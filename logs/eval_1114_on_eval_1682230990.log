@@ -1,0 +1,55 @@
+04/23 02:23:11 AM The args: Namespace(aug_train=False, cache_dir='', data_dir='./_data/glue_data/CoLA', data_url='', do_eval=True, do_lower_case=True, eval_batch_size=32, eval_step=50, gradient_accumulation_steps=1, learning_rate=5e-05, max_seq_length=128, no_cuda=False, num_train_epochs=3.0, output_dir='./eval_results/1114_on_eval', pred_distill=False, seed=42, student_model='./_models/bert-base-uncased-cola', task_name='CoLA', teacher_model=None, temperature=1.0, train_batch_size=32, warmup_proportion=0.1, weight_decay=0.0001)
+04/23 02:23:11 AM device: cuda n_gpu: 1
+04/23 02:23:11 AM ******** num_labels=2
+04/23 02:23:11 AM Model config {
+  "_name_or_path": "/mnt/lustre/weixiuying/transformer/pretrain_models/bert-base-uncased",
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "finetuning_task": "cola",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "unacceptable",
+    "1": "acceptable"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "label2id": {
+    "acceptable": 1,
+    "unacceptable": 0
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "problem_type": "single_label_classification",
+  "torch_dtype": "float32",
+  "training": "",
+  "transformers_version": "4.13.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+04/23 02:23:12 AM Loading model ./_models/bert-base-uncased-cola/pytorch_model.bin
+04/23 02:23:12 AM loading model...
+04/23 02:23:12 AM done!
+04/23 02:23:12 AM Weights of TinyBertForSequenceClassification not initialized from pretrained model: ['fit_dense.weight', 'fit_dense.bias']
+04/23 02:23:12 AM Weights from pretrained model not used in TinyBertForSequenceClassification: ['bert.embeddings.position_ids']
+04/23 02:23:12 AM ***** Running evaluation *****
+04/23 02:23:12 AM   Num examples = 1043
+04/23 02:23:12 AM   Batch size = 32
+04/23 02:23:15 AM preds.shape (1043, 2)
+04/23 02:23:15 AM ***** Eval results *****
+04/23 02:23:15 AM   eval_loss = 0.44588024643334473
+04/23 02:23:15 AM   mcc = 0.5884139541276108
+04/23 02:23:15 AM --- preds.shape: (1043,), probs_0 len: = 1043, probs_1 len: 1043, eval_labels.shape: (1043,) ---

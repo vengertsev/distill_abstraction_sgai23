@@ -1,0 +1,35 @@
+05/04 12:33:39 AM The args: Namespace(aug_train=False, cache_dir='', data_dir='./_data/glue_data/QQP', data_url='', do_eval=True, do_lower_case=True, eval_batch_size=32, eval_step=50, gradient_accumulation_steps=1, learning_rate=5e-05, max_seq_length=128, no_cuda=False, num_train_epochs=3.0, output_dir='./eval_results/1168_on_eval', pred_distill=False, seed=42, student_model='./models_train/TinyBERT_4L_312D_1168_stg2_QQP', task_name='QQP', teacher_model=None, temperature=1.0, train_batch_size=32, warmup_proportion=0.1, weight_decay=0.0001)
+05/04 12:33:39 AM device: cuda n_gpu: 1
+05/04 12:33:39 AM ******** num_labels=2
+05/04 12:33:44 AM Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pre_trained": "",
+  "structure": [],
+  "training": "",
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+
+05/04 12:33:44 AM Loading model ./models_train/TinyBERT_4L_312D_1168_stg2_QQP/pytorch_model.bin
+05/04 12:33:45 AM loading model...
+05/04 12:33:45 AM done!
+05/04 12:33:45 AM ***** Running evaluation *****
+05/04 12:33:45 AM   Num examples = 40430
+05/04 12:33:45 AM   Batch size = 32
+05/04 12:33:54 AM preds.shape (40430, 2)
+05/04 12:33:54 AM ***** Eval results *****
+05/04 12:33:54 AM   acc = 0.8906999752658916
+05/04 12:33:54 AM   acc_and_f1 = 0.8704796003197406
+05/04 12:33:54 AM   eval_loss = 0.26897668392291363
+05/04 12:33:54 AM   f1 = 0.8502592253735894
+05/04 12:33:54 AM --- preds.shape: (40430,), probs_0 len: = 40430, probs_1 len: 40430, eval_labels.shape: (40430,) ---

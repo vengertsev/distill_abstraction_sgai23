@@ -1,0 +1,3143 @@
+04/25 04:54:01 PM The args: Namespace(aug_train=True, cache_dir='', data_dir='./_data/glue_data/RTE', data_url='', do_eval=False, do_lower_case=True, eval_batch_size=32, eval_step=50, gradient_accumulation_steps=1, learning_rate=0.0003, max_seq_length=128, no_cuda=False, num_train_epochs=3.0, output_dir='./models_train/TinyBERT_6L_768D_1137_stg1_RTE', pred_distill=False, seed=42, student_model='./_models/TinyBERT_General_6L_768D', task_name='RTE', teacher_model='./_models/bert-base-uncased-rte', temperature=1.0, train_batch_size=32, warmup_proportion=0.1, weight_decay=0.0001)
+04/25 04:54:01 PM device: cuda n_gpu: 1
+04/25 04:54:01 PM ******** num_labels=2
+04/25 04:54:47 PM Model config {
+  "_name_or_path": "bert-base-uncased",
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "finetuning_task": "rte",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "problem_type": "single_label_classification",
+  "training": "",
+  "transformers_version": "4.6.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+04/25 04:54:48 PM Loading model ./_models/bert-base-uncased-rte/pytorch_model.bin
+04/25 04:54:48 PM loading model...
+04/25 04:54:48 PM done!
+04/25 04:54:48 PM Weights of TinyBertForSequenceClassification not initialized from pretrained model: ['fit_dense.weight', 'fit_dense.bias']
+04/25 04:54:48 PM Weights from pretrained model not used in TinyBertForSequenceClassification: ['bert.embeddings.position_ids']
+04/25 04:54:48 PM Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 6,
+  "pre_trained": "",
+  "structure": [],
+  "training": "",
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+
+04/25 04:54:49 PM Loading model ./_models/TinyBERT_General_6L_768D/pytorch_model.bin
+04/25 04:54:49 PM loading model...
+04/25 04:54:49 PM done!
+04/25 04:54:49 PM Weights of TinyBertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias', 'fit_dense.weight', 'fit_dense.bias']
+04/25 04:54:49 PM Weights from pretrained model not used in TinyBertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'fit_denses.0.weight', 'fit_denses.0.bias', 'fit_denses.1.weight', 'fit_denses.1.bias', 'fit_denses.2.weight', 'fit_denses.2.bias', 'fit_denses.3.weight', 'fit_denses.3.bias', 'fit_denses.4.weight', 'fit_denses.4.bias', 'fit_denses.5.weight', 'fit_denses.5.bias', 'fit_denses.6.weight', 'fit_denses.6.bias']
+04/25 04:54:49 PM ***** Running training *****
+04/25 04:54:49 PM   Num examples = 144076
+04/25 04:54:49 PM   Batch size = 32
+04/25 04:54:49 PM   Num steps = 13506
+04/25 04:54:49 PM n: bert.embeddings.word_embeddings.weight
+04/25 04:54:49 PM n: bert.embeddings.position_embeddings.weight
+04/25 04:54:49 PM n: bert.embeddings.token_type_embeddings.weight
+04/25 04:54:49 PM n: bert.embeddings.LayerNorm.weight
+04/25 04:54:49 PM n: bert.embeddings.LayerNorm.bias
+04/25 04:54:49 PM n: bert.encoder.layer.0.attention.self.query.weight
+04/25 04:54:49 PM n: bert.encoder.layer.0.attention.self.query.bias
+04/25 04:54:49 PM n: bert.encoder.layer.0.attention.self.key.weight
+04/25 04:54:49 PM n: bert.encoder.layer.0.attention.self.key.bias
+04/25 04:54:49 PM n: bert.encoder.layer.0.attention.self.value.weight
+04/25 04:54:49 PM n: bert.encoder.layer.0.attention.self.value.bias
+04/25 04:54:49 PM n: bert.encoder.layer.0.attention.output.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.0.attention.output.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.0.attention.output.LayerNorm.weight
+04/25 04:54:49 PM n: bert.encoder.layer.0.attention.output.LayerNorm.bias
+04/25 04:54:49 PM n: bert.encoder.layer.0.intermediate.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.0.intermediate.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.0.output.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.0.output.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.0.output.LayerNorm.weight
+04/25 04:54:49 PM n: bert.encoder.layer.0.output.LayerNorm.bias
+04/25 04:54:49 PM n: bert.encoder.layer.1.attention.self.query.weight
+04/25 04:54:49 PM n: bert.encoder.layer.1.attention.self.query.bias
+04/25 04:54:49 PM n: bert.encoder.layer.1.attention.self.key.weight
+04/25 04:54:49 PM n: bert.encoder.layer.1.attention.self.key.bias
+04/25 04:54:49 PM n: bert.encoder.layer.1.attention.self.value.weight
+04/25 04:54:49 PM n: bert.encoder.layer.1.attention.self.value.bias
+04/25 04:54:49 PM n: bert.encoder.layer.1.attention.output.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.1.attention.output.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.1.attention.output.LayerNorm.weight
+04/25 04:54:49 PM n: bert.encoder.layer.1.attention.output.LayerNorm.bias
+04/25 04:54:49 PM n: bert.encoder.layer.1.intermediate.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.1.intermediate.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.1.output.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.1.output.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.1.output.LayerNorm.weight
+04/25 04:54:49 PM n: bert.encoder.layer.1.output.LayerNorm.bias
+04/25 04:54:49 PM n: bert.encoder.layer.2.attention.self.query.weight
+04/25 04:54:49 PM n: bert.encoder.layer.2.attention.self.query.bias
+04/25 04:54:49 PM n: bert.encoder.layer.2.attention.self.key.weight
+04/25 04:54:49 PM n: bert.encoder.layer.2.attention.self.key.bias
+04/25 04:54:49 PM n: bert.encoder.layer.2.attention.self.value.weight
+04/25 04:54:49 PM n: bert.encoder.layer.2.attention.self.value.bias
+04/25 04:54:49 PM n: bert.encoder.layer.2.attention.output.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.2.attention.output.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.2.attention.output.LayerNorm.weight
+04/25 04:54:49 PM n: bert.encoder.layer.2.attention.output.LayerNorm.bias
+04/25 04:54:49 PM n: bert.encoder.layer.2.intermediate.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.2.intermediate.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.2.output.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.2.output.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.2.output.LayerNorm.weight
+04/25 04:54:49 PM n: bert.encoder.layer.2.output.LayerNorm.bias
+04/25 04:54:49 PM n: bert.encoder.layer.3.attention.self.query.weight
+04/25 04:54:49 PM n: bert.encoder.layer.3.attention.self.query.bias
+04/25 04:54:49 PM n: bert.encoder.layer.3.attention.self.key.weight
+04/25 04:54:49 PM n: bert.encoder.layer.3.attention.self.key.bias
+04/25 04:54:49 PM n: bert.encoder.layer.3.attention.self.value.weight
+04/25 04:54:49 PM n: bert.encoder.layer.3.attention.self.value.bias
+04/25 04:54:49 PM n: bert.encoder.layer.3.attention.output.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.3.attention.output.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.3.attention.output.LayerNorm.weight
+04/25 04:54:49 PM n: bert.encoder.layer.3.attention.output.LayerNorm.bias
+04/25 04:54:49 PM n: bert.encoder.layer.3.intermediate.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.3.intermediate.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.3.output.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.3.output.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.3.output.LayerNorm.weight
+04/25 04:54:49 PM n: bert.encoder.layer.3.output.LayerNorm.bias
+04/25 04:54:49 PM n: bert.encoder.layer.4.attention.self.query.weight
+04/25 04:54:49 PM n: bert.encoder.layer.4.attention.self.query.bias
+04/25 04:54:49 PM n: bert.encoder.layer.4.attention.self.key.weight
+04/25 04:54:49 PM n: bert.encoder.layer.4.attention.self.key.bias
+04/25 04:54:49 PM n: bert.encoder.layer.4.attention.self.value.weight
+04/25 04:54:49 PM n: bert.encoder.layer.4.attention.self.value.bias
+04/25 04:54:49 PM n: bert.encoder.layer.4.attention.output.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.4.attention.output.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.4.attention.output.LayerNorm.weight
+04/25 04:54:49 PM n: bert.encoder.layer.4.attention.output.LayerNorm.bias
+04/25 04:54:49 PM n: bert.encoder.layer.4.intermediate.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.4.intermediate.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.4.output.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.4.output.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.4.output.LayerNorm.weight
+04/25 04:54:49 PM n: bert.encoder.layer.4.output.LayerNorm.bias
+04/25 04:54:49 PM n: bert.encoder.layer.5.attention.self.query.weight
+04/25 04:54:49 PM n: bert.encoder.layer.5.attention.self.query.bias
+04/25 04:54:49 PM n: bert.encoder.layer.5.attention.self.key.weight
+04/25 04:54:49 PM n: bert.encoder.layer.5.attention.self.key.bias
+04/25 04:54:49 PM n: bert.encoder.layer.5.attention.self.value.weight
+04/25 04:54:49 PM n: bert.encoder.layer.5.attention.self.value.bias
+04/25 04:54:49 PM n: bert.encoder.layer.5.attention.output.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.5.attention.output.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.5.attention.output.LayerNorm.weight
+04/25 04:54:49 PM n: bert.encoder.layer.5.attention.output.LayerNorm.bias
+04/25 04:54:49 PM n: bert.encoder.layer.5.intermediate.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.5.intermediate.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.5.output.dense.weight
+04/25 04:54:49 PM n: bert.encoder.layer.5.output.dense.bias
+04/25 04:54:49 PM n: bert.encoder.layer.5.output.LayerNorm.weight
+04/25 04:54:49 PM n: bert.encoder.layer.5.output.LayerNorm.bias
+04/25 04:54:49 PM n: bert.pooler.dense.weight
+04/25 04:54:49 PM n: bert.pooler.dense.bias
+04/25 04:54:49 PM n: classifier.weight
+04/25 04:54:49 PM n: classifier.bias
+04/25 04:54:49 PM n: fit_dense.weight
+04/25 04:54:49 PM n: fit_dense.bias
+04/25 04:54:49 PM Total parameters: 67547138
+04/25 04:54:57 PM ***** Running evaluation *****
+04/25 04:54:57 PM   Epoch = 0 iter 49 step
+04/25 04:54:57 PM   Num examples = 277
+04/25 04:54:57 PM   Batch size = 32
+04/25 04:54:57 PM ***** Eval results *****
+04/25 04:54:57 PM   att_loss = 18.415467048177913
+04/25 04:54:57 PM   cls_loss = 0.0
+04/25 04:54:57 PM   global_step = 49
+04/25 04:54:57 PM   loss = 21.107695345975916
+04/25 04:54:57 PM   rep_loss = 2.6922284291715037
+04/25 04:54:57 PM ***** Save model *****
+04/25 04:55:05 PM ***** Running evaluation *****
+04/25 04:55:05 PM   Epoch = 0 iter 99 step
+04/25 04:55:05 PM   Num examples = 277
+04/25 04:55:05 PM   Batch size = 32
+04/25 04:55:05 PM ***** Eval results *****
+04/25 04:55:05 PM   att_loss = 13.603013712950426
+04/25 04:55:05 PM   cls_loss = 0.0
+04/25 04:55:05 PM   global_step = 99
+04/25 04:55:05 PM   loss = 15.951194069602273
+04/25 04:55:05 PM   rep_loss = 2.348180390367604
+04/25 04:55:05 PM ***** Save model *****
+04/25 04:55:13 PM ***** Running evaluation *****
+04/25 04:55:13 PM   Epoch = 0 iter 149 step
+04/25 04:55:13 PM   Num examples = 277
+04/25 04:55:13 PM   Batch size = 32
+04/25 04:55:13 PM ***** Eval results *****
+04/25 04:55:13 PM   att_loss = 11.274559709049711
+04/25 04:55:13 PM   cls_loss = 0.0
+04/25 04:55:13 PM   global_step = 149
+04/25 04:55:13 PM   loss = 13.440908368001848
+04/25 04:55:13 PM   rep_loss = 2.166348666152698
+04/25 04:55:13 PM ***** Save model *****
+04/25 04:55:21 PM ***** Running evaluation *****
+04/25 04:55:21 PM   Epoch = 0 iter 199 step
+04/25 04:55:21 PM   Num examples = 277
+04/25 04:55:21 PM   Batch size = 32
+04/25 04:55:21 PM ***** Eval results *****
+04/25 04:55:21 PM   att_loss = 9.87867392726879
+04/25 04:55:21 PM   cls_loss = 0.0
+04/25 04:55:21 PM   global_step = 199
+04/25 04:55:21 PM   loss = 11.916779259341446
+04/25 04:55:21 PM   rep_loss = 2.0381053308745725
+04/25 04:55:21 PM ***** Save model *****
+04/25 04:55:29 PM ***** Running evaluation *****
+04/25 04:55:29 PM   Epoch = 0 iter 249 step
+04/25 04:55:29 PM   Num examples = 277
+04/25 04:55:29 PM   Batch size = 32
+04/25 04:55:29 PM ***** Eval results *****
+04/25 04:55:29 PM   att_loss = 8.920409943684039
+04/25 04:55:29 PM   cls_loss = 0.0
+04/25 04:55:29 PM   global_step = 249
+04/25 04:55:29 PM   loss = 10.85539989777837
+04/25 04:55:29 PM   rep_loss = 1.9349899536155792
+04/25 04:55:29 PM ***** Save model *****
+04/25 04:55:37 PM ***** Running evaluation *****
+04/25 04:55:37 PM   Epoch = 0 iter 299 step
+04/25 04:55:37 PM   Num examples = 277
+04/25 04:55:37 PM   Batch size = 32
+04/25 04:55:37 PM ***** Eval results *****
+04/25 04:55:37 PM   att_loss = 8.223167594858635
+04/25 04:55:37 PM   cls_loss = 0.0
+04/25 04:55:37 PM   global_step = 299
+04/25 04:55:37 PM   loss = 10.075906686559568
+04/25 04:55:37 PM   rep_loss = 1.8527390944917863
+04/25 04:55:37 PM ***** Save model *****
+04/25 04:55:46 PM ***** Running evaluation *****
+04/25 04:55:46 PM   Epoch = 0 iter 349 step
+04/25 04:55:46 PM   Num examples = 277
+04/25 04:55:46 PM   Batch size = 32
+04/25 04:55:46 PM ***** Eval results *****
+04/25 04:55:46 PM   att_loss = 7.655739563583986
+04/25 04:55:46 PM   cls_loss = 0.0
+04/25 04:55:46 PM   global_step = 349
+04/25 04:55:46 PM   loss = 9.435034501859999
+04/25 04:55:46 PM   rep_loss = 1.7792949416917512
+04/25 04:55:46 PM ***** Save model *****
+04/25 04:55:54 PM ***** Running evaluation *****
+04/25 04:55:54 PM   Epoch = 0 iter 399 step
+04/25 04:55:54 PM   Num examples = 277
+04/25 04:55:54 PM   Batch size = 32
+04/25 04:55:54 PM ***** Eval results *****
+04/25 04:55:54 PM   att_loss = 7.208103712340047
+04/25 04:55:54 PM   cls_loss = 0.0
+04/25 04:55:54 PM   global_step = 399
+04/25 04:55:54 PM   loss = 8.924367209126178
+04/25 04:55:54 PM   rep_loss = 1.7162635000726036
+04/25 04:55:54 PM ***** Save model *****
+04/25 04:56:02 PM ***** Running evaluation *****
+04/25 04:56:02 PM   Epoch = 0 iter 449 step
+04/25 04:56:02 PM   Num examples = 277
+04/25 04:56:02 PM   Batch size = 32
+04/25 04:56:02 PM ***** Eval results *****
+04/25 04:56:02 PM   att_loss = 6.842468993435459
+04/25 04:56:02 PM   cls_loss = 0.0
+04/25 04:56:02 PM   global_step = 449
+04/25 04:56:02 PM   loss = 8.503889197496104
+04/25 04:56:02 PM   rep_loss = 1.6614202109636336
+04/25 04:56:02 PM ***** Save model *****
+04/25 04:56:10 PM ***** Running evaluation *****
+04/25 04:56:10 PM   Epoch = 0 iter 499 step
+04/25 04:56:10 PM   Num examples = 277
+04/25 04:56:10 PM   Batch size = 32
+04/25 04:56:10 PM ***** Eval results *****
+04/25 04:56:10 PM   att_loss = 6.5500772118807316
+04/25 04:56:10 PM   cls_loss = 0.0
+04/25 04:56:10 PM   global_step = 499
+04/25 04:56:10 PM   loss = 8.164622015370156
+04/25 04:56:10 PM   rep_loss = 1.6145448106563163
+04/25 04:56:10 PM ***** Save model *****
+04/25 04:56:18 PM ***** Running evaluation *****
+04/25 04:56:18 PM   Epoch = 0 iter 549 step
+04/25 04:56:18 PM   Num examples = 277
+04/25 04:56:18 PM   Batch size = 32
+04/25 04:56:18 PM ***** Eval results *****
+04/25 04:56:18 PM   att_loss = 6.2849934418127615
+04/25 04:56:18 PM   cls_loss = 0.0
+04/25 04:56:18 PM   global_step = 549
+04/25 04:56:18 PM   loss = 7.857132813969597
+04/25 04:56:18 PM   rep_loss = 1.5721393810595319
+04/25 04:56:18 PM ***** Save model *****
+04/25 04:56:26 PM ***** Running evaluation *****
+04/25 04:56:26 PM   Epoch = 0 iter 599 step
+04/25 04:56:26 PM   Num examples = 277
+04/25 04:56:26 PM   Batch size = 32
+04/25 04:56:26 PM ***** Eval results *****
+04/25 04:56:26 PM   att_loss = 6.075405027711133
+04/25 04:56:26 PM   cls_loss = 0.0
+04/25 04:56:26 PM   global_step = 599
+04/25 04:56:26 PM   loss = 7.611859642006519
+04/25 04:56:26 PM   rep_loss = 1.5364546230519953
+04/25 04:56:26 PM ***** Save model *****
+04/25 04:56:35 PM ***** Running evaluation *****
+04/25 04:56:35 PM   Epoch = 0 iter 649 step
+04/25 04:56:35 PM   Num examples = 277
+04/25 04:56:35 PM   Batch size = 32
+04/25 04:56:35 PM ***** Eval results *****
+04/25 04:56:35 PM   att_loss = 5.896396584429984
+04/25 04:56:35 PM   cls_loss = 0.0
+04/25 04:56:35 PM   global_step = 649
+04/25 04:56:35 PM   loss = 7.401316040653294
+04/25 04:56:35 PM   rep_loss = 1.5049194639379329
+04/25 04:56:35 PM ***** Save model *****
+04/25 04:56:43 PM ***** Running evaluation *****
+04/25 04:56:43 PM   Epoch = 0 iter 699 step
+04/25 04:56:43 PM   Num examples = 277
+04/25 04:56:43 PM   Batch size = 32
+04/25 04:56:43 PM ***** Eval results *****
+04/25 04:56:43 PM   att_loss = 5.736861908384658
+04/25 04:56:43 PM   cls_loss = 0.0
+04/25 04:56:43 PM   global_step = 699
+04/25 04:56:43 PM   loss = 7.213379529412724
+04/25 04:56:43 PM   rep_loss = 1.4765176293846534
+04/25 04:56:43 PM ***** Save model *****
+04/25 04:56:51 PM ***** Running evaluation *****
+04/25 04:56:51 PM   Epoch = 0 iter 749 step
+04/25 04:56:51 PM   Num examples = 277
+04/25 04:56:51 PM   Batch size = 32
+04/25 04:56:51 PM ***** Eval results *****
+04/25 04:56:51 PM   att_loss = 5.598731777219174
+04/25 04:56:51 PM   cls_loss = 0.0
+04/25 04:56:51 PM   global_step = 749
+04/25 04:56:51 PM   loss = 7.04986855598572
+04/25 04:56:51 PM   rep_loss = 1.4511367868835998
+04/25 04:56:51 PM ***** Save model *****
+04/25 04:56:59 PM ***** Running evaluation *****
+04/25 04:56:59 PM   Epoch = 0 iter 799 step
+04/25 04:56:59 PM   Num examples = 277
+04/25 04:56:59 PM   Batch size = 32
+04/25 04:56:59 PM ***** Eval results *****
+04/25 04:56:59 PM   att_loss = 5.471487793069011
+04/25 04:56:59 PM   cls_loss = 0.0
+04/25 04:56:59 PM   global_step = 799
+04/25 04:56:59 PM   loss = 6.899268694305897
+04/25 04:56:59 PM   rep_loss = 1.427780907801603
+04/25 04:56:59 PM ***** Save model *****
+04/25 04:57:07 PM ***** Running evaluation *****
+04/25 04:57:07 PM   Epoch = 0 iter 849 step
+04/25 04:57:07 PM   Num examples = 277
+04/25 04:57:07 PM   Batch size = 32
+04/25 04:57:07 PM ***** Eval results *****
+04/25 04:57:07 PM   att_loss = 5.351460844664467
+04/25 04:57:07 PM   cls_loss = 0.0
+04/25 04:57:07 PM   global_step = 849
+04/25 04:57:07 PM   loss = 6.7576365032802626
+04/25 04:57:07 PM   rep_loss = 1.406175663951429
+04/25 04:57:07 PM ***** Save model *****
+04/25 04:57:16 PM ***** Running evaluation *****
+04/25 04:57:16 PM   Epoch = 0 iter 899 step
+04/25 04:57:16 PM   Num examples = 277
+04/25 04:57:16 PM   Batch size = 32
+04/25 04:57:16 PM ***** Eval results *****
+04/25 04:57:16 PM   att_loss = 5.251415764264456
+04/25 04:57:16 PM   cls_loss = 0.0
+04/25 04:57:16 PM   global_step = 899
+04/25 04:57:16 PM   loss = 6.638525665005269
+04/25 04:57:16 PM   rep_loss = 1.387109904453672
+04/25 04:57:16 PM ***** Save model *****
+04/25 04:57:24 PM ***** Running evaluation *****
+04/25 04:57:24 PM   Epoch = 0 iter 949 step
+04/25 04:57:24 PM   Num examples = 277
+04/25 04:57:24 PM   Batch size = 32
+04/25 04:57:24 PM ***** Eval results *****
+04/25 04:57:24 PM   att_loss = 5.159994971011034
+04/25 04:57:24 PM   cls_loss = 0.0
+04/25 04:57:24 PM   global_step = 949
+04/25 04:57:24 PM   loss = 6.529609837697856
+04/25 04:57:24 PM   rep_loss = 1.3696148704552926
+04/25 04:57:24 PM ***** Save model *****
+04/25 04:57:32 PM ***** Running evaluation *****
+04/25 04:57:32 PM   Epoch = 0 iter 999 step
+04/25 04:57:32 PM   Num examples = 277
+04/25 04:57:32 PM   Batch size = 32
+04/25 04:57:32 PM ***** Eval results *****
+04/25 04:57:32 PM   att_loss = 5.072685913757996
+04/25 04:57:32 PM   cls_loss = 0.0
+04/25 04:57:32 PM   global_step = 999
+04/25 04:57:32 PM   loss = 6.425874082175819
+04/25 04:57:32 PM   rep_loss = 1.3531881699690949
+04/25 04:57:32 PM ***** Save model *****
+04/25 04:57:40 PM ***** Running evaluation *****
+04/25 04:57:40 PM   Epoch = 0 iter 1049 step
+04/25 04:57:40 PM   Num examples = 277
+04/25 04:57:40 PM   Batch size = 32
+04/25 04:57:40 PM ***** Eval results *****
+04/25 04:57:40 PM   att_loss = 4.998057967941459
+04/25 04:57:40 PM   cls_loss = 0.0
+04/25 04:57:40 PM   global_step = 1049
+04/25 04:57:40 PM   loss = 6.3364298295929276
+04/25 04:57:40 PM   rep_loss = 1.3383718641515683
+04/25 04:57:40 PM ***** Save model *****
+04/25 04:57:48 PM ***** Running evaluation *****
+04/25 04:57:48 PM   Epoch = 0 iter 1099 step
+04/25 04:57:48 PM   Num examples = 277
+04/25 04:57:48 PM   Batch size = 32
+04/25 04:57:48 PM ***** Eval results *****
+04/25 04:57:48 PM   att_loss = 4.927849603198245
+04/25 04:57:48 PM   cls_loss = 0.0
+04/25 04:57:48 PM   global_step = 1099
+04/25 04:57:48 PM   loss = 6.252457065295912
+04/25 04:57:48 PM   rep_loss = 1.324607465731436
+04/25 04:57:48 PM ***** Save model *****
+04/25 04:57:56 PM ***** Running evaluation *****
+04/25 04:57:56 PM   Epoch = 0 iter 1149 step
+04/25 04:57:56 PM   Num examples = 277
+04/25 04:57:56 PM   Batch size = 32
+04/25 04:57:56 PM ***** Eval results *****
+04/25 04:57:56 PM   att_loss = 4.8612784496901655
+04/25 04:57:56 PM   cls_loss = 0.0
+04/25 04:57:56 PM   global_step = 1149
+04/25 04:57:56 PM   loss = 6.172972093570533
+04/25 04:57:56 PM   rep_loss = 1.3116936474078837
+04/25 04:57:56 PM ***** Save model *****
+04/25 04:58:05 PM ***** Running evaluation *****
+04/25 04:58:05 PM   Epoch = 0 iter 1199 step
+04/25 04:58:05 PM   Num examples = 277
+04/25 04:58:05 PM   Batch size = 32
+04/25 04:58:05 PM ***** Eval results *****
+04/25 04:58:05 PM   att_loss = 4.799626970808142
+04/25 04:58:05 PM   cls_loss = 0.0
+04/25 04:58:05 PM   global_step = 1199
+04/25 04:58:05 PM   loss = 6.099205676469333
+04/25 04:58:05 PM   rep_loss = 1.299578710483252
+04/25 04:58:05 PM ***** Save model *****
+04/25 04:58:13 PM ***** Running evaluation *****
+04/25 04:58:13 PM   Epoch = 0 iter 1249 step
+04/25 04:58:13 PM   Num examples = 277
+04/25 04:58:13 PM   Batch size = 32
+04/25 04:58:13 PM ***** Eval results *****
+04/25 04:58:13 PM   att_loss = 4.742199641976765
+04/25 04:58:13 PM   cls_loss = 0.0
+04/25 04:58:13 PM   global_step = 1249
+04/25 04:58:13 PM   loss = 6.030539100126231
+04/25 04:58:13 PM   rep_loss = 1.2883394612991113
+04/25 04:58:13 PM ***** Save model *****
+04/25 04:58:21 PM ***** Running evaluation *****
+04/25 04:58:21 PM   Epoch = 0 iter 1299 step
+04/25 04:58:21 PM   Num examples = 277
+04/25 04:58:21 PM   Batch size = 32
+04/25 04:58:21 PM ***** Eval results *****
+04/25 04:58:21 PM   att_loss = 4.690176317010869
+04/25 04:58:21 PM   cls_loss = 0.0
+04/25 04:58:21 PM   global_step = 1299
+04/25 04:58:21 PM   loss = 5.967990035181141
+04/25 04:58:21 PM   rep_loss = 1.2778137213363383
+04/25 04:58:21 PM ***** Save model *****
+04/25 04:58:29 PM ***** Running evaluation *****
+04/25 04:58:29 PM   Epoch = 0 iter 1349 step
+04/25 04:58:29 PM   Num examples = 277
+04/25 04:58:29 PM   Batch size = 32
+04/25 04:58:29 PM ***** Eval results *****
+04/25 04:58:29 PM   att_loss = 4.64097279827183
+04/25 04:58:29 PM   cls_loss = 0.0
+04/25 04:58:29 PM   global_step = 1349
+04/25 04:58:29 PM   loss = 5.908877941835713
+04/25 04:58:29 PM   rep_loss = 1.2679051480264996
+04/25 04:58:29 PM ***** Save model *****
+04/25 04:58:37 PM ***** Running evaluation *****
+04/25 04:58:37 PM   Epoch = 0 iter 1399 step
+04/25 04:58:37 PM   Num examples = 277
+04/25 04:58:37 PM   Batch size = 32
+04/25 04:58:37 PM ***** Eval results *****
+04/25 04:58:37 PM   att_loss = 4.592737077899794
+04/25 04:58:37 PM   cls_loss = 0.0
+04/25 04:58:37 PM   global_step = 1399
+04/25 04:58:37 PM   loss = 5.851180425620743
+04/25 04:58:37 PM   rep_loss = 1.2584433523649143
+04/25 04:58:37 PM ***** Save model *****
+04/25 04:58:46 PM ***** Running evaluation *****
+04/25 04:58:46 PM   Epoch = 0 iter 1449 step
+04/25 04:58:46 PM   Num examples = 277
+04/25 04:58:46 PM   Batch size = 32
+04/25 04:58:46 PM ***** Eval results *****
+04/25 04:58:46 PM   att_loss = 4.551152779860197
+04/25 04:58:46 PM   cls_loss = 0.0
+04/25 04:58:46 PM   global_step = 1449
+04/25 04:58:46 PM   loss = 5.800955553397053
+04/25 04:58:46 PM   rep_loss = 1.2498027780617083
+04/25 04:58:46 PM ***** Save model *****
+04/25 04:58:54 PM ***** Running evaluation *****
+04/25 04:58:54 PM   Epoch = 0 iter 1499 step
+04/25 04:58:54 PM   Num examples = 277
+04/25 04:58:54 PM   Batch size = 32
+04/25 04:58:54 PM ***** Eval results *****
+04/25 04:58:54 PM   att_loss = 4.511530628516087
+04/25 04:58:54 PM   cls_loss = 0.0
+04/25 04:58:54 PM   global_step = 1499
+04/25 04:58:54 PM   loss = 5.753040234671982
+04/25 04:58:54 PM   rep_loss = 1.2415096093369293
+04/25 04:58:54 PM ***** Save model *****
+04/25 04:59:02 PM ***** Running evaluation *****
+04/25 04:59:02 PM   Epoch = 0 iter 1549 step
+04/25 04:59:02 PM   Num examples = 277
+04/25 04:59:02 PM   Batch size = 32
+04/25 04:59:02 PM ***** Eval results *****
+04/25 04:59:02 PM   att_loss = 4.471574159958349
+04/25 04:59:02 PM   cls_loss = 0.0
+04/25 04:59:02 PM   global_step = 1549
+04/25 04:59:02 PM   loss = 5.705112197770081
+04/25 04:59:02 PM   rep_loss = 1.233538041313361
+04/25 04:59:02 PM ***** Save model *****
+04/25 04:59:10 PM ***** Running evaluation *****
+04/25 04:59:10 PM   Epoch = 0 iter 1599 step
+04/25 04:59:10 PM   Num examples = 277
+04/25 04:59:10 PM   Batch size = 32
+04/25 04:59:10 PM ***** Eval results *****
+04/25 04:59:10 PM   att_loss = 4.433199593691322
+04/25 04:59:10 PM   cls_loss = 0.0
+04/25 04:59:10 PM   global_step = 1599
+04/25 04:59:10 PM   loss = 5.65906992325416
+04/25 04:59:10 PM   rep_loss = 1.2258703328804197
+04/25 04:59:10 PM ***** Save model *****
+04/25 04:59:18 PM ***** Running evaluation *****
+04/25 04:59:18 PM   Epoch = 0 iter 1649 step
+04/25 04:59:18 PM   Num examples = 277
+04/25 04:59:18 PM   Batch size = 32
+04/25 04:59:18 PM ***** Eval results *****
+04/25 04:59:18 PM   att_loss = 4.396155336685366
+04/25 04:59:18 PM   cls_loss = 0.0
+04/25 04:59:18 PM   global_step = 1649
+04/25 04:59:18 PM   loss = 5.6147212009129195
+04/25 04:59:18 PM   rep_loss = 1.218565866938499
+04/25 04:59:18 PM ***** Save model *****
+04/25 04:59:26 PM ***** Running evaluation *****
+04/25 04:59:26 PM   Epoch = 0 iter 1699 step
+04/25 04:59:26 PM   Num examples = 277
+04/25 04:59:26 PM   Batch size = 32
+04/25 04:59:26 PM ***** Eval results *****
+04/25 04:59:26 PM   att_loss = 4.361272035731226
+04/25 04:59:26 PM   cls_loss = 0.0
+04/25 04:59:26 PM   global_step = 1699
+04/25 04:59:26 PM   loss = 5.572846896512288
+04/25 04:59:26 PM   rep_loss = 1.211574863377145
+04/25 04:59:26 PM ***** Save model *****
+04/25 04:59:35 PM ***** Running evaluation *****
+04/25 04:59:35 PM   Epoch = 0 iter 1749 step
+04/25 04:59:35 PM   Num examples = 277
+04/25 04:59:35 PM   Batch size = 32
+04/25 04:59:35 PM ***** Eval results *****
+04/25 04:59:35 PM   att_loss = 4.329365916358464
+04/25 04:59:35 PM   cls_loss = 0.0
+04/25 04:59:35 PM   global_step = 1749
+04/25 04:59:35 PM   loss = 5.534385621445461
+04/25 04:59:35 PM   rep_loss = 1.205019706143455
+04/25 04:59:35 PM ***** Save model *****
+04/25 04:59:43 PM ***** Running evaluation *****
+04/25 04:59:43 PM   Epoch = 0 iter 1799 step
+04/25 04:59:43 PM   Num examples = 277
+04/25 04:59:43 PM   Batch size = 32
+04/25 04:59:43 PM ***** Eval results *****
+04/25 04:59:43 PM   att_loss = 4.29936559350044
+04/25 04:59:43 PM   cls_loss = 0.0
+04/25 04:59:43 PM   global_step = 1799
+04/25 04:59:43 PM   loss = 5.498163703814555
+04/25 04:59:43 PM   rep_loss = 1.1987981110761536
+04/25 04:59:43 PM ***** Save model *****
+04/25 04:59:51 PM ***** Running evaluation *****
+04/25 04:59:51 PM   Epoch = 0 iter 1849 step
+04/25 04:59:51 PM   Num examples = 277
+04/25 04:59:51 PM   Batch size = 32
+04/25 04:59:51 PM ***** Eval results *****
+04/25 04:59:51 PM   att_loss = 4.27103965420411
+04/25 04:59:51 PM   cls_loss = 0.0
+04/25 04:59:51 PM   global_step = 1849
+04/25 04:59:51 PM   loss = 5.4639193239310035
+04/25 04:59:51 PM   rep_loss = 1.1928796703393811
+04/25 04:59:51 PM ***** Save model *****
+04/25 04:59:59 PM ***** Running evaluation *****
+04/25 04:59:59 PM   Epoch = 0 iter 1899 step
+04/25 04:59:59 PM   Num examples = 277
+04/25 04:59:59 PM   Batch size = 32
+04/25 04:59:59 PM ***** Eval results *****
+04/25 04:59:59 PM   att_loss = 4.244206724322551
+04/25 04:59:59 PM   cls_loss = 0.0
+04/25 04:59:59 PM   global_step = 1899
+04/25 04:59:59 PM   loss = 5.431453072692044
+04/25 04:59:59 PM   rep_loss = 1.1872463495935999
+04/25 04:59:59 PM ***** Save model *****
+04/25 05:00:07 PM ***** Running evaluation *****
+04/25 05:00:07 PM   Epoch = 0 iter 1949 step
+04/25 05:00:07 PM   Num examples = 277
+04/25 05:00:07 PM   Batch size = 32
+04/25 05:00:07 PM ***** Eval results *****
+04/25 05:00:07 PM   att_loss = 4.217941387180428
+04/25 05:00:07 PM   cls_loss = 0.0
+04/25 05:00:07 PM   global_step = 1949
+04/25 05:00:07 PM   loss = 5.399662124859852
+04/25 05:00:07 PM   rep_loss = 1.181720739086204
+04/25 05:00:07 PM ***** Save model *****
+04/25 05:00:16 PM ***** Running evaluation *****
+04/25 05:00:16 PM   Epoch = 0 iter 1999 step
+04/25 05:00:16 PM   Num examples = 277
+04/25 05:00:16 PM   Batch size = 32
+04/25 05:00:16 PM ***** Eval results *****
+04/25 05:00:16 PM   att_loss = 4.192756056725949
+04/25 05:00:16 PM   cls_loss = 0.0
+04/25 05:00:16 PM   global_step = 1999
+04/25 05:00:16 PM   loss = 5.369236834112438
+04/25 05:00:16 PM   rep_loss = 1.1764807780126503
+04/25 05:00:16 PM ***** Save model *****
+04/25 05:00:24 PM ***** Running evaluation *****
+04/25 05:00:24 PM   Epoch = 0 iter 2049 step
+04/25 05:00:24 PM   Num examples = 277
+04/25 05:00:24 PM   Batch size = 32
+04/25 05:00:24 PM ***** Eval results *****
+04/25 05:00:24 PM   att_loss = 4.169994681099091
+04/25 05:00:24 PM   cls_loss = 0.0
+04/25 05:00:24 PM   global_step = 2049
+04/25 05:00:24 PM   loss = 5.341529277198311
+04/25 05:00:24 PM   rep_loss = 1.1715345969428197
+04/25 05:00:24 PM ***** Save model *****
+04/25 05:00:32 PM ***** Running evaluation *****
+04/25 05:00:32 PM   Epoch = 0 iter 2099 step
+04/25 05:00:32 PM   Num examples = 277
+04/25 05:00:32 PM   Batch size = 32
+04/25 05:00:32 PM ***** Eval results *****
+04/25 05:00:32 PM   att_loss = 4.147524895243215
+04/25 05:00:32 PM   cls_loss = 0.0
+04/25 05:00:32 PM   global_step = 2099
+04/25 05:00:32 PM   loss = 5.314273508916076
+04/25 05:00:32 PM   rep_loss = 1.1667486140420176
+04/25 05:00:32 PM ***** Save model *****
+04/25 05:00:40 PM ***** Running evaluation *****
+04/25 05:00:40 PM   Epoch = 0 iter 2149 step
+04/25 05:00:40 PM   Num examples = 277
+04/25 05:00:40 PM   Batch size = 32
+04/25 05:00:40 PM ***** Eval results *****
+04/25 05:00:40 PM   att_loss = 4.126868920306263
+04/25 05:00:40 PM   cls_loss = 0.0
+04/25 05:00:40 PM   global_step = 2149
+04/25 05:00:40 PM   loss = 5.289050110776572
+04/25 05:00:40 PM   rep_loss = 1.1621811906644608
+04/25 05:00:40 PM ***** Save model *****
+04/25 05:00:48 PM ***** Running evaluation *****
+04/25 05:00:48 PM   Epoch = 0 iter 2199 step
+04/25 05:00:48 PM   Num examples = 277
+04/25 05:00:48 PM   Batch size = 32
+04/25 05:00:48 PM ***** Eval results *****
+04/25 05:00:48 PM   att_loss = 4.107069703111219
+04/25 05:00:48 PM   cls_loss = 0.0
+04/25 05:00:48 PM   global_step = 2199
+04/25 05:00:48 PM   loss = 5.264876662194051
+04/25 05:00:48 PM   rep_loss = 1.1578069594352014
+04/25 05:00:48 PM ***** Save model *****
+04/25 05:00:56 PM ***** Running evaluation *****
+04/25 05:00:56 PM   Epoch = 0 iter 2249 step
+04/25 05:00:56 PM   Num examples = 277
+04/25 05:00:56 PM   Batch size = 32
+04/25 05:00:56 PM ***** Eval results *****
+04/25 05:00:56 PM   att_loss = 4.088756971435581
+04/25 05:00:56 PM   cls_loss = 0.0
+04/25 05:00:56 PM   global_step = 2249
+04/25 05:00:56 PM   loss = 5.242417863550691
+04/25 05:00:56 PM   rep_loss = 1.153660892009099
+04/25 05:00:56 PM ***** Save model *****
+04/25 05:01:05 PM ***** Running evaluation *****
+04/25 05:01:05 PM   Epoch = 0 iter 2299 step
+04/25 05:01:05 PM   Num examples = 277
+04/25 05:01:05 PM   Batch size = 32
+04/25 05:01:05 PM ***** Eval results *****
+04/25 05:01:05 PM   att_loss = 4.068712782164977
+04/25 05:01:05 PM   cls_loss = 0.0
+04/25 05:01:05 PM   global_step = 2299
+04/25 05:01:05 PM   loss = 5.218162349018132
+04/25 05:01:05 PM   rep_loss = 1.1494495672420504
+04/25 05:01:05 PM ***** Save model *****
+04/25 05:01:13 PM ***** Running evaluation *****
+04/25 05:01:13 PM   Epoch = 0 iter 2349 step
+04/25 05:01:13 PM   Num examples = 277
+04/25 05:01:13 PM   Batch size = 32
+04/25 05:01:13 PM ***** Eval results *****
+04/25 05:01:13 PM   att_loss = 4.049309179497659
+04/25 05:01:13 PM   cls_loss = 0.0
+04/25 05:01:13 PM   global_step = 2349
+04/25 05:01:13 PM   loss = 5.194710532468956
+04/25 05:01:13 PM   rep_loss = 1.1454013534534124
+04/25 05:01:13 PM ***** Save model *****
+04/25 05:01:21 PM ***** Running evaluation *****
+04/25 05:01:21 PM   Epoch = 0 iter 2399 step
+04/25 05:01:21 PM   Num examples = 277
+04/25 05:01:21 PM   Batch size = 32
+04/25 05:01:21 PM ***** Eval results *****
+04/25 05:01:21 PM   att_loss = 4.028856230457905
+04/25 05:01:21 PM   cls_loss = 0.0
+04/25 05:01:21 PM   global_step = 2399
+04/25 05:01:21 PM   loss = 5.170221163064751
+04/25 05:01:21 PM   rep_loss = 1.1413649333273683
+04/25 05:01:21 PM ***** Save model *****
+04/25 05:01:29 PM ***** Running evaluation *****
+04/25 05:01:29 PM   Epoch = 0 iter 2449 step
+04/25 05:01:29 PM   Num examples = 277
+04/25 05:01:29 PM   Batch size = 32
+04/25 05:01:29 PM ***** Eval results *****
+04/25 05:01:29 PM   att_loss = 4.011992160326708
+04/25 05:01:29 PM   cls_loss = 0.0
+04/25 05:01:29 PM   global_step = 2449
+04/25 05:01:29 PM   loss = 5.14963386486189
+04/25 05:01:29 PM   rep_loss = 1.1376417060928377
+04/25 05:01:29 PM ***** Save model *****
+04/25 05:01:37 PM ***** Running evaluation *****
+04/25 05:01:37 PM   Epoch = 0 iter 2499 step
+04/25 05:01:37 PM   Num examples = 277
+04/25 05:01:37 PM   Batch size = 32
+04/25 05:01:37 PM ***** Eval results *****
+04/25 05:01:37 PM   att_loss = 3.994398394027869
+04/25 05:01:37 PM   cls_loss = 0.0
+04/25 05:01:37 PM   global_step = 2499
+04/25 05:01:37 PM   loss = 5.128410284306441
+04/25 05:01:37 PM   rep_loss = 1.1340118919481703
+04/25 05:01:37 PM ***** Save model *****
+04/25 05:01:46 PM ***** Running evaluation *****
+04/25 05:01:46 PM   Epoch = 0 iter 2549 step
+04/25 05:01:46 PM   Num examples = 277
+04/25 05:01:46 PM   Batch size = 32
+04/25 05:01:46 PM ***** Eval results *****
+04/25 05:01:46 PM   att_loss = 3.9790807336206386
+04/25 05:01:46 PM   cls_loss = 0.0
+04/25 05:01:46 PM   global_step = 2549
+04/25 05:01:46 PM   loss = 5.109620710782979
+04/25 05:01:46 PM   rep_loss = 1.1305399786588863
+04/25 05:01:46 PM ***** Save model *****
+04/25 05:01:54 PM ***** Running evaluation *****
+04/25 05:01:54 PM   Epoch = 0 iter 2599 step
+04/25 05:01:54 PM   Num examples = 277
+04/25 05:01:54 PM   Batch size = 32
+04/25 05:01:54 PM ***** Eval results *****
+04/25 05:01:54 PM   att_loss = 3.9629938437324985
+04/25 05:01:54 PM   cls_loss = 0.0
+04/25 05:01:54 PM   global_step = 2599
+04/25 05:01:54 PM   loss = 5.090086217291679
+04/25 05:01:54 PM   rep_loss = 1.1270923749352015
+04/25 05:01:54 PM ***** Save model *****
+04/25 05:02:02 PM ***** Running evaluation *****
+04/25 05:02:02 PM   Epoch = 0 iter 2649 step
+04/25 05:02:02 PM   Num examples = 277
+04/25 05:02:02 PM   Batch size = 32
+04/25 05:02:02 PM ***** Eval results *****
+04/25 05:02:02 PM   att_loss = 3.9461942932298832
+04/25 05:02:02 PM   cls_loss = 0.0
+04/25 05:02:02 PM   global_step = 2649
+04/25 05:02:02 PM   loss = 5.069843332737785
+04/25 05:02:02 PM   rep_loss = 1.1236490413529687
+04/25 05:02:02 PM ***** Save model *****
+04/25 05:02:10 PM ***** Running evaluation *****
+04/25 05:02:10 PM   Epoch = 0 iter 2699 step
+04/25 05:02:10 PM   Num examples = 277
+04/25 05:02:10 PM   Batch size = 32
+04/25 05:02:10 PM ***** Eval results *****
+04/25 05:02:10 PM   att_loss = 3.931853118407457
+04/25 05:02:10 PM   cls_loss = 0.0
+04/25 05:02:10 PM   global_step = 2699
+04/25 05:02:10 PM   loss = 5.0523032870015285
+04/25 05:02:10 PM   rep_loss = 1.1204501705816297
+04/25 05:02:10 PM ***** Save model *****
+04/25 05:02:18 PM ***** Running evaluation *****
+04/25 05:02:18 PM   Epoch = 0 iter 2749 step
+04/25 05:02:18 PM   Num examples = 277
+04/25 05:02:18 PM   Batch size = 32
+04/25 05:02:18 PM ***** Eval results *****
+04/25 05:02:18 PM   att_loss = 3.9158563333756278
+04/25 05:02:18 PM   cls_loss = 0.0
+04/25 05:02:18 PM   global_step = 2749
+04/25 05:02:18 PM   loss = 5.033062596371409
+04/25 05:02:18 PM   rep_loss = 1.1172062651206467
+04/25 05:02:18 PM ***** Save model *****
+04/25 05:02:26 PM ***** Running evaluation *****
+04/25 05:02:26 PM   Epoch = 0 iter 2799 step
+04/25 05:02:26 PM   Num examples = 277
+04/25 05:02:26 PM   Batch size = 32
+04/25 05:02:26 PM ***** Eval results *****
+04/25 05:02:26 PM   att_loss = 3.9019564497083286
+04/25 05:02:26 PM   cls_loss = 0.0
+04/25 05:02:26 PM   global_step = 2799
+04/25 05:02:26 PM   loss = 5.016137609655579
+04/25 05:02:26 PM   rep_loss = 1.1141811619489779
+04/25 05:02:26 PM ***** Save model *****
+04/25 05:02:35 PM ***** Running evaluation *****
+04/25 05:02:35 PM   Epoch = 0 iter 2849 step
+04/25 05:02:35 PM   Num examples = 277
+04/25 05:02:35 PM   Batch size = 32
+04/25 05:02:35 PM ***** Eval results *****
+04/25 05:02:35 PM   att_loss = 3.8891370881436456
+04/25 05:02:35 PM   cls_loss = 0.0
+04/25 05:02:35 PM   global_step = 2849
+04/25 05:02:35 PM   loss = 5.000360955435504
+04/25 05:02:35 PM   rep_loss = 1.111223869091086
+04/25 05:02:35 PM ***** Save model *****
+04/25 05:02:43 PM ***** Running evaluation *****
+04/25 05:02:43 PM   Epoch = 0 iter 2899 step
+04/25 05:02:43 PM   Num examples = 277
+04/25 05:02:43 PM   Batch size = 32
+04/25 05:02:43 PM ***** Eval results *****
+04/25 05:02:43 PM   att_loss = 3.8768228722177898
+04/25 05:02:43 PM   cls_loss = 0.0
+04/25 05:02:43 PM   global_step = 2899
+04/25 05:02:43 PM   loss = 4.985202604674108
+04/25 05:02:43 PM   rep_loss = 1.1083797339572294
+04/25 05:02:43 PM ***** Save model *****
+04/25 05:02:51 PM ***** Running evaluation *****
+04/25 05:02:51 PM   Epoch = 0 iter 2949 step
+04/25 05:02:51 PM   Num examples = 277
+04/25 05:02:51 PM   Batch size = 32
+04/25 05:02:51 PM ***** Eval results *****
+04/25 05:02:51 PM   att_loss = 3.8663212615136335
+04/25 05:02:51 PM   cls_loss = 0.0
+04/25 05:02:51 PM   global_step = 2949
+04/25 05:02:51 PM   loss = 4.972046384329552
+04/25 05:02:51 PM   rep_loss = 1.1057251239275683
+04/25 05:02:51 PM ***** Save model *****
+04/25 05:02:59 PM ***** Running evaluation *****
+04/25 05:02:59 PM   Epoch = 0 iter 2999 step
+04/25 05:02:59 PM   Num examples = 277
+04/25 05:02:59 PM   Batch size = 32
+04/25 05:02:59 PM ***** Eval results *****
+04/25 05:02:59 PM   att_loss = 3.8544366169707223
+04/25 05:02:59 PM   cls_loss = 0.0
+04/25 05:02:59 PM   global_step = 2999
+04/25 05:02:59 PM   loss = 4.957494257449627
+04/25 05:02:59 PM   rep_loss = 1.1030576418701432
+04/25 05:02:59 PM ***** Save model *****
+04/25 05:03:07 PM ***** Running evaluation *****
+04/25 05:03:07 PM   Epoch = 0 iter 3049 step
+04/25 05:03:07 PM   Num examples = 277
+04/25 05:03:07 PM   Batch size = 32
+04/25 05:03:07 PM ***** Eval results *****
+04/25 05:03:07 PM   att_loss = 3.84266863224271
+04/25 05:03:07 PM   cls_loss = 0.0
+04/25 05:03:07 PM   global_step = 3049
+04/25 05:03:07 PM   loss = 4.943121826582246
+04/25 05:03:07 PM   rep_loss = 1.1004531953560794
+04/25 05:03:07 PM ***** Save model *****
+04/25 05:03:16 PM ***** Running evaluation *****
+04/25 05:03:16 PM   Epoch = 0 iter 3099 step
+04/25 05:03:16 PM   Num examples = 277
+04/25 05:03:16 PM   Batch size = 32
+04/25 05:03:16 PM ***** Eval results *****
+04/25 05:03:16 PM   att_loss = 3.8315613522918888
+04/25 05:03:16 PM   cls_loss = 0.0
+04/25 05:03:16 PM   global_step = 3099
+04/25 05:03:16 PM   loss = 4.929496607037274
+04/25 05:03:16 PM   rep_loss = 1.0979352560532636
+04/25 05:03:16 PM ***** Save model *****
+04/25 05:03:24 PM ***** Running evaluation *****
+04/25 05:03:24 PM   Epoch = 0 iter 3149 step
+04/25 05:03:24 PM   Num examples = 277
+04/25 05:03:24 PM   Batch size = 32
+04/25 05:03:24 PM ***** Eval results *****
+04/25 05:03:24 PM   att_loss = 3.8201891553708585
+04/25 05:03:24 PM   cls_loss = 0.0
+04/25 05:03:24 PM   global_step = 3149
+04/25 05:03:24 PM   loss = 4.915655182520145
+04/25 05:03:24 PM   rep_loss = 1.0954660284174704
+04/25 05:03:24 PM ***** Save model *****
+04/25 05:03:32 PM ***** Running evaluation *****
+04/25 05:03:32 PM   Epoch = 0 iter 3199 step
+04/25 05:03:32 PM   Num examples = 277
+04/25 05:03:32 PM   Batch size = 32
+04/25 05:03:32 PM ***** Eval results *****
+04/25 05:03:32 PM   att_loss = 3.8099392292908707
+04/25 05:03:32 PM   cls_loss = 0.0
+04/25 05:03:32 PM   global_step = 3199
+04/25 05:03:32 PM   loss = 4.903022503845391
+04/25 05:03:32 PM   rep_loss = 1.0930832756351925
+04/25 05:03:32 PM ***** Save model *****
+04/25 05:03:40 PM ***** Running evaluation *****
+04/25 05:03:40 PM   Epoch = 0 iter 3249 step
+04/25 05:03:40 PM   Num examples = 277
+04/25 05:03:40 PM   Batch size = 32
+04/25 05:03:40 PM ***** Eval results *****
+04/25 05:03:40 PM   att_loss = 3.7997206008115083
+04/25 05:03:40 PM   cls_loss = 0.0
+04/25 05:03:40 PM   global_step = 3249
+04/25 05:03:40 PM   loss = 4.89047373232749
+04/25 05:03:40 PM   rep_loss = 1.0907531326167141
+04/25 05:03:40 PM ***** Save model *****
+04/25 05:03:48 PM ***** Running evaluation *****
+04/25 05:03:48 PM   Epoch = 0 iter 3299 step
+04/25 05:03:48 PM   Num examples = 277
+04/25 05:03:48 PM   Batch size = 32
+04/25 05:03:48 PM ***** Eval results *****
+04/25 05:03:48 PM   att_loss = 3.789243388660173
+04/25 05:03:48 PM   cls_loss = 0.0
+04/25 05:03:48 PM   global_step = 3299
+04/25 05:03:48 PM   loss = 4.877676887055461
+04/25 05:03:48 PM   rep_loss = 1.0884334997142144
+04/25 05:03:48 PM ***** Save model *****
+04/25 05:03:56 PM ***** Running evaluation *****
+04/25 05:03:56 PM   Epoch = 0 iter 3349 step
+04/25 05:03:56 PM   Num examples = 277
+04/25 05:03:56 PM   Batch size = 32
+04/25 05:03:56 PM ***** Eval results *****
+04/25 05:03:56 PM   att_loss = 3.7798593545465478
+04/25 05:03:56 PM   cls_loss = 0.0
+04/25 05:03:56 PM   global_step = 3349
+04/25 05:03:56 PM   loss = 4.8660339036248415
+04/25 05:03:56 PM   rep_loss = 1.0861745503775289
+04/25 05:03:56 PM ***** Save model *****
+04/25 05:04:05 PM ***** Running evaluation *****
+04/25 05:04:05 PM   Epoch = 0 iter 3399 step
+04/25 05:04:05 PM   Num examples = 277
+04/25 05:04:05 PM   Batch size = 32
+04/25 05:04:05 PM ***** Eval results *****
+04/25 05:04:05 PM   att_loss = 3.7714394797784996
+04/25 05:04:05 PM   cls_loss = 0.0
+04/25 05:04:05 PM   global_step = 3399
+04/25 05:04:05 PM   loss = 4.8555081364827215
+04/25 05:04:05 PM   rep_loss = 1.0840686581421684
+04/25 05:04:05 PM ***** Save model *****
+04/25 05:04:13 PM ***** Running evaluation *****
+04/25 05:04:13 PM   Epoch = 0 iter 3449 step
+04/25 05:04:13 PM   Num examples = 277
+04/25 05:04:13 PM   Batch size = 32
+04/25 05:04:13 PM ***** Eval results *****
+04/25 05:04:13 PM   att_loss = 3.761089718075689
+04/25 05:04:13 PM   cls_loss = 0.0
+04/25 05:04:13 PM   global_step = 3449
+04/25 05:04:13 PM   loss = 4.842955717870415
+04/25 05:04:13 PM   rep_loss = 1.0818660015574604
+04/25 05:04:13 PM ***** Save model *****
+04/25 05:04:21 PM ***** Running evaluation *****
+04/25 05:04:21 PM   Epoch = 0 iter 3499 step
+04/25 05:04:21 PM   Num examples = 277
+04/25 05:04:21 PM   Batch size = 32
+04/25 05:04:21 PM ***** Eval results *****
+04/25 05:04:21 PM   att_loss = 3.752634989530504
+04/25 05:04:21 PM   cls_loss = 0.0
+04/25 05:04:21 PM   global_step = 3499
+04/25 05:04:21 PM   loss = 4.8324405926914
+04/25 05:04:21 PM   rep_loss = 1.0798056050176859
+04/25 05:04:21 PM ***** Save model *****
+04/25 05:04:29 PM ***** Running evaluation *****
+04/25 05:04:29 PM   Epoch = 0 iter 3549 step
+04/25 05:04:29 PM   Num examples = 277
+04/25 05:04:29 PM   Batch size = 32
+04/25 05:04:29 PM ***** Eval results *****
+04/25 05:04:29 PM   att_loss = 3.742313619128883
+04/25 05:04:29 PM   cls_loss = 0.0
+04/25 05:04:29 PM   global_step = 3549
+04/25 05:04:29 PM   loss = 4.819972082069808
+04/25 05:04:29 PM   rep_loss = 1.0776584643348905
+04/25 05:04:29 PM ***** Save model *****
+04/25 05:04:37 PM ***** Running evaluation *****
+04/25 05:04:37 PM   Epoch = 0 iter 3599 step
+04/25 05:04:37 PM   Num examples = 277
+04/25 05:04:37 PM   Batch size = 32
+04/25 05:04:37 PM ***** Eval results *****
+04/25 05:04:37 PM   att_loss = 3.7340051257368523
+04/25 05:04:37 PM   cls_loss = 0.0
+04/25 05:04:37 PM   global_step = 3599
+04/25 05:04:37 PM   loss = 4.809666620555538
+04/25 05:04:37 PM   rep_loss = 1.0756614964417068
+04/25 05:04:37 PM ***** Save model *****
+04/25 05:04:45 PM ***** Running evaluation *****
+04/25 05:04:45 PM   Epoch = 0 iter 3649 step
+04/25 05:04:45 PM   Num examples = 277
+04/25 05:04:45 PM   Batch size = 32
+04/25 05:04:45 PM ***** Eval results *****
+04/25 05:04:45 PM   att_loss = 3.7255164161712444
+04/25 05:04:45 PM   cls_loss = 0.0
+04/25 05:04:45 PM   global_step = 3649
+04/25 05:04:45 PM   loss = 4.799243463755111
+04/25 05:04:45 PM   rep_loss = 1.0737270492663218
+04/25 05:04:45 PM ***** Save model *****
+04/25 05:04:54 PM ***** Running evaluation *****
+04/25 05:04:54 PM   Epoch = 0 iter 3699 step
+04/25 05:04:54 PM   Num examples = 277
+04/25 05:04:54 PM   Batch size = 32
+04/25 05:04:54 PM ***** Eval results *****
+04/25 05:04:54 PM   att_loss = 3.7170828131928126
+04/25 05:04:54 PM   cls_loss = 0.0
+04/25 05:04:54 PM   global_step = 3699
+04/25 05:04:54 PM   loss = 4.788865082842107
+04/25 05:04:54 PM   rep_loss = 1.0717822712284386
+04/25 05:04:54 PM ***** Save model *****
+04/25 05:05:02 PM ***** Running evaluation *****
+04/25 05:05:02 PM   Epoch = 0 iter 3749 step
+04/25 05:05:02 PM   Num examples = 277
+04/25 05:05:02 PM   Batch size = 32
+04/25 05:05:02 PM ***** Eval results *****
+04/25 05:05:02 PM   att_loss = 3.7084854764600026
+04/25 05:05:02 PM   cls_loss = 0.0
+04/25 05:05:02 PM   global_step = 3749
+04/25 05:05:02 PM   loss = 4.7783535080739545
+04/25 05:05:02 PM   rep_loss = 1.0698680332038333
+04/25 05:05:02 PM ***** Save model *****
+04/25 05:05:10 PM ***** Running evaluation *****
+04/25 05:05:10 PM   Epoch = 0 iter 3799 step
+04/25 05:05:10 PM   Num examples = 277
+04/25 05:05:10 PM   Batch size = 32
+04/25 05:05:10 PM ***** Eval results *****
+04/25 05:05:10 PM   att_loss = 3.7002063247523016
+04/25 05:05:10 PM   cls_loss = 0.0
+04/25 05:05:10 PM   global_step = 3799
+04/25 05:05:10 PM   loss = 4.768195800826436
+04/25 05:05:10 PM   rep_loss = 1.0679894776901593
+04/25 05:05:10 PM ***** Save model *****
+04/25 05:05:18 PM ***** Running evaluation *****
+04/25 05:05:18 PM   Epoch = 0 iter 3849 step
+04/25 05:05:18 PM   Num examples = 277
+04/25 05:05:18 PM   Batch size = 32
+04/25 05:05:18 PM ***** Eval results *****
+04/25 05:05:18 PM   att_loss = 3.693050609188719
+04/25 05:05:18 PM   cls_loss = 0.0
+04/25 05:05:18 PM   global_step = 3849
+04/25 05:05:18 PM   loss = 4.759290104563994
+04/25 05:05:18 PM   rep_loss = 1.0662394972490503
+04/25 05:05:18 PM ***** Save model *****
+04/25 05:05:26 PM ***** Running evaluation *****
+04/25 05:05:26 PM   Epoch = 0 iter 3899 step
+04/25 05:05:26 PM   Num examples = 277
+04/25 05:05:26 PM   Batch size = 32
+04/25 05:05:26 PM ***** Eval results *****
+04/25 05:05:26 PM   att_loss = 3.6860959267549007
+04/25 05:05:26 PM   cls_loss = 0.0
+04/25 05:05:26 PM   global_step = 3899
+04/25 05:05:26 PM   loss = 4.750616192420222
+04/25 05:05:26 PM   rep_loss = 1.0645202672398986
+04/25 05:05:26 PM ***** Save model *****
+04/25 05:05:35 PM ***** Running evaluation *****
+04/25 05:05:35 PM   Epoch = 0 iter 3949 step
+04/25 05:05:35 PM   Num examples = 277
+04/25 05:05:35 PM   Batch size = 32
+04/25 05:05:35 PM ***** Eval results *****
+04/25 05:05:35 PM   att_loss = 3.6776910576828827
+04/25 05:05:35 PM   cls_loss = 0.0
+04/25 05:05:35 PM   global_step = 3949
+04/25 05:05:35 PM   loss = 4.740419002447469
+04/25 05:05:35 PM   rep_loss = 1.0627279460022618
+04/25 05:05:35 PM ***** Save model *****
+04/25 05:05:43 PM ***** Running evaluation *****
+04/25 05:05:43 PM   Epoch = 0 iter 3999 step
+04/25 05:05:43 PM   Num examples = 277
+04/25 05:05:43 PM   Batch size = 32
+04/25 05:05:43 PM ***** Eval results *****
+04/25 05:05:43 PM   att_loss = 3.6705767993898384
+04/25 05:05:43 PM   cls_loss = 0.0
+04/25 05:05:43 PM   global_step = 3999
+04/25 05:05:43 PM   loss = 4.731642766128811
+04/25 05:05:43 PM   rep_loss = 1.061065967871744
+04/25 05:05:43 PM ***** Save model *****
+04/25 05:05:51 PM ***** Running evaluation *****
+04/25 05:05:51 PM   Epoch = 0 iter 4049 step
+04/25 05:05:51 PM   Num examples = 277
+04/25 05:05:51 PM   Batch size = 32
+04/25 05:05:51 PM ***** Eval results *****
+04/25 05:05:51 PM   att_loss = 3.6636229494702053
+04/25 05:05:51 PM   cls_loss = 0.0
+04/25 05:05:51 PM   global_step = 4049
+04/25 05:05:51 PM   loss = 4.723054804840804
+04/25 05:05:51 PM   rep_loss = 1.0594318564304983
+04/25 05:05:51 PM ***** Save model *****
+04/25 05:05:59 PM ***** Running evaluation *****
+04/25 05:05:59 PM   Epoch = 0 iter 4099 step
+04/25 05:05:59 PM   Num examples = 277
+04/25 05:05:59 PM   Batch size = 32
+04/25 05:05:59 PM ***** Eval results *****
+04/25 05:05:59 PM   att_loss = 3.6572040800758616
+04/25 05:05:59 PM   cls_loss = 0.0
+04/25 05:05:59 PM   global_step = 4099
+04/25 05:05:59 PM   loss = 4.7150247534416625
+04/25 05:05:59 PM   rep_loss = 1.0578206743255247
+04/25 05:05:59 PM ***** Save model *****
+04/25 05:06:07 PM ***** Running evaluation *****
+04/25 05:06:07 PM   Epoch = 0 iter 4149 step
+04/25 05:06:07 PM   Num examples = 277
+04/25 05:06:07 PM   Batch size = 32
+04/25 05:06:07 PM ***** Eval results *****
+04/25 05:06:07 PM   att_loss = 3.650774431332073
+04/25 05:06:07 PM   cls_loss = 0.0
+04/25 05:06:07 PM   global_step = 4149
+04/25 05:06:07 PM   loss = 4.70701356369721
+04/25 05:06:07 PM   rep_loss = 1.0562391334138568
+04/25 05:06:07 PM ***** Save model *****
+04/25 05:06:15 PM ***** Running evaluation *****
+04/25 05:06:15 PM   Epoch = 0 iter 4199 step
+04/25 05:06:15 PM   Num examples = 277
+04/25 05:06:15 PM   Batch size = 32
+04/25 05:06:15 PM ***** Eval results *****
+04/25 05:06:15 PM   att_loss = 3.644387549688544
+04/25 05:06:15 PM   cls_loss = 0.0
+04/25 05:06:15 PM   global_step = 4199
+04/25 05:06:15 PM   loss = 4.69905883904212
+04/25 05:06:15 PM   rep_loss = 1.0546712908156572
+04/25 05:06:15 PM ***** Save model *****
+04/25 05:06:24 PM ***** Running evaluation *****
+04/25 05:06:24 PM   Epoch = 0 iter 4249 step
+04/25 05:06:24 PM   Num examples = 277
+04/25 05:06:24 PM   Batch size = 32
+04/25 05:06:24 PM ***** Eval results *****
+04/25 05:06:24 PM   att_loss = 3.6375890957043855
+04/25 05:06:24 PM   cls_loss = 0.0
+04/25 05:06:24 PM   global_step = 4249
+04/25 05:06:24 PM   loss = 4.690702462089738
+04/25 05:06:24 PM   rep_loss = 1.0531133678863402
+04/25 05:06:24 PM ***** Save model *****
+04/25 05:06:32 PM ***** Running evaluation *****
+04/25 05:06:32 PM   Epoch = 0 iter 4299 step
+04/25 05:06:32 PM   Num examples = 277
+04/25 05:06:32 PM   Batch size = 32
+04/25 05:06:32 PM ***** Eval results *****
+04/25 05:06:32 PM   att_loss = 3.6317128224493764
+04/25 05:06:32 PM   cls_loss = 0.0
+04/25 05:06:32 PM   global_step = 4299
+04/25 05:06:32 PM   loss = 4.68336655911137
+04/25 05:06:32 PM   rep_loss = 1.0516537379930118
+04/25 05:06:32 PM ***** Save model *****
+04/25 05:06:40 PM ***** Running evaluation *****
+04/25 05:06:40 PM   Epoch = 0 iter 4349 step
+04/25 05:06:40 PM   Num examples = 277
+04/25 05:06:40 PM   Batch size = 32
+04/25 05:06:40 PM ***** Eval results *****
+04/25 05:06:40 PM   att_loss = 3.6252648434602794
+04/25 05:06:40 PM   cls_loss = 0.0
+04/25 05:06:40 PM   global_step = 4349
+04/25 05:06:40 PM   loss = 4.675421536777397
+04/25 05:06:40 PM   rep_loss = 1.0501566948521188
+04/25 05:06:40 PM ***** Save model *****
+04/25 05:06:48 PM ***** Running evaluation *****
+04/25 05:06:48 PM   Epoch = 0 iter 4399 step
+04/25 05:06:48 PM   Num examples = 277
+04/25 05:06:48 PM   Batch size = 32
+04/25 05:06:48 PM ***** Eval results *****
+04/25 05:06:48 PM   att_loss = 3.619335072179848
+04/25 05:06:48 PM   cls_loss = 0.0
+04/25 05:06:48 PM   global_step = 4399
+04/25 05:06:48 PM   loss = 4.6680728801680464
+04/25 05:06:48 PM   rep_loss = 1.048737809410906
+04/25 05:06:48 PM ***** Save model *****
+04/25 05:06:56 PM ***** Running evaluation *****
+04/25 05:06:56 PM   Epoch = 0 iter 4449 step
+04/25 05:06:56 PM   Num examples = 277
+04/25 05:06:56 PM   Batch size = 32
+04/25 05:06:56 PM ***** Eval results *****
+04/25 05:06:56 PM   att_loss = 3.612915911066797
+04/25 05:06:56 PM   cls_loss = 0.0
+04/25 05:06:56 PM   global_step = 4449
+04/25 05:06:56 PM   loss = 4.660199322628691
+04/25 05:06:56 PM   rep_loss = 1.0472834128480355
+04/25 05:06:56 PM ***** Save model *****
+04/25 05:07:04 PM ***** Running evaluation *****
+04/25 05:07:04 PM   Epoch = 0 iter 4499 step
+04/25 05:07:04 PM   Num examples = 277
+04/25 05:07:04 PM   Batch size = 32
+04/25 05:07:04 PM ***** Eval results *****
+04/25 05:07:04 PM   att_loss = 3.607277460219092
+04/25 05:07:04 PM   cls_loss = 0.0
+04/25 05:07:04 PM   global_step = 4499
+04/25 05:07:04 PM   loss = 4.653175803337343
+04/25 05:07:04 PM   rep_loss = 1.0458983439264045
+04/25 05:07:04 PM ***** Save model *****
+04/25 05:07:13 PM ***** Running evaluation *****
+04/25 05:07:13 PM   Epoch = 1 iter 4549 step
+04/25 05:07:13 PM   Num examples = 277
+04/25 05:07:13 PM   Batch size = 32
+04/25 05:07:13 PM ***** Eval results *****
+04/25 05:07:13 PM   att_loss = 3.09887254999039
+04/25 05:07:13 PM   cls_loss = 0.0
+04/25 05:07:13 PM   global_step = 4549
+04/25 05:07:13 PM   loss = 4.019476129653606
+04/25 05:07:13 PM   rep_loss = 0.9206035593722729
+04/25 05:07:13 PM ***** Save model *****
+04/25 05:07:21 PM ***** Running evaluation *****
+04/25 05:07:21 PM   Epoch = 1 iter 4599 step
+04/25 05:07:21 PM   Num examples = 277
+04/25 05:07:21 PM   Batch size = 32
+04/25 05:07:21 PM ***** Eval results *****
+04/25 05:07:21 PM   att_loss = 3.117519005057738
+04/25 05:07:21 PM   cls_loss = 0.0
+04/25 05:07:21 PM   global_step = 4599
+04/25 05:07:21 PM   loss = 4.039507858531991
+04/25 05:07:21 PM   rep_loss = 0.9219888356543079
+04/25 05:07:21 PM ***** Save model *****
+04/25 05:07:29 PM ***** Running evaluation *****
+04/25 05:07:29 PM   Epoch = 1 iter 4649 step
+04/25 05:07:29 PM   Num examples = 277
+04/25 05:07:29 PM   Batch size = 32
+04/25 05:07:29 PM ***** Eval results *****
+04/25 05:07:29 PM   att_loss = 3.113641224750856
+04/25 05:07:29 PM   cls_loss = 0.0
+04/25 05:07:29 PM   global_step = 4649
+04/25 05:07:29 PM   loss = 4.035352411724272
+04/25 05:07:29 PM   rep_loss = 0.9217111756201504
+04/25 05:07:29 PM ***** Save model *****
+04/25 05:07:37 PM ***** Running evaluation *****
+04/25 05:07:37 PM   Epoch = 1 iter 4699 step
+04/25 05:07:37 PM   Num examples = 277
+04/25 05:07:37 PM   Batch size = 32
+04/25 05:07:37 PM ***** Eval results *****
+04/25 05:07:37 PM   att_loss = 3.091824259249692
+04/25 05:07:37 PM   cls_loss = 0.0
+04/25 05:07:37 PM   global_step = 4699
+04/25 05:07:37 PM   loss = 4.011835415351209
+04/25 05:07:37 PM   rep_loss = 0.9200111452092979
+04/25 05:07:37 PM ***** Save model *****
+04/25 05:07:45 PM ***** Running evaluation *****
+04/25 05:07:45 PM   Epoch = 1 iter 4749 step
+04/25 05:07:45 PM   Num examples = 277
+04/25 05:07:45 PM   Batch size = 32
+04/25 05:07:45 PM ***** Eval results *****
+04/25 05:07:45 PM   att_loss = 3.0868950025272754
+04/25 05:07:45 PM   cls_loss = 0.0
+04/25 05:07:45 PM   global_step = 4749
+04/25 05:07:45 PM   loss = 4.006721026501675
+04/25 05:07:45 PM   rep_loss = 0.9198260172175975
+04/25 05:07:45 PM ***** Save model *****
+04/25 05:07:54 PM ***** Running evaluation *****
+04/25 05:07:54 PM   Epoch = 1 iter 4799 step
+04/25 05:07:54 PM   Num examples = 277
+04/25 05:07:54 PM   Batch size = 32
+04/25 05:07:54 PM ***** Eval results *****
+04/25 05:07:54 PM   att_loss = 3.098871931082472
+04/25 05:07:54 PM   cls_loss = 0.0
+04/25 05:07:54 PM   global_step = 4799
+04/25 05:07:54 PM   loss = 4.019060712069374
+04/25 05:07:54 PM   rep_loss = 0.9201887811875905
+04/25 05:07:54 PM ***** Save model *****
+04/25 05:08:02 PM ***** Running evaluation *****
+04/25 05:08:02 PM   Epoch = 1 iter 4849 step
+04/25 05:08:02 PM   Num examples = 277
+04/25 05:08:02 PM   Batch size = 32
+04/25 05:08:02 PM ***** Eval results *****
+04/25 05:08:02 PM   att_loss = 3.1004113697524716
+04/25 05:08:02 PM   cls_loss = 0.0
+04/25 05:08:02 PM   global_step = 4849
+04/25 05:08:02 PM   loss = 4.02029098557464
+04/25 05:08:02 PM   rep_loss = 0.9198796158221682
+04/25 05:08:02 PM ***** Save model *****
+04/25 05:08:10 PM ***** Running evaluation *****
+04/25 05:08:10 PM   Epoch = 1 iter 4899 step
+04/25 05:08:10 PM   Num examples = 277
+04/25 05:08:10 PM   Batch size = 32
+04/25 05:08:10 PM ***** Eval results *****
+04/25 05:08:10 PM   att_loss = 3.095975352174389
+04/25 05:08:10 PM   cls_loss = 0.0
+04/25 05:08:10 PM   global_step = 4899
+04/25 05:08:10 PM   loss = 4.015169310029267
+04/25 05:08:10 PM   rep_loss = 0.919193955602814
+04/25 05:08:10 PM ***** Save model *****
+04/25 05:08:18 PM ***** Running evaluation *****
+04/25 05:08:18 PM   Epoch = 1 iter 4949 step
+04/25 05:08:18 PM   Num examples = 277
+04/25 05:08:18 PM   Batch size = 32
+04/25 05:08:18 PM ***** Eval results *****
+04/25 05:08:18 PM   att_loss = 3.0901377921136435
+04/25 05:08:18 PM   cls_loss = 0.0
+04/25 05:08:18 PM   global_step = 4949
+04/25 05:08:18 PM   loss = 4.008503538916842
+04/25 05:08:18 PM   rep_loss = 0.9183657448030424
+04/25 05:08:18 PM ***** Save model *****
+04/25 05:08:26 PM ***** Running evaluation *****
+04/25 05:08:26 PM   Epoch = 1 iter 4999 step
+04/25 05:08:26 PM   Num examples = 277
+04/25 05:08:26 PM   Batch size = 32
+04/25 05:08:26 PM ***** Eval results *****
+04/25 05:08:26 PM   att_loss = 3.088597439184515
+04/25 05:08:26 PM   cls_loss = 0.0
+04/25 05:08:26 PM   global_step = 4999
+04/25 05:08:26 PM   loss = 4.006830357449875
+04/25 05:08:26 PM   rep_loss = 0.9182329161066405
+04/25 05:08:26 PM ***** Save model *****
+04/25 05:08:34 PM ***** Running evaluation *****
+04/25 05:08:34 PM   Epoch = 1 iter 5049 step
+04/25 05:08:34 PM   Num examples = 277
+04/25 05:08:34 PM   Batch size = 32
+04/25 05:08:34 PM ***** Eval results *****
+04/25 05:08:34 PM   att_loss = 3.085173664406841
+04/25 05:08:34 PM   cls_loss = 0.0
+04/25 05:08:34 PM   global_step = 5049
+04/25 05:08:34 PM   loss = 4.002892308958706
+04/25 05:08:34 PM   rep_loss = 0.9177186412828714
+04/25 05:08:34 PM ***** Save model *****
+04/25 05:08:43 PM ***** Running evaluation *****
+04/25 05:08:43 PM   Epoch = 1 iter 5099 step
+04/25 05:08:43 PM   Num examples = 277
+04/25 05:08:43 PM   Batch size = 32
+04/25 05:08:43 PM ***** Eval results *****
+04/25 05:08:43 PM   att_loss = 3.0869743596369297
+04/25 05:08:43 PM   cls_loss = 0.0
+04/25 05:08:43 PM   global_step = 5099
+04/25 05:08:43 PM   loss = 4.004690691054965
+04/25 05:08:43 PM   rep_loss = 0.9177163287223483
+04/25 05:08:43 PM ***** Save model *****
+04/25 05:08:51 PM ***** Running evaluation *****
+04/25 05:08:51 PM   Epoch = 1 iter 5149 step
+04/25 05:08:51 PM   Num examples = 277
+04/25 05:08:51 PM   Batch size = 32
+04/25 05:08:51 PM ***** Eval results *****
+04/25 05:08:51 PM   att_loss = 3.084692492551376
+04/25 05:08:51 PM   cls_loss = 0.0
+04/25 05:08:51 PM   global_step = 5149
+04/25 05:08:51 PM   loss = 4.002105192939133
+04/25 05:08:51 PM   rep_loss = 0.9174126981767657
+04/25 05:08:51 PM ***** Save model *****
+04/25 05:08:59 PM ***** Running evaluation *****
+04/25 05:08:59 PM   Epoch = 1 iter 5199 step
+04/25 05:08:59 PM   Num examples = 277
+04/25 05:08:59 PM   Batch size = 32
+04/25 05:08:59 PM ***** Eval results *****
+04/25 05:08:59 PM   att_loss = 3.08024058759298
+04/25 05:08:59 PM   cls_loss = 0.0
+04/25 05:08:59 PM   global_step = 5199
+04/25 05:08:59 PM   loss = 3.9970388881103207
+04/25 05:08:59 PM   rep_loss = 0.916798299063569
+04/25 05:08:59 PM ***** Save model *****
+04/25 05:09:07 PM ***** Running evaluation *****
+04/25 05:09:07 PM   Epoch = 1 iter 5249 step
+04/25 05:09:07 PM   Num examples = 277
+04/25 05:09:07 PM   Batch size = 32
+04/25 05:09:07 PM ***** Eval results *****
+04/25 05:09:07 PM   att_loss = 3.0835691005829347
+04/25 05:09:07 PM   cls_loss = 0.0
+04/25 05:09:07 PM   global_step = 5249
+04/25 05:09:07 PM   loss = 4.000435279874278
+04/25 05:09:07 PM   rep_loss = 0.9168661799296797
+04/25 05:09:07 PM ***** Save model *****
+04/25 05:09:15 PM ***** Running evaluation *****
+04/25 05:09:15 PM   Epoch = 1 iter 5299 step
+04/25 05:09:15 PM   Num examples = 277
+04/25 05:09:15 PM   Batch size = 32
+04/25 05:09:15 PM ***** Eval results *****
+04/25 05:09:15 PM   att_loss = 3.080994145633884
+04/25 05:09:15 PM   cls_loss = 0.0
+04/25 05:09:15 PM   global_step = 5299
+04/25 05:09:15 PM   loss = 3.997509918069301
+04/25 05:09:15 PM   rep_loss = 0.9165157737815695
+04/25 05:09:15 PM ***** Save model *****
+04/25 05:09:24 PM ***** Running evaluation *****
+04/25 05:09:24 PM   Epoch = 1 iter 5349 step
+04/25 05:09:24 PM   Num examples = 277
+04/25 05:09:24 PM   Batch size = 32
+04/25 05:09:24 PM ***** Eval results *****
+04/25 05:09:24 PM   att_loss = 3.077791160225446
+04/25 05:09:24 PM   cls_loss = 0.0
+04/25 05:09:24 PM   global_step = 5349
+04/25 05:09:24 PM   loss = 3.9938996671363625
+04/25 05:09:24 PM   rep_loss = 0.9161085087405748
+04/25 05:09:24 PM ***** Save model *****
+04/25 05:09:32 PM ***** Running evaluation *****
+04/25 05:09:32 PM   Epoch = 1 iter 5399 step
+04/25 05:09:32 PM   Num examples = 277
+04/25 05:09:32 PM   Batch size = 32
+04/25 05:09:32 PM ***** Eval results *****
+04/25 05:09:32 PM   att_loss = 3.077975409219629
+04/25 05:09:32 PM   cls_loss = 0.0
+04/25 05:09:32 PM   global_step = 5399
+04/25 05:09:32 PM   loss = 3.9939372914291944
+04/25 05:09:32 PM   rep_loss = 0.9159618832727473
+04/25 05:09:32 PM ***** Save model *****
+04/25 05:09:40 PM ***** Running evaluation *****
+04/25 05:09:40 PM   Epoch = 1 iter 5449 step
+04/25 05:09:40 PM   Num examples = 277
+04/25 05:09:40 PM   Batch size = 32
+04/25 05:09:40 PM ***** Eval results *****
+04/25 05:09:40 PM   att_loss = 3.0779272457614244
+04/25 05:09:40 PM   cls_loss = 0.0
+04/25 05:09:40 PM   global_step = 5449
+04/25 05:09:40 PM   loss = 3.993728887191418
+04/25 05:09:40 PM   rep_loss = 0.9158016414299938
+04/25 05:09:40 PM ***** Save model *****
+04/25 05:09:48 PM ***** Running evaluation *****
+04/25 05:09:48 PM   Epoch = 1 iter 5499 step
+04/25 05:09:48 PM   Num examples = 277
+04/25 05:09:48 PM   Batch size = 32
+04/25 05:09:48 PM ***** Eval results *****
+04/25 05:09:48 PM   att_loss = 3.0769443021734117
+04/25 05:09:48 PM   cls_loss = 0.0
+04/25 05:09:48 PM   global_step = 5499
+04/25 05:09:48 PM   loss = 3.9924621663337487
+04/25 05:09:48 PM   rep_loss = 0.9155178636222808
+04/25 05:09:48 PM ***** Save model *****
+04/25 05:09:56 PM ***** Running evaluation *****
+04/25 05:09:56 PM   Epoch = 1 iter 5549 step
+04/25 05:09:56 PM   Num examples = 277
+04/25 05:09:56 PM   Batch size = 32
+04/25 05:09:56 PM ***** Eval results *****
+04/25 05:09:56 PM   att_loss = 3.072786765203321
+04/25 05:09:56 PM   cls_loss = 0.0
+04/25 05:09:56 PM   global_step = 5549
+04/25 05:09:56 PM   loss = 3.9878073651788344
+04/25 05:09:56 PM   rep_loss = 0.915020600032442
+04/25 05:09:56 PM ***** Save model *****
+04/25 05:10:04 PM ***** Running evaluation *****
+04/25 05:10:04 PM   Epoch = 1 iter 5599 step
+04/25 05:10:04 PM   Num examples = 277
+04/25 05:10:04 PM   Batch size = 32
+04/25 05:10:04 PM ***** Eval results *****
+04/25 05:10:04 PM   att_loss = 3.074917131048392
+04/25 05:10:04 PM   cls_loss = 0.0
+04/25 05:10:04 PM   global_step = 5599
+04/25 05:10:04 PM   loss = 3.9898832013852616
+04/25 05:10:04 PM   rep_loss = 0.914966068978514
+04/25 05:10:04 PM ***** Save model *****
+04/25 05:10:13 PM ***** Running evaluation *****
+04/25 05:10:13 PM   Epoch = 1 iter 5649 step
+04/25 05:10:13 PM   Num examples = 277
+04/25 05:10:13 PM   Batch size = 32
+04/25 05:10:13 PM ***** Eval results *****
+04/25 05:10:13 PM   att_loss = 3.070747555913152
+04/25 05:10:13 PM   cls_loss = 0.0
+04/25 05:10:13 PM   global_step = 5649
+04/25 05:10:13 PM   loss = 3.985210118547355
+04/25 05:10:13 PM   rep_loss = 0.914462560763438
+04/25 05:10:13 PM ***** Save model *****
+04/25 05:10:21 PM ***** Running evaluation *****
+04/25 05:10:21 PM   Epoch = 1 iter 5699 step
+04/25 05:10:21 PM   Num examples = 277
+04/25 05:10:21 PM   Batch size = 32
+04/25 05:10:21 PM ***** Eval results *****
+04/25 05:10:21 PM   att_loss = 3.0669106992962165
+04/25 05:10:21 PM   cls_loss = 0.0
+04/25 05:10:21 PM   global_step = 5699
+04/25 05:10:21 PM   loss = 3.9809372695964282
+04/25 05:10:21 PM   rep_loss = 0.9140265681590253
+04/25 05:10:21 PM ***** Save model *****
+04/25 05:10:29 PM ***** Running evaluation *****
+04/25 05:10:29 PM   Epoch = 1 iter 5749 step
+04/25 05:10:29 PM   Num examples = 277
+04/25 05:10:29 PM   Batch size = 32
+04/25 05:10:29 PM ***** Eval results *****
+04/25 05:10:29 PM   att_loss = 3.065715253687708
+04/25 05:10:29 PM   cls_loss = 0.0
+04/25 05:10:29 PM   global_step = 5749
+04/25 05:10:29 PM   loss = 3.9795102786329526
+04/25 05:10:29 PM   rep_loss = 0.9137950225075245
+04/25 05:10:29 PM ***** Save model *****
+04/25 05:10:37 PM ***** Running evaluation *****
+04/25 05:10:37 PM   Epoch = 1 iter 5799 step
+04/25 05:10:37 PM   Num examples = 277
+04/25 05:10:37 PM   Batch size = 32
+04/25 05:10:37 PM ***** Eval results *****
+04/25 05:10:37 PM   att_loss = 3.0669260041568496
+04/25 05:10:37 PM   cls_loss = 0.0
+04/25 05:10:37 PM   global_step = 5799
+04/25 05:10:37 PM   loss = 3.980639603474366
+04/25 05:10:37 PM   rep_loss = 0.9137135973414183
+04/25 05:10:37 PM ***** Save model *****
+04/25 05:10:45 PM ***** Running evaluation *****
+04/25 05:10:45 PM   Epoch = 1 iter 5849 step
+04/25 05:10:45 PM   Num examples = 277
+04/25 05:10:45 PM   Batch size = 32
+04/25 05:10:45 PM ***** Eval results *****
+04/25 05:10:45 PM   att_loss = 3.0672841480951796
+04/25 05:10:45 PM   cls_loss = 0.0
+04/25 05:10:45 PM   global_step = 5849
+04/25 05:10:45 PM   loss = 3.9808324162129924
+04/25 05:10:45 PM   rep_loss = 0.9135482675425637
+04/25 05:10:45 PM ***** Save model *****
+04/25 05:10:54 PM ***** Running evaluation *****
+04/25 05:10:54 PM   Epoch = 1 iter 5899 step
+04/25 05:10:54 PM   Num examples = 277
+04/25 05:10:54 PM   Batch size = 32
+04/25 05:10:54 PM ***** Eval results *****
+04/25 05:10:54 PM   att_loss = 3.0683016428882595
+04/25 05:10:54 PM   cls_loss = 0.0
+04/25 05:10:54 PM   global_step = 5899
+04/25 05:10:54 PM   loss = 3.981680593750011
+04/25 05:10:54 PM   rep_loss = 0.913378950051094
+04/25 05:10:54 PM ***** Save model *****
+04/25 05:11:02 PM ***** Running evaluation *****
+04/25 05:11:02 PM   Epoch = 1 iter 5949 step
+04/25 05:11:02 PM   Num examples = 277
+04/25 05:11:02 PM   Batch size = 32
+04/25 05:11:02 PM ***** Eval results *****
+04/25 05:11:02 PM   att_loss = 3.0677324407415383
+04/25 05:11:02 PM   cls_loss = 0.0
+04/25 05:11:02 PM   global_step = 5949
+04/25 05:11:02 PM   loss = 3.98092948986731
+04/25 05:11:02 PM   rep_loss = 0.9131970482607422
+04/25 05:11:02 PM ***** Save model *****
+04/25 05:11:10 PM ***** Running evaluation *****
+04/25 05:11:10 PM   Epoch = 1 iter 5999 step
+04/25 05:11:10 PM   Num examples = 277
+04/25 05:11:10 PM   Batch size = 32
+04/25 05:11:10 PM ***** Eval results *****
+04/25 05:11:10 PM   att_loss = 3.06704066049758
+04/25 05:11:10 PM   cls_loss = 0.0
+04/25 05:11:10 PM   global_step = 5999
+04/25 05:11:10 PM   loss = 3.9800128105408206
+04/25 05:11:10 PM   rep_loss = 0.9129721486894943
+04/25 05:11:10 PM ***** Save model *****
+04/25 05:11:18 PM ***** Running evaluation *****
+04/25 05:11:18 PM   Epoch = 1 iter 6049 step
+04/25 05:11:18 PM   Num examples = 277
+04/25 05:11:18 PM   Batch size = 32
+04/25 05:11:18 PM ***** Eval results *****
+04/25 05:11:18 PM   att_loss = 3.0637811198108182
+04/25 05:11:18 PM   cls_loss = 0.0
+04/25 05:11:18 PM   global_step = 6049
+04/25 05:11:18 PM   loss = 3.9763470159936274
+04/25 05:11:18 PM   rep_loss = 0.9125658949884046
+04/25 05:11:18 PM ***** Save model *****
+04/25 05:11:26 PM ***** Running evaluation *****
+04/25 05:11:26 PM   Epoch = 1 iter 6099 step
+04/25 05:11:26 PM   Num examples = 277
+04/25 05:11:26 PM   Batch size = 32
+04/25 05:11:26 PM ***** Eval results *****
+04/25 05:11:26 PM   att_loss = 3.063276068001295
+04/25 05:11:26 PM   cls_loss = 0.0
+04/25 05:11:26 PM   global_step = 6099
+04/25 05:11:26 PM   loss = 3.975667826145533
+04/25 05:11:26 PM   rep_loss = 0.9123917567259682
+04/25 05:11:26 PM ***** Save model *****
+04/25 05:11:34 PM ***** Running evaluation *****
+04/25 05:11:34 PM   Epoch = 1 iter 6149 step
+04/25 05:11:34 PM   Num examples = 277
+04/25 05:11:34 PM   Batch size = 32
+04/25 05:11:34 PM ***** Eval results *****
+04/25 05:11:34 PM   att_loss = 3.0628704043251136
+04/25 05:11:34 PM   cls_loss = 0.0
+04/25 05:11:34 PM   global_step = 6149
+04/25 05:11:34 PM   loss = 3.9750623132651257
+04/25 05:11:34 PM   rep_loss = 0.9121919079266972
+04/25 05:11:34 PM ***** Save model *****
+04/25 05:11:43 PM ***** Running evaluation *****
+04/25 05:11:43 PM   Epoch = 1 iter 6199 step
+04/25 05:11:43 PM   Num examples = 277
+04/25 05:11:43 PM   Batch size = 32
+04/25 05:11:43 PM ***** Eval results *****
+04/25 05:11:43 PM   att_loss = 3.060560512346033
+04/25 05:11:43 PM   cls_loss = 0.0
+04/25 05:11:43 PM   global_step = 6199
+04/25 05:11:43 PM   loss = 3.972353756252147
+04/25 05:11:43 PM   rep_loss = 0.9117932423606787
+04/25 05:11:43 PM ***** Save model *****
+04/25 05:11:51 PM ***** Running evaluation *****
+04/25 05:11:51 PM   Epoch = 1 iter 6249 step
+04/25 05:11:51 PM   Num examples = 277
+04/25 05:11:51 PM   Batch size = 32
+04/25 05:11:51 PM ***** Eval results *****
+04/25 05:11:51 PM   att_loss = 3.0594234003908785
+04/25 05:11:51 PM   cls_loss = 0.0
+04/25 05:11:51 PM   global_step = 6249
+04/25 05:11:51 PM   loss = 3.9709679074606763
+04/25 05:11:51 PM   rep_loss = 0.9115445052615287
+04/25 05:11:51 PM ***** Save model *****
+04/25 05:11:59 PM ***** Running evaluation *****
+04/25 05:11:59 PM   Epoch = 1 iter 6299 step
+04/25 05:11:59 PM   Num examples = 277
+04/25 05:11:59 PM   Batch size = 32
+04/25 05:11:59 PM ***** Eval results *****
+04/25 05:11:59 PM   att_loss = 3.0610390453784415
+04/25 05:11:59 PM   cls_loss = 0.0
+04/25 05:11:59 PM   global_step = 6299
+04/25 05:11:59 PM   loss = 3.9724981799414905
+04/25 05:11:59 PM   rep_loss = 0.9114591317436863
+04/25 05:11:59 PM ***** Save model *****
+04/25 05:12:07 PM ***** Running evaluation *****
+04/25 05:12:07 PM   Epoch = 1 iter 6349 step
+04/25 05:12:07 PM   Num examples = 277
+04/25 05:12:07 PM   Batch size = 32
+04/25 05:12:07 PM ***** Eval results *****
+04/25 05:12:07 PM   att_loss = 3.05898903457939
+04/25 05:12:07 PM   cls_loss = 0.0
+04/25 05:12:07 PM   global_step = 6349
+04/25 05:12:07 PM   loss = 3.9701107398974425
+04/25 05:12:07 PM   rep_loss = 0.9111217027040965
+04/25 05:12:07 PM ***** Save model *****
+04/25 05:12:15 PM ***** Running evaluation *****
+04/25 05:12:15 PM   Epoch = 1 iter 6399 step
+04/25 05:12:15 PM   Num examples = 277
+04/25 05:12:15 PM   Batch size = 32
+04/25 05:12:15 PM ***** Eval results *****
+04/25 05:12:15 PM   att_loss = 3.0592167475503813
+04/25 05:12:15 PM   cls_loss = 0.0
+04/25 05:12:15 PM   global_step = 6399
+04/25 05:12:15 PM   loss = 3.970195960797444
+04/25 05:12:15 PM   rep_loss = 0.9109792107648452
+04/25 05:12:15 PM ***** Save model *****
+04/25 05:12:23 PM ***** Running evaluation *****
+04/25 05:12:23 PM   Epoch = 1 iter 6449 step
+04/25 05:12:23 PM   Num examples = 277
+04/25 05:12:23 PM   Batch size = 32
+04/25 05:12:23 PM ***** Eval results *****
+04/25 05:12:23 PM   att_loss = 3.057788809079296
+04/25 05:12:23 PM   cls_loss = 0.0
+04/25 05:12:23 PM   global_step = 6449
+04/25 05:12:23 PM   loss = 3.9685328319002924
+04/25 05:12:23 PM   rep_loss = 0.9107440207086591
+04/25 05:12:23 PM ***** Save model *****
+04/25 05:12:32 PM ***** Running evaluation *****
+04/25 05:12:32 PM   Epoch = 1 iter 6499 step
+04/25 05:12:32 PM   Num examples = 277
+04/25 05:12:32 PM   Batch size = 32
+04/25 05:12:32 PM ***** Eval results *****
+04/25 05:12:32 PM   att_loss = 3.057952687450212
+04/25 05:12:32 PM   cls_loss = 0.0
+04/25 05:12:32 PM   global_step = 6499
+04/25 05:12:32 PM   loss = 3.968470370584449
+04/25 05:12:32 PM   rep_loss = 0.910517681015093
+04/25 05:12:32 PM ***** Save model *****
+04/25 05:12:40 PM ***** Running evaluation *****
+04/25 05:12:40 PM   Epoch = 1 iter 6549 step
+04/25 05:12:40 PM   Num examples = 277
+04/25 05:12:40 PM   Batch size = 32
+04/25 05:12:40 PM ***** Eval results *****
+04/25 05:12:40 PM   att_loss = 3.057409649542849
+04/25 05:12:40 PM   cls_loss = 0.0
+04/25 05:12:40 PM   global_step = 6549
+04/25 05:12:40 PM   loss = 3.9677143388104312
+04/25 05:12:40 PM   rep_loss = 0.9103046873166728
+04/25 05:12:40 PM ***** Save model *****
+04/25 05:12:48 PM ***** Running evaluation *****
+04/25 05:12:48 PM   Epoch = 1 iter 6599 step
+04/25 05:12:48 PM   Num examples = 277
+04/25 05:12:48 PM   Batch size = 32
+04/25 05:12:48 PM ***** Eval results *****
+04/25 05:12:48 PM   att_loss = 3.055928667102135
+04/25 05:12:48 PM   cls_loss = 0.0
+04/25 05:12:48 PM   global_step = 6599
+04/25 05:12:48 PM   loss = 3.965988489577585
+04/25 05:12:48 PM   rep_loss = 0.9100598206279047
+04/25 05:12:48 PM ***** Save model *****
+04/25 05:12:56 PM ***** Running evaluation *****
+04/25 05:12:56 PM   Epoch = 1 iter 6649 step
+04/25 05:12:56 PM   Num examples = 277
+04/25 05:12:56 PM   Batch size = 32
+04/25 05:12:56 PM ***** Eval results *****
+04/25 05:12:56 PM   att_loss = 3.055730254249235
+04/25 05:12:56 PM   cls_loss = 0.0
+04/25 05:12:56 PM   global_step = 6649
+04/25 05:12:56 PM   loss = 3.965591492406368
+04/25 05:12:56 PM   rep_loss = 0.9098612362970904
+04/25 05:12:56 PM ***** Save model *****
+04/25 05:13:04 PM ***** Running evaluation *****
+04/25 05:13:04 PM   Epoch = 1 iter 6699 step
+04/25 05:13:04 PM   Num examples = 277
+04/25 05:13:04 PM   Batch size = 32
+04/25 05:13:04 PM ***** Eval results *****
+04/25 05:13:04 PM   att_loss = 3.0552554601531274
+04/25 05:13:04 PM   cls_loss = 0.0
+04/25 05:13:04 PM   global_step = 6699
+04/25 05:13:04 PM   loss = 3.964906057011392
+04/25 05:13:04 PM   rep_loss = 0.9096505955288938
+04/25 05:13:04 PM ***** Save model *****
+04/25 05:13:12 PM ***** Running evaluation *****
+04/25 05:13:12 PM   Epoch = 1 iter 6749 step
+04/25 05:13:12 PM   Num examples = 277
+04/25 05:13:12 PM   Batch size = 32
+04/25 05:13:12 PM ***** Eval results *****
+04/25 05:13:12 PM   att_loss = 3.0548770892445014
+04/25 05:13:12 PM   cls_loss = 0.0
+04/25 05:13:12 PM   global_step = 6749
+04/25 05:13:12 PM   loss = 3.964377536421412
+04/25 05:13:12 PM   rep_loss = 0.9095004464341738
+04/25 05:13:12 PM ***** Save model *****
+04/25 05:13:21 PM ***** Running evaluation *****
+04/25 05:13:21 PM   Epoch = 1 iter 6799 step
+04/25 05:13:21 PM   Num examples = 277
+04/25 05:13:21 PM   Batch size = 32
+04/25 05:13:21 PM ***** Eval results *****
+04/25 05:13:21 PM   att_loss = 3.054636565197225
+04/25 05:13:21 PM   cls_loss = 0.0
+04/25 05:13:21 PM   global_step = 6799
+04/25 05:13:21 PM   loss = 3.9639296483931252
+04/25 05:13:21 PM   rep_loss = 0.9092930827547687
+04/25 05:13:21 PM ***** Save model *****
+04/25 05:13:29 PM ***** Running evaluation *****
+04/25 05:13:29 PM   Epoch = 1 iter 6849 step
+04/25 05:13:29 PM   Num examples = 277
+04/25 05:13:29 PM   Batch size = 32
+04/25 05:13:29 PM ***** Eval results *****
+04/25 05:13:29 PM   att_loss = 3.0536317960424633
+04/25 05:13:29 PM   cls_loss = 0.0
+04/25 05:13:29 PM   global_step = 6849
+04/25 05:13:29 PM   loss = 3.96270799525098
+04/25 05:13:29 PM   rep_loss = 0.9090761994116856
+04/25 05:13:29 PM ***** Save model *****
+04/25 05:13:37 PM ***** Running evaluation *****
+04/25 05:13:37 PM   Epoch = 1 iter 6899 step
+04/25 05:13:37 PM   Num examples = 277
+04/25 05:13:37 PM   Batch size = 32
+04/25 05:13:37 PM ***** Eval results *****
+04/25 05:13:37 PM   att_loss = 3.052688159890905
+04/25 05:13:37 PM   cls_loss = 0.0
+04/25 05:13:37 PM   global_step = 6899
+04/25 05:13:37 PM   loss = 3.9615064368528476
+04/25 05:13:37 PM   rep_loss = 0.9088182771608737
+04/25 05:13:37 PM ***** Save model *****
+04/25 05:13:45 PM ***** Running evaluation *****
+04/25 05:13:45 PM   Epoch = 1 iter 6949 step
+04/25 05:13:45 PM   Num examples = 277
+04/25 05:13:45 PM   Batch size = 32
+04/25 05:13:45 PM ***** Eval results *****
+04/25 05:13:45 PM   att_loss = 3.0523472214212797
+04/25 05:13:45 PM   cls_loss = 0.0
+04/25 05:13:45 PM   global_step = 6949
+04/25 05:13:45 PM   loss = 3.961000068849284
+04/25 05:13:45 PM   rep_loss = 0.9086528477203032
+04/25 05:13:45 PM ***** Save model *****
+04/25 05:13:53 PM ***** Running evaluation *****
+04/25 05:13:53 PM   Epoch = 1 iter 6999 step
+04/25 05:13:53 PM   Num examples = 277
+04/25 05:13:53 PM   Batch size = 32
+04/25 05:13:53 PM ***** Eval results *****
+04/25 05:13:53 PM   att_loss = 3.0533644010125993
+04/25 05:13:53 PM   cls_loss = 0.0
+04/25 05:13:53 PM   global_step = 6999
+04/25 05:13:53 PM   loss = 3.961946225233158
+04/25 05:13:53 PM   rep_loss = 0.9085818244831343
+04/25 05:13:53 PM ***** Save model *****
+04/25 05:14:02 PM ***** Running evaluation *****
+04/25 05:14:02 PM   Epoch = 1 iter 7049 step
+04/25 05:14:02 PM   Num examples = 277
+04/25 05:14:02 PM   Batch size = 32
+04/25 05:14:02 PM ***** Eval results *****
+04/25 05:14:02 PM   att_loss = 3.0520825759541723
+04/25 05:14:02 PM   cls_loss = 0.0
+04/25 05:14:02 PM   global_step = 7049
+04/25 05:14:02 PM   loss = 3.9604175760084197
+04/25 05:14:02 PM   rep_loss = 0.9083350007563046
+04/25 05:14:02 PM ***** Save model *****
+04/25 05:14:10 PM ***** Running evaluation *****
+04/25 05:14:10 PM   Epoch = 1 iter 7099 step
+04/25 05:14:10 PM   Num examples = 277
+04/25 05:14:10 PM   Batch size = 32
+04/25 05:14:10 PM ***** Eval results *****
+04/25 05:14:10 PM   att_loss = 3.0516372556910407
+04/25 05:14:10 PM   cls_loss = 0.0
+04/25 05:14:10 PM   global_step = 7099
+04/25 05:14:10 PM   loss = 3.959798362560808
+04/25 05:14:10 PM   rep_loss = 0.9081611073976487
+04/25 05:14:10 PM ***** Save model *****
+04/25 05:14:18 PM ***** Running evaluation *****
+04/25 05:14:18 PM   Epoch = 1 iter 7149 step
+04/25 05:14:18 PM   Num examples = 277
+04/25 05:14:18 PM   Batch size = 32
+04/25 05:14:18 PM ***** Eval results *****
+04/25 05:14:18 PM   att_loss = 3.0500396684200575
+04/25 05:14:18 PM   cls_loss = 0.0
+04/25 05:14:18 PM   global_step = 7149
+04/25 05:14:18 PM   loss = 3.957933348442052
+04/25 05:14:18 PM   rep_loss = 0.9078936804273149
+04/25 05:14:18 PM ***** Save model *****
+04/25 05:14:26 PM ***** Running evaluation *****
+04/25 05:14:26 PM   Epoch = 1 iter 7199 step
+04/25 05:14:26 PM   Num examples = 277
+04/25 05:14:26 PM   Batch size = 32
+04/25 05:14:26 PM ***** Eval results *****
+04/25 05:14:26 PM   att_loss = 3.0515014895431016
+04/25 05:14:26 PM   cls_loss = 0.0
+04/25 05:14:26 PM   global_step = 7199
+04/25 05:14:26 PM   loss = 3.9593665752757423
+04/25 05:14:26 PM   rep_loss = 0.9078650861083467
+04/25 05:14:26 PM ***** Save model *****
+04/25 05:14:34 PM ***** Running evaluation *****
+04/25 05:14:34 PM   Epoch = 1 iter 7249 step
+04/25 05:14:34 PM   Num examples = 277
+04/25 05:14:34 PM   Batch size = 32
+04/25 05:14:34 PM ***** Eval results *****
+04/25 05:14:34 PM   att_loss = 3.0503808140624513
+04/25 05:14:34 PM   cls_loss = 0.0
+04/25 05:14:34 PM   global_step = 7249
+04/25 05:14:34 PM   loss = 3.958027213019894
+04/25 05:14:34 PM   rep_loss = 0.9076463990876317
+04/25 05:14:34 PM ***** Save model *****
+04/25 05:14:42 PM ***** Running evaluation *****
+04/25 05:14:42 PM   Epoch = 1 iter 7299 step
+04/25 05:14:42 PM   Num examples = 277
+04/25 05:14:42 PM   Batch size = 32
+04/25 05:14:42 PM ***** Eval results *****
+04/25 05:14:42 PM   att_loss = 3.0493188801943765
+04/25 05:14:42 PM   cls_loss = 0.0
+04/25 05:14:42 PM   global_step = 7299
+04/25 05:14:42 PM   loss = 3.9567443714169124
+04/25 05:14:42 PM   rep_loss = 0.9074254911799153
+04/25 05:14:42 PM ***** Save model *****
+04/25 05:14:51 PM ***** Running evaluation *****
+04/25 05:14:51 PM   Epoch = 1 iter 7349 step
+04/25 05:14:51 PM   Num examples = 277
+04/25 05:14:51 PM   Batch size = 32
+04/25 05:14:51 PM ***** Eval results *****
+04/25 05:14:51 PM   att_loss = 3.0495804348534605
+04/25 05:14:51 PM   cls_loss = 0.0
+04/25 05:14:51 PM   global_step = 7349
+04/25 05:14:51 PM   loss = 3.9568417805054334
+04/25 05:14:51 PM   rep_loss = 0.9072613456519729
+04/25 05:14:51 PM ***** Save model *****
+04/25 05:14:59 PM ***** Running evaluation *****
+04/25 05:14:59 PM   Epoch = 1 iter 7399 step
+04/25 05:14:59 PM   Num examples = 277
+04/25 05:14:59 PM   Batch size = 32
+04/25 05:14:59 PM ***** Eval results *****
+04/25 05:14:59 PM   att_loss = 3.0496308223354354
+04/25 05:14:59 PM   cls_loss = 0.0
+04/25 05:14:59 PM   global_step = 7399
+04/25 05:14:59 PM   loss = 3.9567346424738785
+04/25 05:14:59 PM   rep_loss = 0.9071038205499357
+04/25 05:14:59 PM ***** Save model *****
+04/25 05:15:07 PM ***** Running evaluation *****
+04/25 05:15:07 PM   Epoch = 1 iter 7449 step
+04/25 05:15:07 PM   Num examples = 277
+04/25 05:15:07 PM   Batch size = 32
+04/25 05:15:07 PM ***** Eval results *****
+04/25 05:15:07 PM   att_loss = 3.049581841124815
+04/25 05:15:07 PM   cls_loss = 0.0
+04/25 05:15:07 PM   global_step = 7449
+04/25 05:15:07 PM   loss = 3.9564891707747516
+04/25 05:15:07 PM   rep_loss = 0.9069073300544472
+04/25 05:15:07 PM ***** Save model *****
+04/25 05:15:15 PM ***** Running evaluation *****
+04/25 05:15:15 PM   Epoch = 1 iter 7499 step
+04/25 05:15:15 PM   Num examples = 277
+04/25 05:15:15 PM   Batch size = 32
+04/25 05:15:15 PM ***** Eval results *****
+04/25 05:15:15 PM   att_loss = 3.0490520048984737
+04/25 05:15:15 PM   cls_loss = 0.0
+04/25 05:15:15 PM   global_step = 7499
+04/25 05:15:15 PM   loss = 3.9557761768122135
+04/25 05:15:15 PM   rep_loss = 0.9067241723711665
+04/25 05:15:15 PM ***** Save model *****
+04/25 05:15:23 PM ***** Running evaluation *****
+04/25 05:15:23 PM   Epoch = 1 iter 7549 step
+04/25 05:15:23 PM   Num examples = 277
+04/25 05:15:23 PM   Batch size = 32
+04/25 05:15:23 PM ***** Eval results *****
+04/25 05:15:23 PM   att_loss = 3.0487183058970007
+04/25 05:15:23 PM   cls_loss = 0.0
+04/25 05:15:23 PM   global_step = 7549
+04/25 05:15:23 PM   loss = 3.955256391205395
+04/25 05:15:23 PM   rep_loss = 0.9065380858169997
+04/25 05:15:23 PM ***** Save model *****
+04/25 05:15:32 PM ***** Running evaluation *****
+04/25 05:15:32 PM   Epoch = 1 iter 7599 step
+04/25 05:15:32 PM   Num examples = 277
+04/25 05:15:32 PM   Batch size = 32
+04/25 05:15:32 PM ***** Eval results *****
+04/25 05:15:32 PM   att_loss = 3.048903434862427
+04/25 05:15:32 PM   cls_loss = 0.0
+04/25 05:15:32 PM   global_step = 7599
+04/25 05:15:32 PM   loss = 3.955304891631262
+04/25 05:15:32 PM   rep_loss = 0.9064014573654591
+04/25 05:15:32 PM ***** Save model *****
+04/25 05:15:40 PM ***** Running evaluation *****
+04/25 05:15:40 PM   Epoch = 1 iter 7649 step
+04/25 05:15:40 PM   Num examples = 277
+04/25 05:15:40 PM   Batch size = 32
+04/25 05:15:40 PM ***** Eval results *****
+04/25 05:15:40 PM   att_loss = 3.047686021442371
+04/25 05:15:40 PM   cls_loss = 0.0
+04/25 05:15:40 PM   global_step = 7649
+04/25 05:15:40 PM   loss = 3.9538680118418967
+04/25 05:15:40 PM   rep_loss = 0.90618199092985
+04/25 05:15:40 PM ***** Save model *****
+04/25 05:15:48 PM ***** Running evaluation *****
+04/25 05:15:48 PM   Epoch = 1 iter 7699 step
+04/25 05:15:48 PM   Num examples = 277
+04/25 05:15:48 PM   Batch size = 32
+04/25 05:15:48 PM ***** Eval results *****
+04/25 05:15:48 PM   att_loss = 3.045964202770487
+04/25 05:15:48 PM   cls_loss = 0.0
+04/25 05:15:48 PM   global_step = 7699
+04/25 05:15:48 PM   loss = 3.951910720230976
+04/25 05:15:48 PM   rep_loss = 0.9059465178520112
+04/25 05:15:48 PM ***** Save model *****
+04/25 05:15:56 PM ***** Running evaluation *****
+04/25 05:15:56 PM   Epoch = 1 iter 7749 step
+04/25 05:15:56 PM   Num examples = 277
+04/25 05:15:56 PM   Batch size = 32
+04/25 05:15:56 PM ***** Eval results *****
+04/25 05:15:56 PM   att_loss = 3.0440978903310794
+04/25 05:15:56 PM   cls_loss = 0.0
+04/25 05:15:56 PM   global_step = 7749
+04/25 05:15:56 PM   loss = 3.9498010468108493
+04/25 05:15:56 PM   rep_loss = 0.9057031570304751
+04/25 05:15:56 PM ***** Save model *****
+04/25 05:16:04 PM ***** Running evaluation *****
+04/25 05:16:04 PM   Epoch = 1 iter 7799 step
+04/25 05:16:04 PM   Num examples = 277
+04/25 05:16:04 PM   Batch size = 32
+04/25 05:16:04 PM ***** Eval results *****
+04/25 05:16:04 PM   att_loss = 3.0433865707861427
+04/25 05:16:04 PM   cls_loss = 0.0
+04/25 05:16:04 PM   global_step = 7799
+04/25 05:16:04 PM   loss = 3.9489056852900117
+04/25 05:16:04 PM   rep_loss = 0.905519115064301
+04/25 05:16:04 PM ***** Save model *****
+04/25 05:16:12 PM ***** Running evaluation *****
+04/25 05:16:12 PM   Epoch = 1 iter 7849 step
+04/25 05:16:12 PM   Num examples = 277
+04/25 05:16:12 PM   Batch size = 32
+04/25 05:16:12 PM ***** Eval results *****
+04/25 05:16:12 PM   att_loss = 3.042702163622776
+04/25 05:16:12 PM   cls_loss = 0.0
+04/25 05:16:12 PM   global_step = 7849
+04/25 05:16:12 PM   loss = 3.948031320620338
+04/25 05:16:12 PM   rep_loss = 0.9053291576208554
+04/25 05:16:12 PM ***** Save model *****
+04/25 05:16:21 PM ***** Running evaluation *****
+04/25 05:16:21 PM   Epoch = 1 iter 7899 step
+04/25 05:16:21 PM   Num examples = 277
+04/25 05:16:21 PM   Batch size = 32
+04/25 05:16:21 PM ***** Eval results *****
+04/25 05:16:21 PM   att_loss = 3.0412554717744698
+04/25 05:16:21 PM   cls_loss = 0.0
+04/25 05:16:21 PM   global_step = 7899
+04/25 05:16:21 PM   loss = 3.9463439379364456
+04/25 05:16:21 PM   rep_loss = 0.9050884666357245
+04/25 05:16:21 PM ***** Save model *****
+04/25 05:16:29 PM ***** Running evaluation *****
+04/25 05:16:29 PM   Epoch = 1 iter 7949 step
+04/25 05:16:29 PM   Num examples = 277
+04/25 05:16:29 PM   Batch size = 32
+04/25 05:16:29 PM ***** Eval results *****
+04/25 05:16:29 PM   att_loss = 3.0395865315868087
+04/25 05:16:29 PM   cls_loss = 0.0
+04/25 05:16:29 PM   global_step = 7949
+04/25 05:16:29 PM   loss = 3.9444151442051627
+04/25 05:16:29 PM   rep_loss = 0.9048286132927317
+04/25 05:16:29 PM ***** Save model *****
+04/25 05:16:37 PM ***** Running evaluation *****
+04/25 05:16:37 PM   Epoch = 1 iter 7999 step
+04/25 05:16:37 PM   Num examples = 277
+04/25 05:16:37 PM   Batch size = 32
+04/25 05:16:37 PM ***** Eval results *****
+04/25 05:16:37 PM   att_loss = 3.0402308923024806
+04/25 05:16:37 PM   cls_loss = 0.0
+04/25 05:16:37 PM   global_step = 7999
+04/25 05:16:37 PM   loss = 3.9449762091283493
+04/25 05:16:37 PM   rep_loss = 0.904745317064492
+04/25 05:16:37 PM ***** Save model *****
+04/25 05:16:45 PM ***** Running evaluation *****
+04/25 05:16:45 PM   Epoch = 1 iter 8049 step
+04/25 05:16:45 PM   Num examples = 277
+04/25 05:16:45 PM   Batch size = 32
+04/25 05:16:45 PM ***** Eval results *****
+04/25 05:16:45 PM   att_loss = 3.039323489565832
+04/25 05:16:45 PM   cls_loss = 0.0
+04/25 05:16:45 PM   global_step = 8049
+04/25 05:16:45 PM   loss = 3.9438738232099877
+04/25 05:16:45 PM   rep_loss = 0.9045503340474579
+04/25 05:16:45 PM ***** Save model *****
+04/25 05:16:53 PM ***** Running evaluation *****
+04/25 05:16:53 PM   Epoch = 1 iter 8099 step
+04/25 05:16:53 PM   Num examples = 277
+04/25 05:16:53 PM   Batch size = 32
+04/25 05:16:53 PM ***** Eval results *****
+04/25 05:16:53 PM   att_loss = 3.038380202035424
+04/25 05:16:53 PM   cls_loss = 0.0
+04/25 05:16:53 PM   global_step = 8099
+04/25 05:16:53 PM   loss = 3.9427209237167364
+04/25 05:16:53 PM   rep_loss = 0.904340722079008
+04/25 05:16:53 PM ***** Save model *****
+04/25 05:17:01 PM ***** Running evaluation *****
+04/25 05:17:01 PM   Epoch = 1 iter 8149 step
+04/25 05:17:01 PM   Num examples = 277
+04/25 05:17:01 PM   Batch size = 32
+04/25 05:17:01 PM ***** Eval results *****
+04/25 05:17:01 PM   att_loss = 3.036875368308655
+04/25 05:17:01 PM   cls_loss = 0.0
+04/25 05:17:01 PM   global_step = 8149
+04/25 05:17:01 PM   loss = 3.9409812479957935
+04/25 05:17:01 PM   rep_loss = 0.9041058797198255
+04/25 05:17:01 PM ***** Save model *****
+04/25 05:17:10 PM ***** Running evaluation *****
+04/25 05:17:10 PM   Epoch = 1 iter 8199 step
+04/25 05:17:10 PM   Num examples = 277
+04/25 05:17:10 PM   Batch size = 32
+04/25 05:17:10 PM ***** Eval results *****
+04/25 05:17:10 PM   att_loss = 3.0349414278308475
+04/25 05:17:10 PM   cls_loss = 0.0
+04/25 05:17:10 PM   global_step = 8199
+04/25 05:17:10 PM   loss = 3.9387904535540703
+04/25 05:17:10 PM   rep_loss = 0.9038490258199575
+04/25 05:17:10 PM ***** Save model *****
+04/25 05:17:18 PM ***** Running evaluation *****
+04/25 05:17:18 PM   Epoch = 1 iter 8249 step
+04/25 05:17:18 PM   Num examples = 277
+04/25 05:17:18 PM   Batch size = 32
+04/25 05:17:18 PM ***** Eval results *****
+04/25 05:17:18 PM   att_loss = 3.035377665523023
+04/25 05:17:18 PM   cls_loss = 0.0
+04/25 05:17:18 PM   global_step = 8249
+04/25 05:17:18 PM   loss = 3.939110583803448
+04/25 05:17:18 PM   rep_loss = 0.90373291848722
+04/25 05:17:18 PM ***** Save model *****
+04/25 05:17:26 PM ***** Running evaluation *****
+04/25 05:17:26 PM   Epoch = 1 iter 8299 step
+04/25 05:17:26 PM   Num examples = 277
+04/25 05:17:26 PM   Batch size = 32
+04/25 05:17:26 PM ***** Eval results *****
+04/25 05:17:26 PM   att_loss = 3.035837844575365
+04/25 05:17:26 PM   cls_loss = 0.0
+04/25 05:17:26 PM   global_step = 8299
+04/25 05:17:26 PM   loss = 3.939464676967256
+04/25 05:17:26 PM   rep_loss = 0.9036268323918911
+04/25 05:17:26 PM ***** Save model *****
+04/25 05:17:34 PM ***** Running evaluation *****
+04/25 05:17:34 PM   Epoch = 1 iter 8349 step
+04/25 05:17:34 PM   Num examples = 277
+04/25 05:17:34 PM   Batch size = 32
+04/25 05:17:34 PM ***** Eval results *****
+04/25 05:17:34 PM   att_loss = 3.035285020636868
+04/25 05:17:34 PM   cls_loss = 0.0
+04/25 05:17:34 PM   global_step = 8349
+04/25 05:17:34 PM   loss = 3.938748731531352
+04/25 05:17:34 PM   rep_loss = 0.9034637108789905
+04/25 05:17:34 PM ***** Save model *****
+04/25 05:17:42 PM ***** Running evaluation *****
+04/25 05:17:42 PM   Epoch = 1 iter 8399 step
+04/25 05:17:42 PM   Num examples = 277
+04/25 05:17:42 PM   Batch size = 32
+04/25 05:17:42 PM ***** Eval results *****
+04/25 05:17:42 PM   att_loss = 3.0347673130059873
+04/25 05:17:42 PM   cls_loss = 0.0
+04/25 05:17:42 PM   global_step = 8399
+04/25 05:17:42 PM   loss = 3.938071813098828
+04/25 05:17:42 PM   rep_loss = 0.9033045004905111
+04/25 05:17:42 PM ***** Save model *****
+04/25 05:17:50 PM ***** Running evaluation *****
+04/25 05:17:50 PM   Epoch = 1 iter 8449 step
+04/25 05:17:50 PM   Num examples = 277
+04/25 05:17:50 PM   Batch size = 32
+04/25 05:17:50 PM ***** Eval results *****
+04/25 05:17:50 PM   att_loss = 3.035176732131189
+04/25 05:17:50 PM   cls_loss = 0.0
+04/25 05:17:50 PM   global_step = 8449
+04/25 05:17:50 PM   loss = 3.938394849621135
+04/25 05:17:50 PM   rep_loss = 0.9032181179127815
+04/25 05:17:50 PM ***** Save model *****
+04/25 05:17:59 PM ***** Running evaluation *****
+04/25 05:17:59 PM   Epoch = 1 iter 8499 step
+04/25 05:17:59 PM   Num examples = 277
+04/25 05:17:59 PM   Batch size = 32
+04/25 05:17:59 PM ***** Eval results *****
+04/25 05:17:59 PM   att_loss = 3.0346392536568945
+04/25 05:17:59 PM   cls_loss = 0.0
+04/25 05:17:59 PM   global_step = 8499
+04/25 05:17:59 PM   loss = 3.9376915063683855
+04/25 05:17:59 PM   rep_loss = 0.9030522532930725
+04/25 05:17:59 PM ***** Save model *****
+04/25 05:18:07 PM ***** Running evaluation *****
+04/25 05:18:07 PM   Epoch = 1 iter 8549 step
+04/25 05:18:07 PM   Num examples = 277
+04/25 05:18:07 PM   Batch size = 32
+04/25 05:18:07 PM ***** Eval results *****
+04/25 05:18:07 PM   att_loss = 3.0345614704050075
+04/25 05:18:07 PM   cls_loss = 0.0
+04/25 05:18:07 PM   global_step = 8549
+04/25 05:18:07 PM   loss = 3.937459286448689
+04/25 05:18:07 PM   rep_loss = 0.9028978165886212
+04/25 05:18:07 PM ***** Save model *****
+04/25 05:18:15 PM ***** Running evaluation *****
+04/25 05:18:15 PM   Epoch = 1 iter 8599 step
+04/25 05:18:15 PM   Num examples = 277
+04/25 05:18:15 PM   Batch size = 32
+04/25 05:18:15 PM ***** Eval results *****
+04/25 05:18:15 PM   att_loss = 3.0349472547293233
+04/25 05:18:15 PM   cls_loss = 0.0
+04/25 05:18:15 PM   global_step = 8599
+04/25 05:18:15 PM   loss = 3.937730836786815
+04/25 05:18:15 PM   rep_loss = 0.9027835825521363
+04/25 05:18:15 PM ***** Save model *****
+04/25 05:18:23 PM ***** Running evaluation *****
+04/25 05:18:23 PM   Epoch = 1 iter 8649 step
+04/25 05:18:23 PM   Num examples = 277
+04/25 05:18:23 PM   Batch size = 32
+04/25 05:18:23 PM ***** Eval results *****
+04/25 05:18:23 PM   att_loss = 3.034346361634011
+04/25 05:18:23 PM   cls_loss = 0.0
+04/25 05:18:23 PM   global_step = 8649
+04/25 05:18:23 PM   loss = 3.936958026621524
+04/25 05:18:23 PM   rep_loss = 0.9026116652749722
+04/25 05:18:23 PM ***** Save model *****
+04/25 05:18:31 PM ***** Running evaluation *****
+04/25 05:18:31 PM   Epoch = 1 iter 8699 step
+04/25 05:18:31 PM   Num examples = 277
+04/25 05:18:31 PM   Batch size = 32
+04/25 05:18:31 PM ***** Eval results *****
+04/25 05:18:31 PM   att_loss = 3.0335160748061605
+04/25 05:18:31 PM   cls_loss = 0.0
+04/25 05:18:31 PM   global_step = 8699
+04/25 05:18:31 PM   loss = 3.935955012387141
+04/25 05:18:31 PM   rep_loss = 0.9024389376803924
+04/25 05:18:31 PM ***** Save model *****
+04/25 05:18:40 PM ***** Running evaluation *****
+04/25 05:18:40 PM   Epoch = 1 iter 8749 step
+04/25 05:18:40 PM   Num examples = 277
+04/25 05:18:40 PM   Batch size = 32
+04/25 05:18:40 PM ***** Eval results *****
+04/25 05:18:40 PM   att_loss = 3.0332774697176452
+04/25 05:18:40 PM   cls_loss = 0.0
+04/25 05:18:40 PM   global_step = 8749
+04/25 05:18:40 PM   loss = 3.9355691339314505
+04/25 05:18:40 PM   rep_loss = 0.9022916642278398
+04/25 05:18:40 PM ***** Save model *****
+04/25 05:18:48 PM ***** Running evaluation *****
+04/25 05:18:48 PM   Epoch = 1 iter 8799 step
+04/25 05:18:48 PM   Num examples = 277
+04/25 05:18:48 PM   Batch size = 32
+04/25 05:18:48 PM ***** Eval results *****
+04/25 05:18:48 PM   att_loss = 3.0322372820145977
+04/25 05:18:48 PM   cls_loss = 0.0
+04/25 05:18:48 PM   global_step = 8799
+04/25 05:18:48 PM   loss = 3.934309334041408
+04/25 05:18:48 PM   rep_loss = 0.9020720520406815
+04/25 05:18:48 PM ***** Save model *****
+04/25 05:18:56 PM ***** Running evaluation *****
+04/25 05:18:56 PM   Epoch = 1 iter 8849 step
+04/25 05:18:56 PM   Num examples = 277
+04/25 05:18:56 PM   Batch size = 32
+04/25 05:18:56 PM ***** Eval results *****
+04/25 05:18:56 PM   att_loss = 3.0310398132630483
+04/25 05:18:56 PM   cls_loss = 0.0
+04/25 05:18:56 PM   global_step = 8849
+04/25 05:18:56 PM   loss = 3.93290246528457
+04/25 05:18:56 PM   rep_loss = 0.9018626520352334
+04/25 05:18:56 PM ***** Save model *****
+04/25 05:19:04 PM ***** Running evaluation *****
+04/25 05:19:04 PM   Epoch = 1 iter 8899 step
+04/25 05:19:04 PM   Num examples = 277
+04/25 05:19:04 PM   Batch size = 32
+04/25 05:19:04 PM ***** Eval results *****
+04/25 05:19:04 PM   att_loss = 3.0301531126804453
+04/25 05:19:04 PM   cls_loss = 0.0
+04/25 05:19:04 PM   global_step = 8899
+04/25 05:19:04 PM   loss = 3.931815833104099
+04/25 05:19:04 PM   rep_loss = 0.9016627199898695
+04/25 05:19:04 PM ***** Save model *****
+04/25 05:19:12 PM ***** Running evaluation *****
+04/25 05:19:12 PM   Epoch = 1 iter 8949 step
+04/25 05:19:12 PM   Num examples = 277
+04/25 05:19:12 PM   Batch size = 32
+04/25 05:19:12 PM ***** Eval results *****
+04/25 05:19:12 PM   att_loss = 3.0300472133851786
+04/25 05:19:12 PM   cls_loss = 0.0
+04/25 05:19:12 PM   global_step = 8949
+04/25 05:19:12 PM   loss = 3.9315670845828645
+04/25 05:19:12 PM   rep_loss = 0.9015198707285693
+04/25 05:19:12 PM ***** Save model *****
+04/25 05:19:20 PM ***** Running evaluation *****
+04/25 05:19:20 PM   Epoch = 1 iter 8999 step
+04/25 05:19:20 PM   Num examples = 277
+04/25 05:19:20 PM   Batch size = 32
+04/25 05:19:20 PM ***** Eval results *****
+04/25 05:19:20 PM   att_loss = 3.03026366806412
+04/25 05:19:20 PM   cls_loss = 0.0
+04/25 05:19:20 PM   global_step = 8999
+04/25 05:19:20 PM   loss = 3.931673649339801
+04/25 05:19:20 PM   rep_loss = 0.9014099807057456
+04/25 05:19:20 PM ***** Save model *****
+04/25 05:19:29 PM ***** Running evaluation *****
+04/25 05:19:29 PM   Epoch = 2 iter 9049 step
+04/25 05:19:29 PM   Num examples = 277
+04/25 05:19:29 PM   Batch size = 32
+04/25 05:19:29 PM ***** Eval results *****
+04/25 05:19:29 PM   att_loss = 3.004516124725342
+04/25 05:19:29 PM   cls_loss = 0.0
+04/25 05:19:29 PM   global_step = 9049
+04/25 05:19:29 PM   loss = 3.8946698135799833
+04/25 05:19:29 PM   rep_loss = 0.8901536875300937
+04/25 05:19:29 PM ***** Save model *****
+04/25 05:19:37 PM ***** Running evaluation *****
+04/25 05:19:37 PM   Epoch = 2 iter 9099 step
+04/25 05:19:37 PM   Num examples = 277
+04/25 05:19:37 PM   Batch size = 32
+04/25 05:19:37 PM ***** Eval results *****
+04/25 05:19:37 PM   att_loss = 2.9937040253689413
+04/25 05:19:37 PM   cls_loss = 0.0
+04/25 05:19:37 PM   global_step = 9099
+04/25 05:19:37 PM   loss = 3.8801761401327033
+04/25 05:19:37 PM   rep_loss = 0.8864721047250848
+04/25 05:19:37 PM ***** Save model *****
+04/25 05:19:45 PM ***** Running evaluation *****
+04/25 05:19:45 PM   Epoch = 2 iter 9149 step
+04/25 05:19:45 PM   Num examples = 277
+04/25 05:19:45 PM   Batch size = 32
+04/25 05:19:45 PM ***** Eval results *****
+04/25 05:19:45 PM   att_loss = 2.9693811909905796
+04/25 05:19:45 PM   cls_loss = 0.0
+04/25 05:19:45 PM   global_step = 9149
+04/25 05:19:45 PM   loss = 3.8544289901338775
+04/25 05:19:45 PM   rep_loss = 0.8850477917441006
+04/25 05:19:45 PM ***** Save model *****
+04/25 05:19:53 PM ***** Running evaluation *****
+04/25 05:19:53 PM   Epoch = 2 iter 9199 step
+04/25 05:19:53 PM   Num examples = 277
+04/25 05:19:53 PM   Batch size = 32
+04/25 05:19:53 PM ***** Eval results *****
+04/25 05:19:53 PM   att_loss = 2.983177681458302
+04/25 05:19:53 PM   cls_loss = 0.0
+04/25 05:19:53 PM   global_step = 9199
+04/25 05:19:53 PM   loss = 3.869510381649702
+04/25 05:19:53 PM   rep_loss = 0.8863326919384492
+04/25 05:19:53 PM ***** Save model *****
+04/25 05:20:01 PM ***** Running evaluation *****
+04/25 05:20:01 PM   Epoch = 2 iter 9249 step
+04/25 05:20:01 PM   Num examples = 277
+04/25 05:20:01 PM   Batch size = 32
+04/25 05:20:01 PM ***** Eval results *****
+04/25 05:20:01 PM   att_loss = 2.988628063396532
+04/25 05:20:01 PM   cls_loss = 0.0
+04/25 05:20:01 PM   global_step = 9249
+04/25 05:20:01 PM   loss = 3.8753539104850923
+04/25 05:20:01 PM   rep_loss = 0.8867258407631698
+04/25 05:20:01 PM ***** Save model *****
+04/25 05:20:10 PM ***** Running evaluation *****
+04/25 05:20:10 PM   Epoch = 2 iter 9299 step
+04/25 05:20:10 PM   Num examples = 277
+04/25 05:20:10 PM   Batch size = 32
+04/25 05:20:10 PM ***** Eval results *****
+04/25 05:20:10 PM   att_loss = 2.9940580230648233
+04/25 05:20:10 PM   cls_loss = 0.0
+04/25 05:20:10 PM   global_step = 9299
+04/25 05:20:10 PM   loss = 3.88152816740133
+04/25 05:20:10 PM   rep_loss = 0.8874701417098612
+04/25 05:20:10 PM ***** Save model *****
+04/25 05:20:18 PM ***** Running evaluation *****
+04/25 05:20:18 PM   Epoch = 2 iter 9349 step
+04/25 05:20:18 PM   Num examples = 277
+04/25 05:20:18 PM   Batch size = 32
+04/25 05:20:18 PM ***** Eval results *****
+04/25 05:20:18 PM   att_loss = 2.9895741946455363
+04/25 05:20:18 PM   cls_loss = 0.0
+04/25 05:20:18 PM   global_step = 9349
+04/25 05:20:18 PM   loss = 3.876681677500407
+04/25 05:20:18 PM   rep_loss = 0.8871074755986531
+04/25 05:20:18 PM ***** Save model *****
+04/25 05:20:26 PM ***** Running evaluation *****
+04/25 05:20:26 PM   Epoch = 2 iter 9399 step
+04/25 05:20:26 PM   Num examples = 277
+04/25 05:20:26 PM   Batch size = 32
+04/25 05:20:26 PM ***** Eval results *****
+04/25 05:20:26 PM   att_loss = 2.97956902105597
+04/25 05:20:26 PM   cls_loss = 0.0
+04/25 05:20:26 PM   global_step = 9399
+04/25 05:20:26 PM   loss = 3.8658473407165914
+04/25 05:20:26 PM   rep_loss = 0.886278314530095
+04/25 05:20:26 PM ***** Save model *****
+04/25 05:20:34 PM ***** Running evaluation *****
+04/25 05:20:34 PM   Epoch = 2 iter 9449 step
+04/25 05:20:34 PM   Num examples = 277
+04/25 05:20:34 PM   Batch size = 32
+04/25 05:20:34 PM ***** Eval results *****
+04/25 05:20:34 PM   att_loss = 2.9768213700712396
+04/25 05:20:34 PM   cls_loss = 0.0
+04/25 05:20:34 PM   global_step = 9449
+04/25 05:20:34 PM   loss = 3.862716325481286
+04/25 05:20:34 PM   rep_loss = 0.8858949512578128
+04/25 05:20:34 PM ***** Save model *****
+04/25 05:20:42 PM ***** Running evaluation *****
+04/25 05:20:42 PM   Epoch = 2 iter 9499 step
+04/25 05:20:42 PM   Num examples = 277
+04/25 05:20:42 PM   Batch size = 32
+04/25 05:20:42 PM ***** Eval results *****
+04/25 05:20:42 PM   att_loss = 2.974949035740862
+04/25 05:20:42 PM   cls_loss = 0.0
+04/25 05:20:42 PM   global_step = 9499
+04/25 05:20:42 PM   loss = 3.8604950688102027
+04/25 05:20:42 PM   rep_loss = 0.885546029697765
+04/25 05:20:42 PM ***** Save model *****
+04/25 05:20:50 PM ***** Running evaluation *****
+04/25 05:20:50 PM   Epoch = 2 iter 9549 step
+04/25 05:20:50 PM   Num examples = 277
+04/25 05:20:50 PM   Batch size = 32
+04/25 05:20:50 PM ***** Eval results *****
+04/25 05:20:50 PM   att_loss = 2.9809466060148466
+04/25 05:20:50 PM   cls_loss = 0.0
+04/25 05:20:50 PM   global_step = 9549
+04/25 05:20:50 PM   loss = 3.8667690058366966
+04/25 05:20:50 PM   rep_loss = 0.8858223971970585
+04/25 05:20:50 PM ***** Save model *****
+04/25 05:20:59 PM ***** Running evaluation *****
+04/25 05:20:59 PM   Epoch = 2 iter 9599 step
+04/25 05:20:59 PM   Num examples = 277
+04/25 05:20:59 PM   Batch size = 32
+04/25 05:20:59 PM ***** Eval results *****
+04/25 05:20:59 PM   att_loss = 2.9760066232761413
+04/25 05:20:59 PM   cls_loss = 0.0
+04/25 05:20:59 PM   global_step = 9599
+04/25 05:20:59 PM   loss = 3.8613772260040795
+04/25 05:20:59 PM   rep_loss = 0.8853706012253
+04/25 05:20:59 PM ***** Save model *****
+04/25 05:21:07 PM ***** Running evaluation *****
+04/25 05:21:07 PM   Epoch = 2 iter 9649 step
+04/25 05:21:07 PM   Num examples = 277
+04/25 05:21:07 PM   Batch size = 32
+04/25 05:21:07 PM ***** Eval results *****
+04/25 05:21:07 PM   att_loss = 2.974604476884354
+04/25 05:21:07 PM   cls_loss = 0.0
+04/25 05:21:07 PM   global_step = 9649
+04/25 05:21:07 PM   loss = 3.859721430327541
+04/25 05:21:07 PM   rep_loss = 0.8851169517798018
+04/25 05:21:07 PM ***** Save model *****
+04/25 05:21:15 PM ***** Running evaluation *****
+04/25 05:21:15 PM   Epoch = 2 iter 9699 step
+04/25 05:21:15 PM   Num examples = 277
+04/25 05:21:15 PM   Batch size = 32
+04/25 05:21:15 PM ***** Eval results *****
+04/25 05:21:15 PM   att_loss = 2.972395099324288
+04/25 05:21:15 PM   cls_loss = 0.0
+04/25 05:21:15 PM   global_step = 9699
+04/25 05:21:15 PM   loss = 3.857338261432785
+04/25 05:21:15 PM   rep_loss = 0.884943161250876
+04/25 05:21:15 PM ***** Save model *****
+04/25 05:21:23 PM ***** Running evaluation *****
+04/25 05:21:23 PM   Epoch = 2 iter 9749 step
+04/25 05:21:23 PM   Num examples = 277
+04/25 05:21:23 PM   Batch size = 32
+04/25 05:21:23 PM ***** Eval results *****
+04/25 05:21:23 PM   att_loss = 2.9772378998314775
+04/25 05:21:23 PM   cls_loss = 0.0
+04/25 05:21:23 PM   global_step = 9749
+04/25 05:21:23 PM   loss = 3.862301057137099
+04/25 05:21:23 PM   rep_loss = 0.885063156825584
+04/25 05:21:23 PM ***** Save model *****
+04/25 05:21:31 PM ***** Running evaluation *****
+04/25 05:21:31 PM   Epoch = 2 iter 9799 step
+04/25 05:21:31 PM   Num examples = 277
+04/25 05:21:31 PM   Batch size = 32
+04/25 05:21:31 PM ***** Eval results *****
+04/25 05:21:31 PM   att_loss = 2.983508734433156
+04/25 05:21:31 PM   cls_loss = 0.0
+04/25 05:21:31 PM   global_step = 9799
+04/25 05:21:31 PM   loss = 3.868951969626565
+04/25 05:21:31 PM   rep_loss = 0.8854432345936133
+04/25 05:21:31 PM ***** Save model *****
+04/25 05:21:39 PM ***** Running evaluation *****
+04/25 05:21:39 PM   Epoch = 2 iter 9849 step
+04/25 05:21:39 PM   Num examples = 277
+04/25 05:21:39 PM   Batch size = 32
+04/25 05:21:39 PM ***** Eval results *****
+04/25 05:21:39 PM   att_loss = 2.9858429519382454
+04/25 05:21:39 PM   cls_loss = 0.0
+04/25 05:21:39 PM   global_step = 9849
+04/25 05:21:39 PM   loss = 3.871390937207013
+04/25 05:21:39 PM   rep_loss = 0.8855479838580069
+04/25 05:21:39 PM ***** Save model *****
+04/25 05:21:48 PM ***** Running evaluation *****
+04/25 05:21:48 PM   Epoch = 2 iter 9899 step
+04/25 05:21:48 PM   Num examples = 277
+04/25 05:21:48 PM   Batch size = 32
+04/25 05:21:48 PM ***** Eval results *****
+04/25 05:21:48 PM   att_loss = 2.9846454673639222
+04/25 05:21:48 PM   cls_loss = 0.0
+04/25 05:21:48 PM   global_step = 9899
+04/25 05:21:48 PM   loss = 3.869962835578279
+04/25 05:21:48 PM   rep_loss = 0.8853173660832411
+04/25 05:21:48 PM ***** Save model *****
+04/25 05:21:56 PM ***** Running evaluation *****
+04/25 05:21:56 PM   Epoch = 2 iter 9949 step
+04/25 05:21:56 PM   Num examples = 277
+04/25 05:21:56 PM   Batch size = 32
+04/25 05:21:56 PM ***** Eval results *****
+04/25 05:21:56 PM   att_loss = 2.9829172409400737
+04/25 05:21:56 PM   cls_loss = 0.0
+04/25 05:21:56 PM   global_step = 9949
+04/25 05:21:56 PM   loss = 3.868026829775048
+04/25 05:21:56 PM   rep_loss = 0.8851095861228054
+04/25 05:21:56 PM ***** Save model *****
+04/25 05:22:04 PM ***** Running evaluation *****
+04/25 05:22:04 PM   Epoch = 2 iter 9999 step
+04/25 05:22:04 PM   Num examples = 277
+04/25 05:22:04 PM   Batch size = 32
+04/25 05:22:04 PM ***** Eval results *****
+04/25 05:22:04 PM   att_loss = 2.982268314744959
+04/25 05:22:04 PM   cls_loss = 0.0
+04/25 05:22:04 PM   global_step = 9999
+04/25 05:22:04 PM   loss = 3.86720422572227
+04/25 05:22:04 PM   rep_loss = 0.8849359091801859
+04/25 05:22:04 PM ***** Save model *****
+04/25 05:22:12 PM ***** Running evaluation *****
+04/25 05:22:12 PM   Epoch = 2 iter 10049 step
+04/25 05:22:12 PM   Num examples = 277
+04/25 05:22:12 PM   Batch size = 32
+04/25 05:22:12 PM ***** Eval results *****
+04/25 05:22:12 PM   att_loss = 2.980318160490556
+04/25 05:22:12 PM   cls_loss = 0.0
+04/25 05:22:12 PM   global_step = 10049
+04/25 05:22:12 PM   loss = 3.8649170829918966
+04/25 05:22:12 PM   rep_loss = 0.8845989199346332
+04/25 05:22:12 PM ***** Save model *****
+04/25 05:22:20 PM ***** Running evaluation *****
+04/25 05:22:20 PM   Epoch = 2 iter 10099 step
+04/25 05:22:20 PM   Num examples = 277
+04/25 05:22:20 PM   Batch size = 32
+04/25 05:22:20 PM ***** Eval results *****
+04/25 05:22:20 PM   att_loss = 2.9791363986115478
+04/25 05:22:20 PM   cls_loss = 0.0
+04/25 05:22:20 PM   global_step = 10099
+04/25 05:22:20 PM   loss = 3.8635495397053896
+04/25 05:22:20 PM   rep_loss = 0.8844131390798038
+04/25 05:22:20 PM ***** Save model *****
+04/25 05:22:29 PM ***** Running evaluation *****
+04/25 05:22:29 PM   Epoch = 2 iter 10149 step
+04/25 05:22:29 PM   Num examples = 277
+04/25 05:22:29 PM   Batch size = 32
+04/25 05:22:29 PM ***** Eval results *****
+04/25 05:22:29 PM   att_loss = 2.9810378214157303
+04/25 05:22:29 PM   cls_loss = 0.0
+04/25 05:22:29 PM   global_step = 10149
+04/25 05:22:29 PM   loss = 3.865537279037409
+04/25 05:22:29 PM   rep_loss = 0.8844994547065168
+04/25 05:22:29 PM ***** Save model *****
+04/25 05:22:37 PM ***** Running evaluation *****
+04/25 05:22:37 PM   Epoch = 2 iter 10199 step
+04/25 05:22:37 PM   Num examples = 277
+04/25 05:22:37 PM   Batch size = 32
+04/25 05:22:37 PM ***** Eval results *****
+04/25 05:22:37 PM   att_loss = 2.978429313085069
+04/25 05:22:37 PM   cls_loss = 0.0
+04/25 05:22:37 PM   global_step = 10199
+04/25 05:22:37 PM   loss = 3.8626856356983903
+04/25 05:22:37 PM   rep_loss = 0.8842563187726871
+04/25 05:22:37 PM ***** Save model *****
+04/25 05:22:45 PM ***** Running evaluation *****
+04/25 05:22:45 PM   Epoch = 2 iter 10249 step
+04/25 05:22:45 PM   Num examples = 277
+04/25 05:22:45 PM   Batch size = 32
+04/25 05:22:45 PM ***** Eval results *****
+04/25 05:22:45 PM   att_loss = 2.9804834051783304
+04/25 05:22:45 PM   cls_loss = 0.0
+04/25 05:22:45 PM   global_step = 10249
+04/25 05:22:45 PM   loss = 3.864877886561505
+04/25 05:22:45 PM   rep_loss = 0.88439447712228
+04/25 05:22:45 PM ***** Save model *****
+04/25 05:22:53 PM ***** Running evaluation *****
+04/25 05:22:53 PM   Epoch = 2 iter 10299 step
+04/25 05:22:53 PM   Num examples = 277
+04/25 05:22:53 PM   Batch size = 32
+04/25 05:22:53 PM ***** Eval results *****
+04/25 05:22:53 PM   att_loss = 2.9825115769065946
+04/25 05:22:53 PM   cls_loss = 0.0
+04/25 05:22:53 PM   global_step = 10299
+04/25 05:22:53 PM   loss = 3.8670570535549325
+04/25 05:22:53 PM   rep_loss = 0.8845454730582514
+04/25 05:22:53 PM ***** Save model *****
+04/25 05:23:01 PM ***** Running evaluation *****
+04/25 05:23:01 PM   Epoch = 2 iter 10349 step
+04/25 05:23:01 PM   Num examples = 277
+04/25 05:23:01 PM   Batch size = 32
+04/25 05:23:01 PM ***** Eval results *****
+04/25 05:23:01 PM   att_loss = 2.983651062812947
+04/25 05:23:01 PM   cls_loss = 0.0
+04/25 05:23:01 PM   global_step = 10349
+04/25 05:23:01 PM   loss = 3.8682188103190143
+04/25 05:23:01 PM   rep_loss = 0.8845677436505995
+04/25 05:23:01 PM ***** Save model *****
+04/25 05:23:09 PM ***** Running evaluation *****
+04/25 05:23:09 PM   Epoch = 2 iter 10399 step
+04/25 05:23:09 PM   Num examples = 277
+04/25 05:23:09 PM   Batch size = 32
+04/25 05:23:09 PM ***** Eval results *****
+04/25 05:23:09 PM   att_loss = 2.983209631519933
+04/25 05:23:09 PM   cls_loss = 0.0
+04/25 05:23:09 PM   global_step = 10399
+04/25 05:23:09 PM   loss = 3.8677203180114854
+04/25 05:23:09 PM   rep_loss = 0.8845106836288206
+04/25 05:23:09 PM ***** Save model *****
+04/25 05:23:18 PM ***** Running evaluation *****
+04/25 05:23:18 PM   Epoch = 2 iter 10449 step
+04/25 05:23:18 PM   Num examples = 277
+04/25 05:23:18 PM   Batch size = 32
+04/25 05:23:18 PM ***** Eval results *****
+04/25 05:23:18 PM   att_loss = 2.983081110126007
+04/25 05:23:18 PM   cls_loss = 0.0
+04/25 05:23:18 PM   global_step = 10449
+04/25 05:23:18 PM   loss = 3.867481898766488
+04/25 05:23:18 PM   rep_loss = 0.8844007862067965
+04/25 05:23:18 PM ***** Save model *****
+04/25 05:23:26 PM ***** Running evaluation *****
+04/25 05:23:26 PM   Epoch = 2 iter 10499 step
+04/25 05:23:26 PM   Num examples = 277
+04/25 05:23:26 PM   Batch size = 32
+04/25 05:23:26 PM ***** Eval results *****
+04/25 05:23:26 PM   att_loss = 2.9827880747740885
+04/25 05:23:26 PM   cls_loss = 0.0
+04/25 05:23:26 PM   global_step = 10499
+04/25 05:23:26 PM   loss = 3.867107603462245
+04/25 05:23:26 PM   rep_loss = 0.8843195266149515
+04/25 05:23:26 PM ***** Save model *****
+04/25 05:23:34 PM ***** Running evaluation *****
+04/25 05:23:34 PM   Epoch = 2 iter 10549 step
+04/25 05:23:34 PM   Num examples = 277
+04/25 05:23:34 PM   Batch size = 32
+04/25 05:23:34 PM ***** Eval results *****
+04/25 05:23:34 PM   att_loss = 2.9826165361311827
+04/25 05:23:34 PM   cls_loss = 0.0
+04/25 05:23:34 PM   global_step = 10549
+04/25 05:23:34 PM   loss = 3.8668196576312908
+04/25 05:23:34 PM   rep_loss = 0.8842031198797874
+04/25 05:23:34 PM ***** Save model *****
+04/25 05:23:42 PM ***** Running evaluation *****
+04/25 05:23:42 PM   Epoch = 2 iter 10599 step
+04/25 05:23:42 PM   Num examples = 277
+04/25 05:23:42 PM   Batch size = 32
+04/25 05:23:42 PM ***** Eval results *****
+04/25 05:23:42 PM   att_loss = 2.9836098569313934
+04/25 05:23:42 PM   cls_loss = 0.0
+04/25 05:23:42 PM   global_step = 10599
+04/25 05:23:42 PM   loss = 3.8677697129384105
+04/25 05:23:42 PM   rep_loss = 0.8841598546243387
+04/25 05:23:42 PM ***** Save model *****
+04/25 05:23:50 PM ***** Running evaluation *****
+04/25 05:23:50 PM   Epoch = 2 iter 10649 step
+04/25 05:23:50 PM   Num examples = 277
+04/25 05:23:50 PM   Batch size = 32
+04/25 05:23:50 PM ***** Eval results *****
+04/25 05:23:50 PM   att_loss = 2.9836389815553708
+04/25 05:23:50 PM   cls_loss = 0.0
+04/25 05:23:50 PM   global_step = 10649
+04/25 05:23:50 PM   loss = 3.8676910013413357
+04/25 05:23:50 PM   rep_loss = 0.8840520185177811
+04/25 05:23:50 PM ***** Save model *****
+04/25 05:23:59 PM ***** Running evaluation *****
+04/25 05:23:59 PM   Epoch = 2 iter 10699 step
+04/25 05:23:59 PM   Num examples = 277
+04/25 05:23:59 PM   Batch size = 32
+04/25 05:23:59 PM ***** Eval results *****
+04/25 05:23:59 PM   att_loss = 2.9814772980051405
+04/25 05:23:59 PM   cls_loss = 0.0
+04/25 05:23:59 PM   global_step = 10699
+04/25 05:23:59 PM   loss = 3.8653218048512055
+04/25 05:23:59 PM   rep_loss = 0.8838445053339707
+04/25 05:23:59 PM ***** Save model *****
+04/25 05:24:07 PM ***** Running evaluation *****
+04/25 05:24:07 PM   Epoch = 2 iter 10749 step
+04/25 05:24:07 PM   Num examples = 277
+04/25 05:24:07 PM   Batch size = 32
+04/25 05:24:07 PM ***** Eval results *****
+04/25 05:24:07 PM   att_loss = 2.980236435073153
+04/25 05:24:07 PM   cls_loss = 0.0
+04/25 05:24:07 PM   global_step = 10749
+04/25 05:24:07 PM   loss = 3.8639391649076793
+04/25 05:24:07 PM   rep_loss = 0.8837027282291292
+04/25 05:24:07 PM ***** Save model *****
+04/25 05:24:15 PM ***** Running evaluation *****
+04/25 05:24:15 PM   Epoch = 2 iter 10799 step
+04/25 05:24:15 PM   Num examples = 277
+04/25 05:24:15 PM   Batch size = 32
+04/25 05:24:15 PM ***** Eval results *****
+04/25 05:24:15 PM   att_loss = 2.981402964977169
+04/25 05:24:15 PM   cls_loss = 0.0
+04/25 05:24:15 PM   global_step = 10799
+04/25 05:24:15 PM   loss = 3.865109059272702
+04/25 05:24:15 PM   rep_loss = 0.8837060919379125
+04/25 05:24:15 PM ***** Save model *****
+04/25 05:24:23 PM ***** Running evaluation *****
+04/25 05:24:23 PM   Epoch = 2 iter 10849 step
+04/25 05:24:23 PM   Num examples = 277
+04/25 05:24:23 PM   Batch size = 32
+04/25 05:24:23 PM ***** Eval results *****
+04/25 05:24:23 PM   att_loss = 2.9842478604820686
+04/25 05:24:23 PM   cls_loss = 0.0
+04/25 05:24:23 PM   global_step = 10849
+04/25 05:24:23 PM   loss = 3.8680753032043373
+04/25 05:24:23 PM   rep_loss = 0.8838274402670098
+04/25 05:24:23 PM ***** Save model *****
+04/25 05:24:31 PM ***** Running evaluation *****
+04/25 05:24:31 PM   Epoch = 2 iter 10899 step
+04/25 05:24:31 PM   Num examples = 277
+04/25 05:24:31 PM   Batch size = 32
+04/25 05:24:31 PM ***** Eval results *****
+04/25 05:24:31 PM   att_loss = 2.9842947844150514
+04/25 05:24:31 PM   cls_loss = 0.0
+04/25 05:24:31 PM   global_step = 10899
+04/25 05:24:31 PM   loss = 3.8680421938682295
+04/25 05:24:31 PM   rep_loss = 0.8837474075345062
+04/25 05:24:31 PM ***** Save model *****
+04/25 05:24:39 PM ***** Running evaluation *****
+04/25 05:24:39 PM   Epoch = 2 iter 10949 step
+04/25 05:24:39 PM   Num examples = 277
+04/25 05:24:39 PM   Batch size = 32
+04/25 05:24:39 PM ***** Eval results *****
+04/25 05:24:39 PM   att_loss = 2.9829559415655456
+04/25 05:24:39 PM   cls_loss = 0.0
+04/25 05:24:39 PM   global_step = 10949
+04/25 05:24:39 PM   loss = 3.8665581423703075
+04/25 05:24:39 PM   rep_loss = 0.8836021987208977
+04/25 05:24:39 PM ***** Save model *****
+04/25 05:24:48 PM ***** Running evaluation *****
+04/25 05:24:48 PM   Epoch = 2 iter 10999 step
+04/25 05:24:48 PM   Num examples = 277
+04/25 05:24:48 PM   Batch size = 32
+04/25 05:24:48 PM ***** Eval results *****
+04/25 05:24:48 PM   att_loss = 2.982523442748794
+04/25 05:24:48 PM   cls_loss = 0.0
+04/25 05:24:48 PM   global_step = 10999
+04/25 05:24:48 PM   loss = 3.866049337626101
+04/25 05:24:48 PM   rep_loss = 0.8835258920987447
+04/25 05:24:48 PM ***** Save model *****
+04/25 05:24:56 PM ***** Running evaluation *****
+04/25 05:24:56 PM   Epoch = 2 iter 11049 step
+04/25 05:24:56 PM   Num examples = 277
+04/25 05:24:56 PM   Batch size = 32
+04/25 05:24:56 PM ***** Eval results *****
+04/25 05:24:56 PM   att_loss = 2.9821214235207854
+04/25 05:24:56 PM   cls_loss = 0.0
+04/25 05:24:56 PM   global_step = 11049
+04/25 05:24:56 PM   loss = 3.8655365672263073
+04/25 05:24:56 PM   rep_loss = 0.8834151412572138
+04/25 05:24:56 PM ***** Save model *****
+04/25 05:25:04 PM ***** Running evaluation *****
+04/25 05:25:04 PM   Epoch = 2 iter 11099 step
+04/25 05:25:04 PM   Num examples = 277
+04/25 05:25:04 PM   Batch size = 32
+04/25 05:25:04 PM ***** Eval results *****
+04/25 05:25:04 PM   att_loss = 2.98272427215212
+04/25 05:25:04 PM   cls_loss = 0.0
+04/25 05:25:04 PM   global_step = 11099
+04/25 05:25:04 PM   loss = 3.866099128859709
+04/25 05:25:04 PM   rep_loss = 0.8833748541754584
+04/25 05:25:04 PM ***** Save model *****
+04/25 05:25:12 PM ***** Running evaluation *****
+04/25 05:25:12 PM   Epoch = 2 iter 11149 step
+04/25 05:25:12 PM   Num examples = 277
+04/25 05:25:12 PM   Batch size = 32
+04/25 05:25:12 PM ***** Eval results *****
+04/25 05:25:12 PM   att_loss = 2.981950710203264
+04/25 05:25:12 PM   cls_loss = 0.0
+04/25 05:25:12 PM   global_step = 11149
+04/25 05:25:12 PM   loss = 3.865188279185262
+04/25 05:25:12 PM   rep_loss = 0.8832375665088912
+04/25 05:25:12 PM ***** Save model *****
+04/25 05:25:20 PM ***** Running evaluation *****
+04/25 05:25:20 PM   Epoch = 2 iter 11199 step
+04/25 05:25:20 PM   Num examples = 277
+04/25 05:25:20 PM   Batch size = 32
+04/25 05:25:20 PM ***** Eval results *****
+04/25 05:25:20 PM   att_loss = 2.981495831604699
+04/25 05:25:20 PM   cls_loss = 0.0
+04/25 05:25:20 PM   global_step = 11199
+04/25 05:25:20 PM   loss = 3.8646484821423854
+04/25 05:25:20 PM   rep_loss = 0.8831526480394507
+04/25 05:25:20 PM ***** Save model *****
+04/25 05:25:29 PM ***** Running evaluation *****
+04/25 05:25:29 PM   Epoch = 2 iter 11249 step
+04/25 05:25:29 PM   Num examples = 277
+04/25 05:25:29 PM   Batch size = 32
+04/25 05:25:29 PM ***** Eval results *****
+04/25 05:25:29 PM   att_loss = 2.980735646589827
+04/25 05:25:29 PM   cls_loss = 0.0
+04/25 05:25:29 PM   global_step = 11249
+04/25 05:25:29 PM   loss = 3.8637516356257926
+04/25 05:25:29 PM   rep_loss = 0.8830159864871698
+04/25 05:25:29 PM ***** Save model *****
+04/25 05:25:37 PM ***** Running evaluation *****
+04/25 05:25:37 PM   Epoch = 2 iter 11299 step
+04/25 05:25:37 PM   Num examples = 277
+04/25 05:25:37 PM   Batch size = 32
+04/25 05:25:37 PM ***** Eval results *****
+04/25 05:25:37 PM   att_loss = 2.9812280333899204
+04/25 05:25:37 PM   cls_loss = 0.0
+04/25 05:25:37 PM   global_step = 11299
+04/25 05:25:37 PM   loss = 3.864235285528345
+04/25 05:25:37 PM   rep_loss = 0.8830072494373862
+04/25 05:25:37 PM ***** Save model *****
+04/25 05:25:45 PM ***** Running evaluation *****
+04/25 05:25:45 PM   Epoch = 2 iter 11349 step
+04/25 05:25:45 PM   Num examples = 277
+04/25 05:25:45 PM   Batch size = 32
+04/25 05:25:45 PM ***** Eval results *****
+04/25 05:25:45 PM   att_loss = 2.9797952605717217
+04/25 05:25:45 PM   cls_loss = 0.0
+04/25 05:25:45 PM   global_step = 11349
+04/25 05:25:45 PM   loss = 3.8626267271509556
+04/25 05:25:45 PM   rep_loss = 0.882831464139129
+04/25 05:25:45 PM ***** Save model *****
+04/25 05:25:53 PM ***** Running evaluation *****
+04/25 05:25:53 PM   Epoch = 2 iter 11399 step
+04/25 05:25:53 PM   Num examples = 277
+04/25 05:25:53 PM   Batch size = 32
+04/25 05:25:53 PM ***** Eval results *****
+04/25 05:25:53 PM   att_loss = 2.980460150854075
+04/25 05:25:53 PM   cls_loss = 0.0
+04/25 05:25:53 PM   global_step = 11399
+04/25 05:25:53 PM   loss = 3.8632749726727513
+04/25 05:25:53 PM   rep_loss = 0.8828148200019168
+04/25 05:25:53 PM ***** Save model *****
+04/25 05:26:01 PM ***** Running evaluation *****
+04/25 05:26:01 PM   Epoch = 2 iter 11449 step
+04/25 05:26:01 PM   Num examples = 277
+04/25 05:26:01 PM   Batch size = 32
+04/25 05:26:01 PM ***** Eval results *****
+04/25 05:26:01 PM   att_loss = 2.980575503064567
+04/25 05:26:01 PM   cls_loss = 0.0
+04/25 05:26:01 PM   global_step = 11449
+04/25 05:26:01 PM   loss = 3.8633025498965523
+04/25 05:26:01 PM   rep_loss = 0.8827270444916802
+04/25 05:26:01 PM ***** Save model *****
+04/25 05:26:09 PM ***** Running evaluation *****
+04/25 05:26:09 PM   Epoch = 2 iter 11499 step
+04/25 05:26:09 PM   Num examples = 277
+04/25 05:26:09 PM   Batch size = 32
+04/25 05:26:09 PM ***** Eval results *****
+04/25 05:26:09 PM   att_loss = 2.9795673325926604
+04/25 05:26:09 PM   cls_loss = 0.0
+04/25 05:26:09 PM   global_step = 11499
+04/25 05:26:09 PM   loss = 3.8621441575472724
+04/25 05:26:09 PM   rep_loss = 0.8825768227328757
+04/25 05:26:09 PM ***** Save model *****
+04/25 05:26:18 PM ***** Running evaluation *****
+04/25 05:26:18 PM   Epoch = 2 iter 11549 step
+04/25 05:26:18 PM   Num examples = 277
+04/25 05:26:18 PM   Batch size = 32
+04/25 05:26:18 PM ***** Eval results *****
+04/25 05:26:18 PM   att_loss = 2.979705202790281
+04/25 05:26:18 PM   cls_loss = 0.0
+04/25 05:26:18 PM   global_step = 11549
+04/25 05:26:18 PM   loss = 3.862204363678668
+04/25 05:26:18 PM   rep_loss = 0.8824991583355752
+04/25 05:26:18 PM ***** Save model *****
+04/25 05:26:26 PM ***** Running evaluation *****
+04/25 05:26:26 PM   Epoch = 2 iter 11599 step
+04/25 05:26:26 PM   Num examples = 277
+04/25 05:26:26 PM   Batch size = 32
+04/25 05:26:26 PM ***** Eval results *****
+04/25 05:26:26 PM   att_loss = 2.9798152664952653
+04/25 05:26:26 PM   cls_loss = 0.0
+04/25 05:26:26 PM   global_step = 11599
+04/25 05:26:26 PM   loss = 3.86223933811592
+04/25 05:26:26 PM   rep_loss = 0.8824240693696891
+04/25 05:26:26 PM ***** Save model *****
+04/25 05:26:34 PM ***** Running evaluation *****
+04/25 05:26:34 PM   Epoch = 2 iter 11649 step
+04/25 05:26:34 PM   Num examples = 277
+04/25 05:26:34 PM   Batch size = 32
+04/25 05:26:34 PM ***** Eval results *****
+04/25 05:26:34 PM   att_loss = 2.9795666650022135
+04/25 05:26:34 PM   cls_loss = 0.0
+04/25 05:26:34 PM   global_step = 11649
+04/25 05:26:34 PM   loss = 3.861915745221374
+04/25 05:26:34 PM   rep_loss = 0.8823490782811646
+04/25 05:26:34 PM ***** Save model *****
+04/25 05:26:42 PM ***** Running evaluation *****
+04/25 05:26:42 PM   Epoch = 2 iter 11699 step
+04/25 05:26:42 PM   Num examples = 277
+04/25 05:26:42 PM   Batch size = 32
+04/25 05:26:42 PM ***** Eval results *****
+04/25 05:26:42 PM   att_loss = 2.9793987220647384
+04/25 05:26:42 PM   cls_loss = 0.0
+04/25 05:26:42 PM   global_step = 11699
+04/25 05:26:42 PM   loss = 3.8616400529369574
+04/25 05:26:42 PM   rep_loss = 0.8822413286163103
+04/25 05:26:42 PM ***** Save model *****
+04/25 05:26:50 PM ***** Running evaluation *****
+04/25 05:26:50 PM   Epoch = 2 iter 11749 step
+04/25 05:26:50 PM   Num examples = 277
+04/25 05:26:50 PM   Batch size = 32
+04/25 05:26:50 PM ***** Eval results *****
+04/25 05:26:50 PM   att_loss = 2.9794526707713502
+04/25 05:26:50 PM   cls_loss = 0.0
+04/25 05:26:50 PM   global_step = 11749
+04/25 05:26:50 PM   loss = 3.861639948099689
+04/25 05:26:50 PM   rep_loss = 0.8821872753523738
+04/25 05:26:50 PM ***** Save model *****
+04/25 05:26:58 PM ***** Running evaluation *****
+04/25 05:26:58 PM   Epoch = 2 iter 11799 step
+04/25 05:26:58 PM   Num examples = 277
+04/25 05:26:58 PM   Batch size = 32
+04/25 05:26:58 PM ***** Eval results *****
+04/25 05:26:58 PM   att_loss = 2.9793302404219433
+04/25 05:26:58 PM   cls_loss = 0.0
+04/25 05:26:58 PM   global_step = 11799
+04/25 05:26:58 PM   loss = 3.8614371565032304
+04/25 05:26:58 PM   rep_loss = 0.8821069143752506
+04/25 05:26:58 PM ***** Save model *****
+04/25 05:27:07 PM ***** Running evaluation *****
+04/25 05:27:07 PM   Epoch = 2 iter 11849 step
+04/25 05:27:07 PM   Num examples = 277
+04/25 05:27:07 PM   Batch size = 32
+04/25 05:27:07 PM ***** Eval results *****
+04/25 05:27:07 PM   att_loss = 2.9789142630850285
+04/25 05:27:07 PM   cls_loss = 0.0
+04/25 05:27:07 PM   global_step = 11849
+04/25 05:27:07 PM   loss = 3.8609283656772284
+04/25 05:27:07 PM   rep_loss = 0.8820141007275908
+04/25 05:27:07 PM ***** Save model *****
+04/25 05:27:15 PM ***** Running evaluation *****
+04/25 05:27:15 PM   Epoch = 2 iter 11899 step
+04/25 05:27:15 PM   Num examples = 277
+04/25 05:27:15 PM   Batch size = 32
+04/25 05:27:15 PM ***** Eval results *****
+04/25 05:27:15 PM   att_loss = 2.9787638499946794
+04/25 05:27:15 PM   cls_loss = 0.0
+04/25 05:27:15 PM   global_step = 11899
+04/25 05:27:15 PM   loss = 3.860678967951905
+04/25 05:27:15 PM   rep_loss = 0.8819151160218761
+04/25 05:27:15 PM ***** Save model *****
+04/25 05:27:23 PM ***** Running evaluation *****
+04/25 05:27:23 PM   Epoch = 2 iter 11949 step
+04/25 05:27:23 PM   Num examples = 277
+04/25 05:27:23 PM   Batch size = 32
+04/25 05:27:23 PM ***** Eval results *****
+04/25 05:27:23 PM   att_loss = 2.977938753761136
+04/25 05:27:23 PM   cls_loss = 0.0
+04/25 05:27:23 PM   global_step = 11949
+04/25 05:27:23 PM   loss = 3.859718315062984
+04/25 05:27:23 PM   rep_loss = 0.8817795595410319
+04/25 05:27:23 PM ***** Save model *****
+04/25 05:27:31 PM ***** Running evaluation *****
+04/25 05:27:31 PM   Epoch = 2 iter 11999 step
+04/25 05:27:31 PM   Num examples = 277
+04/25 05:27:31 PM   Batch size = 32
+04/25 05:27:31 PM ***** Eval results *****
+04/25 05:27:31 PM   att_loss = 2.9771533635303453
+04/25 05:27:31 PM   cls_loss = 0.0
+04/25 05:27:31 PM   global_step = 11999
+04/25 05:27:31 PM   loss = 3.8588098653369833
+04/25 05:27:31 PM   rep_loss = 0.8816564999757107
+04/25 05:27:31 PM ***** Save model *****
+04/25 05:27:39 PM ***** Running evaluation *****
+04/25 05:27:39 PM   Epoch = 2 iter 12049 step
+04/25 05:27:39 PM   Num examples = 277
+04/25 05:27:39 PM   Batch size = 32
+04/25 05:27:39 PM ***** Eval results *****
+04/25 05:27:39 PM   att_loss = 2.9772275315912684
+04/25 05:27:39 PM   cls_loss = 0.0
+04/25 05:27:39 PM   global_step = 12049
+04/25 05:27:39 PM   loss = 3.8588214315217115
+04/25 05:27:39 PM   rep_loss = 0.8815938980121331
+04/25 05:27:39 PM ***** Save model *****
+04/25 05:27:48 PM ***** Running evaluation *****
+04/25 05:27:48 PM   Epoch = 2 iter 12099 step
+04/25 05:27:48 PM   Num examples = 277
+04/25 05:27:48 PM   Batch size = 32
+04/25 05:27:48 PM ***** Eval results *****
+04/25 05:27:48 PM   att_loss = 2.9773465565217716
+04/25 05:27:48 PM   cls_loss = 0.0
+04/25 05:27:48 PM   global_step = 12099
+04/25 05:27:48 PM   loss = 3.858859511916202
+04/25 05:27:48 PM   rep_loss = 0.8815129536611775
+04/25 05:27:48 PM ***** Save model *****
+04/25 05:27:56 PM ***** Running evaluation *****
+04/25 05:27:56 PM   Epoch = 2 iter 12149 step
+04/25 05:27:56 PM   Num examples = 277
+04/25 05:27:56 PM   Batch size = 32
+04/25 05:27:56 PM ***** Eval results *****
+04/25 05:27:56 PM   att_loss = 2.9781222347614307
+04/25 05:27:56 PM   cls_loss = 0.0
+04/25 05:27:56 PM   global_step = 12149
+04/25 05:27:56 PM   loss = 3.8596189410205106
+04/25 05:27:56 PM   rep_loss = 0.8814967042501477
+04/25 05:27:56 PM ***** Save model *****
+04/25 05:28:04 PM ***** Running evaluation *****
+04/25 05:28:04 PM   Epoch = 2 iter 12199 step
+04/25 05:28:04 PM   Num examples = 277
+04/25 05:28:04 PM   Batch size = 32
+04/25 05:28:04 PM ***** Eval results *****
+04/25 05:28:04 PM   att_loss = 2.976544822288418
+04/25 05:28:04 PM   cls_loss = 0.0
+04/25 05:28:04 PM   global_step = 12199
+04/25 05:28:04 PM   loss = 3.857878503590496
+04/25 05:28:04 PM   rep_loss = 0.8813336794551736
+04/25 05:28:04 PM ***** Save model *****
+04/25 05:28:12 PM ***** Running evaluation *****
+04/25 05:28:12 PM   Epoch = 2 iter 12249 step
+04/25 05:28:12 PM   Num examples = 277
+04/25 05:28:12 PM   Batch size = 32
+04/25 05:28:12 PM ***** Eval results *****
+04/25 05:28:12 PM   att_loss = 2.976350618290424
+04/25 05:28:12 PM   cls_loss = 0.0
+04/25 05:28:12 PM   global_step = 12249
+04/25 05:28:12 PM   loss = 3.8575790980563878
+04/25 05:28:12 PM   rep_loss = 0.8812284780209898
+04/25 05:28:12 PM ***** Save model *****
+04/25 05:28:20 PM ***** Running evaluation *****
+04/25 05:28:20 PM   Epoch = 2 iter 12299 step
+04/25 05:28:20 PM   Num examples = 277
+04/25 05:28:20 PM   Batch size = 32
+04/25 05:28:20 PM ***** Eval results *****
+04/25 05:28:20 PM   att_loss = 2.9768740380117853
+04/25 05:28:20 PM   cls_loss = 0.0
+04/25 05:28:20 PM   global_step = 12299
+04/25 05:28:20 PM   loss = 3.8580887327787545
+04/25 05:28:20 PM   rep_loss = 0.8812146932474579
+04/25 05:28:20 PM ***** Save model *****
+04/25 05:28:28 PM ***** Running evaluation *****
+04/25 05:28:28 PM   Epoch = 2 iter 12349 step
+04/25 05:28:28 PM   Num examples = 277
+04/25 05:28:28 PM   Batch size = 32
+04/25 05:28:28 PM ***** Eval results *****
+04/25 05:28:28 PM   att_loss = 2.9766017659006274
+04/25 05:28:28 PM   cls_loss = 0.0
+04/25 05:28:28 PM   global_step = 12349
+04/25 05:28:28 PM   loss = 3.8577443530563102
+04/25 05:28:28 PM   rep_loss = 0.8811425857836177
+04/25 05:28:28 PM ***** Save model *****
+04/25 05:28:37 PM ***** Running evaluation *****
+04/25 05:28:37 PM   Epoch = 2 iter 12399 step
+04/25 05:28:37 PM   Num examples = 277
+04/25 05:28:37 PM   Batch size = 32
+04/25 05:28:37 PM ***** Eval results *****
+04/25 05:28:37 PM   att_loss = 2.9769162028808482
+04/25 05:28:37 PM   cls_loss = 0.0
+04/25 05:28:37 PM   global_step = 12399
+04/25 05:28:37 PM   loss = 3.858005431614849
+04/25 05:28:37 PM   rep_loss = 0.8810892272065771
+04/25 05:28:37 PM ***** Save model *****
+04/25 05:28:45 PM ***** Running evaluation *****
+04/25 05:28:45 PM   Epoch = 2 iter 12449 step
+04/25 05:28:45 PM   Num examples = 277
+04/25 05:28:45 PM   Batch size = 32
+04/25 05:28:45 PM ***** Eval results *****
+04/25 05:28:45 PM   att_loss = 2.975999903678894
+04/25 05:28:45 PM   cls_loss = 0.0
+04/25 05:28:45 PM   global_step = 12449
+04/25 05:28:45 PM   loss = 3.856972654395249
+04/25 05:28:45 PM   rep_loss = 0.880972749332212
+04/25 05:28:45 PM ***** Save model *****
+04/25 05:28:53 PM ***** Running evaluation *****
+04/25 05:28:53 PM   Epoch = 2 iter 12499 step
+04/25 05:28:53 PM   Num examples = 277
+04/25 05:28:53 PM   Batch size = 32
+04/25 05:28:53 PM ***** Eval results *****
+04/25 05:28:53 PM   att_loss = 2.9759488677773867
+04/25 05:28:53 PM   cls_loss = 0.0
+04/25 05:28:53 PM   global_step = 12499
+04/25 05:28:53 PM   loss = 3.856823184050204
+04/25 05:28:53 PM   rep_loss = 0.8808743147890967
+04/25 05:28:53 PM ***** Save model *****
+04/25 05:29:01 PM ***** Running evaluation *****
+04/25 05:29:01 PM   Epoch = 2 iter 12549 step
+04/25 05:29:01 PM   Num examples = 277
+04/25 05:29:01 PM   Batch size = 32
+04/25 05:29:01 PM ***** Eval results *****
+04/25 05:29:01 PM   att_loss = 2.975653063225309
+04/25 05:29:01 PM   cls_loss = 0.0
+04/25 05:29:01 PM   global_step = 12549
+04/25 05:29:01 PM   loss = 3.8564309611138907
+04/25 05:29:01 PM   rep_loss = 0.8807778962240232
+04/25 05:29:01 PM ***** Save model *****
+04/25 05:29:09 PM ***** Running evaluation *****
+04/25 05:29:09 PM   Epoch = 2 iter 12599 step
+04/25 05:29:09 PM   Num examples = 277
+04/25 05:29:09 PM   Batch size = 32
+04/25 05:29:09 PM ***** Eval results *****
+04/25 05:29:09 PM   att_loss = 2.976435542172948
+04/25 05:29:09 PM   cls_loss = 0.0
+04/25 05:29:09 PM   global_step = 12599
+04/25 05:29:09 PM   loss = 3.8572012155875046
+04/25 05:29:09 PM   rep_loss = 0.8807656715244511
+04/25 05:29:09 PM ***** Save model *****
+04/25 05:29:18 PM ***** Running evaluation *****
+04/25 05:29:18 PM   Epoch = 2 iter 12649 step
+04/25 05:29:18 PM   Num examples = 277
+04/25 05:29:18 PM   Batch size = 32
+04/25 05:29:18 PM ***** Eval results *****
+04/25 05:29:18 PM   att_loss = 2.9758284419979413
+04/25 05:29:18 PM   cls_loss = 0.0
+04/25 05:29:18 PM   global_step = 12649
+04/25 05:29:18 PM   loss = 3.8565031989611716
+04/25 05:29:18 PM   rep_loss = 0.8806747548374129
+04/25 05:29:18 PM ***** Save model *****
+04/25 05:29:26 PM ***** Running evaluation *****
+04/25 05:29:26 PM   Epoch = 2 iter 12699 step
+04/25 05:29:26 PM   Num examples = 277
+04/25 05:29:26 PM   Batch size = 32
+04/25 05:29:26 PM ***** Eval results *****
+04/25 05:29:26 PM   att_loss = 2.9764980372621177
+04/25 05:29:26 PM   cls_loss = 0.0
+04/25 05:29:26 PM   global_step = 12699
+04/25 05:29:26 PM   loss = 3.857132340574458
+04/25 05:29:26 PM   rep_loss = 0.8806343009410595
+04/25 05:29:26 PM ***** Save model *****
+04/25 05:29:34 PM ***** Running evaluation *****
+04/25 05:29:34 PM   Epoch = 2 iter 12749 step
+04/25 05:29:34 PM   Num examples = 277
+04/25 05:29:34 PM   Batch size = 32
+04/25 05:29:34 PM ***** Eval results *****
+04/25 05:29:34 PM   att_loss = 2.974910288563717
+04/25 05:29:34 PM   cls_loss = 0.0
+04/25 05:29:34 PM   global_step = 12749
+04/25 05:29:34 PM   loss = 3.855381899618498
+04/25 05:29:34 PM   rep_loss = 0.8804716088265698
+04/25 05:29:34 PM ***** Save model *****
+04/25 05:29:42 PM ***** Running evaluation *****
+04/25 05:29:42 PM   Epoch = 2 iter 12799 step
+04/25 05:29:42 PM   Num examples = 277
+04/25 05:29:42 PM   Batch size = 32
+04/25 05:29:42 PM ***** Eval results *****
+04/25 05:29:42 PM   att_loss = 2.974628926045967
+04/25 05:29:42 PM   cls_loss = 0.0
+04/25 05:29:42 PM   global_step = 12799
+04/25 05:29:42 PM   loss = 3.855025764761863
+04/25 05:29:42 PM   rep_loss = 0.880396836281451
+04/25 05:29:42 PM ***** Save model *****
+04/25 05:29:50 PM ***** Running evaluation *****
+04/25 05:29:50 PM   Epoch = 2 iter 12849 step
+04/25 05:29:50 PM   Num examples = 277
+04/25 05:29:50 PM   Batch size = 32
+04/25 05:29:50 PM ***** Eval results *****
+04/25 05:29:50 PM   att_loss = 2.9752232762710014
+04/25 05:29:50 PM   cls_loss = 0.0
+04/25 05:29:50 PM   global_step = 12849
+04/25 05:29:50 PM   loss = 3.855601741619631
+04/25 05:29:50 PM   rep_loss = 0.8803784633023841
+04/25 05:29:50 PM ***** Save model *****
+04/25 05:29:58 PM ***** Running evaluation *****
+04/25 05:29:58 PM   Epoch = 2 iter 12899 step
+04/25 05:29:58 PM   Num examples = 277
+04/25 05:29:58 PM   Batch size = 32
+04/25 05:29:58 PM ***** Eval results *****
+04/25 05:29:58 PM   att_loss = 2.974596474963373
+04/25 05:29:58 PM   cls_loss = 0.0
+04/25 05:29:58 PM   global_step = 12899
+04/25 05:29:58 PM   loss = 3.8548923471007637
+04/25 05:29:58 PM   rep_loss = 0.8802958701174127
+04/25 05:29:58 PM ***** Save model *****
+04/25 05:30:07 PM ***** Running evaluation *****
+04/25 05:30:07 PM   Epoch = 2 iter 12949 step
+04/25 05:30:07 PM   Num examples = 277
+04/25 05:30:07 PM   Batch size = 32
+04/25 05:30:07 PM ***** Eval results *****
+04/25 05:30:07 PM   att_loss = 2.9747845210049997
+04/25 05:30:07 PM   cls_loss = 0.0
+04/25 05:30:07 PM   global_step = 12949
+04/25 05:30:07 PM   loss = 3.8550466582802314
+04/25 05:30:07 PM   rep_loss = 0.8802621355981428
+04/25 05:30:07 PM ***** Save model *****
+04/25 05:30:15 PM ***** Running evaluation *****
+04/25 05:30:15 PM   Epoch = 2 iter 12999 step
+04/25 05:30:15 PM   Num examples = 277
+04/25 05:30:15 PM   Batch size = 32
+04/25 05:30:15 PM ***** Eval results *****
+04/25 05:30:15 PM   att_loss = 2.974204212583797
+04/25 05:30:15 PM   cls_loss = 0.0
+04/25 05:30:15 PM   global_step = 12999
+04/25 05:30:15 PM   loss = 3.854392897232304
+04/25 05:30:15 PM   rep_loss = 0.8801886826940114
+04/25 05:30:15 PM ***** Save model *****
+04/25 05:30:23 PM ***** Running evaluation *****
+04/25 05:30:23 PM   Epoch = 2 iter 13049 step
+04/25 05:30:23 PM   Num examples = 277
+04/25 05:30:23 PM   Batch size = 32
+04/25 05:30:23 PM ***** Eval results *****
+04/25 05:30:23 PM   att_loss = 2.973453617420126
+04/25 05:30:23 PM   cls_loss = 0.0
+04/25 05:30:23 PM   global_step = 13049
+04/25 05:30:23 PM   loss = 3.8535638495635043
+04/25 05:30:23 PM   rep_loss = 0.8801102304488089
+04/25 05:30:23 PM ***** Save model *****
+04/25 05:30:31 PM ***** Running evaluation *****
+04/25 05:30:31 PM   Epoch = 2 iter 13099 step
+04/25 05:30:31 PM   Num examples = 277
+04/25 05:30:31 PM   Batch size = 32
+04/25 05:30:31 PM ***** Eval results *****
+04/25 05:30:31 PM   att_loss = 2.972762761302338
+04/25 05:30:31 PM   cls_loss = 0.0
+04/25 05:30:31 PM   global_step = 13099
+04/25 05:30:31 PM   loss = 3.852776796622736
+04/25 05:30:31 PM   rep_loss = 0.8800140335155203
+04/25 05:30:31 PM ***** Save model *****
+04/25 05:30:39 PM ***** Running evaluation *****
+04/25 05:30:39 PM   Epoch = 2 iter 13149 step
+04/25 05:30:39 PM   Num examples = 277
+04/25 05:30:39 PM   Batch size = 32
+04/25 05:30:39 PM ***** Eval results *****
+04/25 05:30:39 PM   att_loss = 2.9728063560653797
+04/25 05:30:39 PM   cls_loss = 0.0
+04/25 05:30:39 PM   global_step = 13149
+04/25 05:30:39 PM   loss = 3.852748096693842
+04/25 05:30:39 PM   rep_loss = 0.8799417386871771
+04/25 05:30:39 PM ***** Save model *****
+04/25 05:30:47 PM ***** Running evaluation *****
+04/25 05:30:47 PM   Epoch = 2 iter 13199 step
+04/25 05:30:47 PM   Num examples = 277
+04/25 05:30:47 PM   Batch size = 32
+04/25 05:30:47 PM ***** Eval results *****
+04/25 05:30:47 PM   att_loss = 2.9715262069463444
+04/25 05:30:47 PM   cls_loss = 0.0
+04/25 05:30:47 PM   global_step = 13199
+04/25 05:30:47 PM   loss = 3.8513199449295934
+04/25 05:30:47 PM   rep_loss = 0.8797937359798509
+04/25 05:30:47 PM ***** Save model *****
+04/25 05:30:56 PM ***** Running evaluation *****
+04/25 05:30:56 PM   Epoch = 2 iter 13249 step
+04/25 05:30:56 PM   Num examples = 277
+04/25 05:30:56 PM   Batch size = 32
+04/25 05:30:56 PM ***** Eval results *****
+04/25 05:30:56 PM   att_loss = 2.971100914773166
+04/25 05:30:56 PM   cls_loss = 0.0
+04/25 05:30:56 PM   global_step = 13249
+04/25 05:30:56 PM   loss = 3.8507993076940026
+04/25 05:30:56 PM   rep_loss = 0.8796983909410357
+04/25 05:30:56 PM ***** Save model *****
+04/25 05:31:04 PM ***** Running evaluation *****
+04/25 05:31:04 PM   Epoch = 2 iter 13299 step
+04/25 05:31:04 PM   Num examples = 277
+04/25 05:31:04 PM   Batch size = 32
+04/25 05:31:04 PM ***** Eval results *****
+04/25 05:31:04 PM   att_loss = 2.9706922218324974
+04/25 05:31:04 PM   cls_loss = 0.0
+04/25 05:31:04 PM   global_step = 13299
+04/25 05:31:04 PM   loss = 3.85028064364743
+04/25 05:31:04 PM   rep_loss = 0.8795884197055253
+04/25 05:31:04 PM ***** Save model *****
+04/25 05:31:12 PM ***** Running evaluation *****
+04/25 05:31:12 PM   Epoch = 2 iter 13349 step
+04/25 05:31:12 PM   Num examples = 277
+04/25 05:31:12 PM   Batch size = 32
+04/25 05:31:12 PM ***** Eval results *****
+04/25 05:31:12 PM   att_loss = 2.9706788401060464
+04/25 05:31:12 PM   cls_loss = 0.0
+04/25 05:31:12 PM   global_step = 13349
+04/25 05:31:12 PM   loss = 3.85020567758997
+04/25 05:31:12 PM   rep_loss = 0.8795268351518655
+04/25 05:31:12 PM ***** Save model *****
+04/25 05:31:20 PM ***** Running evaluation *****
+04/25 05:31:20 PM   Epoch = 2 iter 13399 step
+04/25 05:31:20 PM   Num examples = 277
+04/25 05:31:20 PM   Batch size = 32
+04/25 05:31:20 PM ***** Eval results *****
+04/25 05:31:20 PM   att_loss = 2.9696898513550916
+04/25 05:31:20 PM   cls_loss = 0.0
+04/25 05:31:20 PM   global_step = 13399
+04/25 05:31:20 PM   loss = 3.849092174905423
+04/25 05:31:20 PM   rep_loss = 0.8794023213126146
+04/25 05:31:20 PM ***** Save model *****
+04/25 05:31:28 PM ***** Running evaluation *****
+04/25 05:31:28 PM   Epoch = 2 iter 13449 step
+04/25 05:31:28 PM   Num examples = 277
+04/25 05:31:28 PM   Batch size = 32
+04/25 05:31:28 PM ***** Eval results *****
+04/25 05:31:28 PM   att_loss = 2.969009476973852
+04/25 05:31:28 PM   cls_loss = 0.0
+04/25 05:31:28 PM   global_step = 13449
+04/25 05:31:28 PM   loss = 3.8482728748943726
+04/25 05:31:28 PM   rep_loss = 0.8792633957884309
+04/25 05:31:28 PM ***** Save model *****
+04/25 05:31:37 PM ***** Running evaluation *****
+04/25 05:31:37 PM   Epoch = 2 iter 13499 step
+04/25 05:31:37 PM   Num examples = 277
+04/25 05:31:37 PM   Batch size = 32
+04/25 05:31:37 PM ***** Eval results *****
+04/25 05:31:37 PM   att_loss = 2.969442625332197
+04/25 05:31:37 PM   cls_loss = 0.0
+04/25 05:31:37 PM   global_step = 13499
+04/25 05:31:37 PM   loss = 3.8486728416268896
+04/25 05:31:37 PM   rep_loss = 0.8792302140271968
+04/25 05:31:37 PM ***** Save model *****

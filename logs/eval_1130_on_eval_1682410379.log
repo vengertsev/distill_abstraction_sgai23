@@ -1,0 +1,33 @@
+04/25 04:13:00 AM The args: Namespace(aug_train=False, cache_dir='', data_dir='./_data/glue_data/RTE', data_url='', do_eval=True, do_lower_case=True, eval_batch_size=32, eval_step=50, gradient_accumulation_steps=1, learning_rate=5e-05, max_seq_length=128, no_cuda=False, num_train_epochs=3.0, output_dir='./eval_results/1130_on_eval', pred_distill=False, seed=42, student_model='./models_train/TinyBERT_6L_768D_1130_stg2_RTE', task_name='RTE', teacher_model=None, temperature=1.0, train_batch_size=32, warmup_proportion=0.1, weight_decay=0.0001)
+04/25 04:13:00 AM device: cuda n_gpu: 1
+04/25 04:13:00 AM ******** num_labels=2
+04/25 04:13:00 AM Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 6,
+  "pre_trained": "",
+  "structure": [],
+  "training": "",
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+
+04/25 04:13:01 AM Loading model ./models_train/TinyBERT_6L_768D_1130_stg2_RTE/pytorch_model.bin
+04/25 04:13:01 AM loading model...
+04/25 04:13:01 AM done!
+04/25 04:13:01 AM ***** Running evaluation *****
+04/25 04:13:01 AM   Num examples = 277
+04/25 04:13:01 AM   Batch size = 32
+04/25 04:13:02 AM preds.shape (277, 2)
+04/25 04:13:02 AM ***** Eval results *****
+04/25 04:13:02 AM   acc = 0.7184115523465704
+04/25 04:13:02 AM   eval_loss = 0.6145620346069336
+04/25 04:13:02 AM --- preds.shape: (277,), probs_0 len: = 277, probs_1 len: 277, eval_labels.shape: (277,) ---

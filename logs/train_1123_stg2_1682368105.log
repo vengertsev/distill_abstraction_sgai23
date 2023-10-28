@@ -1,0 +1,355 @@
+04/24 04:28:26 PM The args: Namespace(aug_train=True, cache_dir='', data_dir='./_data/glue_data/CoLA', data_url='', do_eval=False, do_lower_case=True, eval_batch_size=32, eval_step=2000, gradient_accumulation_steps=1, learning_rate=3e-05, max_seq_length=128, no_cuda=False, num_train_epochs=4.0, output_dir='./models_train/TinyBERT_6L_768D_1123_stg2_CoLA', pred_distill=True, seed=42, student_model='./models_train/TinyBERT_6L_768D_1123_stg1_CoLA', task_name='CoLA', teacher_model='./_models/bert-base-uncased-cola', temperature=1.0, train_batch_size=32, warmup_proportion=0.1, weight_decay=0.0001)
+04/24 04:28:26 PM device: cuda n_gpu: 1
+04/24 04:28:26 PM ******** num_labels=2
+04/24 04:28:38 PM Model config {
+  "_name_or_path": "/mnt/lustre/weixiuying/transformer/pretrain_models/bert-base-uncased",
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "finetuning_task": "cola",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "unacceptable",
+    "1": "acceptable"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "label2id": {
+    "acceptable": 1,
+    "unacceptable": 0
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "problem_type": "single_label_classification",
+  "torch_dtype": "float32",
+  "training": "",
+  "transformers_version": "4.13.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+04/24 04:28:39 PM Loading model ./_models/bert-base-uncased-cola/pytorch_model.bin
+04/24 04:28:39 PM loading model...
+04/24 04:28:39 PM done!
+04/24 04:28:39 PM Weights of TinyBertForSequenceClassification not initialized from pretrained model: ['fit_dense.weight', 'fit_dense.bias']
+04/24 04:28:39 PM Weights from pretrained model not used in TinyBertForSequenceClassification: ['bert.embeddings.position_ids']
+04/24 04:28:39 PM Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 6,
+  "pre_trained": "",
+  "structure": [],
+  "training": "",
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+
+04/24 04:28:40 PM Loading model ./models_train/TinyBERT_6L_768D_1123_stg1_CoLA/pytorch_model.bin
+04/24 04:28:40 PM loading model...
+04/24 04:28:40 PM done!
+04/24 04:28:40 PM ***** Running training *****
+04/24 04:28:40 PM   Num examples = 210325
+04/24 04:28:40 PM   Batch size = 32
+04/24 04:28:40 PM   Num steps = 26288
+04/24 04:28:40 PM n: bert.embeddings.word_embeddings.weight
+04/24 04:28:40 PM n: bert.embeddings.position_embeddings.weight
+04/24 04:28:40 PM n: bert.embeddings.token_type_embeddings.weight
+04/24 04:28:40 PM n: bert.embeddings.LayerNorm.weight
+04/24 04:28:40 PM n: bert.embeddings.LayerNorm.bias
+04/24 04:28:40 PM n: bert.encoder.layer.0.attention.self.query.weight
+04/24 04:28:40 PM n: bert.encoder.layer.0.attention.self.query.bias
+04/24 04:28:40 PM n: bert.encoder.layer.0.attention.self.key.weight
+04/24 04:28:40 PM n: bert.encoder.layer.0.attention.self.key.bias
+04/24 04:28:40 PM n: bert.encoder.layer.0.attention.self.value.weight
+04/24 04:28:40 PM n: bert.encoder.layer.0.attention.self.value.bias
+04/24 04:28:40 PM n: bert.encoder.layer.0.attention.output.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.0.attention.output.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.0.attention.output.LayerNorm.weight
+04/24 04:28:40 PM n: bert.encoder.layer.0.attention.output.LayerNorm.bias
+04/24 04:28:40 PM n: bert.encoder.layer.0.intermediate.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.0.intermediate.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.0.output.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.0.output.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.0.output.LayerNorm.weight
+04/24 04:28:40 PM n: bert.encoder.layer.0.output.LayerNorm.bias
+04/24 04:28:40 PM n: bert.encoder.layer.1.attention.self.query.weight
+04/24 04:28:40 PM n: bert.encoder.layer.1.attention.self.query.bias
+04/24 04:28:40 PM n: bert.encoder.layer.1.attention.self.key.weight
+04/24 04:28:40 PM n: bert.encoder.layer.1.attention.self.key.bias
+04/24 04:28:40 PM n: bert.encoder.layer.1.attention.self.value.weight
+04/24 04:28:40 PM n: bert.encoder.layer.1.attention.self.value.bias
+04/24 04:28:40 PM n: bert.encoder.layer.1.attention.output.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.1.attention.output.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.1.attention.output.LayerNorm.weight
+04/24 04:28:40 PM n: bert.encoder.layer.1.attention.output.LayerNorm.bias
+04/24 04:28:40 PM n: bert.encoder.layer.1.intermediate.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.1.intermediate.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.1.output.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.1.output.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.1.output.LayerNorm.weight
+04/24 04:28:40 PM n: bert.encoder.layer.1.output.LayerNorm.bias
+04/24 04:28:40 PM n: bert.encoder.layer.2.attention.self.query.weight
+04/24 04:28:40 PM n: bert.encoder.layer.2.attention.self.query.bias
+04/24 04:28:40 PM n: bert.encoder.layer.2.attention.self.key.weight
+04/24 04:28:40 PM n: bert.encoder.layer.2.attention.self.key.bias
+04/24 04:28:40 PM n: bert.encoder.layer.2.attention.self.value.weight
+04/24 04:28:40 PM n: bert.encoder.layer.2.attention.self.value.bias
+04/24 04:28:40 PM n: bert.encoder.layer.2.attention.output.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.2.attention.output.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.2.attention.output.LayerNorm.weight
+04/24 04:28:40 PM n: bert.encoder.layer.2.attention.output.LayerNorm.bias
+04/24 04:28:40 PM n: bert.encoder.layer.2.intermediate.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.2.intermediate.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.2.output.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.2.output.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.2.output.LayerNorm.weight
+04/24 04:28:40 PM n: bert.encoder.layer.2.output.LayerNorm.bias
+04/24 04:28:40 PM n: bert.encoder.layer.3.attention.self.query.weight
+04/24 04:28:40 PM n: bert.encoder.layer.3.attention.self.query.bias
+04/24 04:28:40 PM n: bert.encoder.layer.3.attention.self.key.weight
+04/24 04:28:40 PM n: bert.encoder.layer.3.attention.self.key.bias
+04/24 04:28:40 PM n: bert.encoder.layer.3.attention.self.value.weight
+04/24 04:28:40 PM n: bert.encoder.layer.3.attention.self.value.bias
+04/24 04:28:40 PM n: bert.encoder.layer.3.attention.output.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.3.attention.output.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.3.attention.output.LayerNorm.weight
+04/24 04:28:40 PM n: bert.encoder.layer.3.attention.output.LayerNorm.bias
+04/24 04:28:40 PM n: bert.encoder.layer.3.intermediate.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.3.intermediate.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.3.output.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.3.output.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.3.output.LayerNorm.weight
+04/24 04:28:40 PM n: bert.encoder.layer.3.output.LayerNorm.bias
+04/24 04:28:40 PM n: bert.encoder.layer.4.attention.self.query.weight
+04/24 04:28:40 PM n: bert.encoder.layer.4.attention.self.query.bias
+04/24 04:28:40 PM n: bert.encoder.layer.4.attention.self.key.weight
+04/24 04:28:40 PM n: bert.encoder.layer.4.attention.self.key.bias
+04/24 04:28:40 PM n: bert.encoder.layer.4.attention.self.value.weight
+04/24 04:28:40 PM n: bert.encoder.layer.4.attention.self.value.bias
+04/24 04:28:40 PM n: bert.encoder.layer.4.attention.output.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.4.attention.output.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.4.attention.output.LayerNorm.weight
+04/24 04:28:40 PM n: bert.encoder.layer.4.attention.output.LayerNorm.bias
+04/24 04:28:40 PM n: bert.encoder.layer.4.intermediate.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.4.intermediate.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.4.output.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.4.output.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.4.output.LayerNorm.weight
+04/24 04:28:40 PM n: bert.encoder.layer.4.output.LayerNorm.bias
+04/24 04:28:40 PM n: bert.encoder.layer.5.attention.self.query.weight
+04/24 04:28:40 PM n: bert.encoder.layer.5.attention.self.query.bias
+04/24 04:28:40 PM n: bert.encoder.layer.5.attention.self.key.weight
+04/24 04:28:40 PM n: bert.encoder.layer.5.attention.self.key.bias
+04/24 04:28:40 PM n: bert.encoder.layer.5.attention.self.value.weight
+04/24 04:28:40 PM n: bert.encoder.layer.5.attention.self.value.bias
+04/24 04:28:40 PM n: bert.encoder.layer.5.attention.output.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.5.attention.output.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.5.attention.output.LayerNorm.weight
+04/24 04:28:40 PM n: bert.encoder.layer.5.attention.output.LayerNorm.bias
+04/24 04:28:40 PM n: bert.encoder.layer.5.intermediate.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.5.intermediate.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.5.output.dense.weight
+04/24 04:28:40 PM n: bert.encoder.layer.5.output.dense.bias
+04/24 04:28:40 PM n: bert.encoder.layer.5.output.LayerNorm.weight
+04/24 04:28:40 PM n: bert.encoder.layer.5.output.LayerNorm.bias
+04/24 04:28:40 PM n: bert.pooler.dense.weight
+04/24 04:28:40 PM n: bert.pooler.dense.bias
+04/24 04:28:40 PM n: classifier.weight
+04/24 04:28:40 PM n: classifier.bias
+04/24 04:28:40 PM n: fit_dense.weight
+04/24 04:28:40 PM n: fit_dense.bias
+04/24 04:28:40 PM Total parameters: 67547138
+04/24 04:33:36 PM ***** Running evaluation *****
+04/24 04:33:36 PM   Epoch = 0 iter 1999 step
+04/24 04:33:36 PM   Num examples = 1043
+04/24 04:33:36 PM   Batch size = 32
+04/24 04:33:37 PM preds.shape (1043, 2)
+04/24 04:33:37 PM ***** Eval results *****
+04/24 04:33:37 PM   att_loss = 0.0
+04/24 04:33:37 PM   cls_loss = 0.20381320559006444
+04/24 04:33:37 PM   eval_loss = 0.47614240262544516
+04/24 04:33:37 PM   global_step = 1999
+04/24 04:33:37 PM   loss = 0.20381320559006444
+04/24 04:33:37 PM   mcc = 0.4894438128180558
+04/24 04:33:37 PM   rep_loss = 0.0
+04/24 04:33:37 PM ***** Save model *****
+04/24 04:38:34 PM ***** Running evaluation *****
+04/24 04:38:34 PM   Epoch = 0 iter 3999 step
+04/24 04:38:34 PM   Num examples = 1043
+04/24 04:38:34 PM   Batch size = 32
+04/24 04:38:35 PM preds.shape (1043, 2)
+04/24 04:38:35 PM ***** Eval results *****
+04/24 04:38:35 PM   att_loss = 0.0
+04/24 04:38:35 PM   cls_loss = 0.1998322164641228
+04/24 04:38:35 PM   eval_loss = 0.4698568643494086
+04/24 04:38:35 PM   global_step = 3999
+04/24 04:38:35 PM   loss = 0.1998322164641228
+04/24 04:38:35 PM   mcc = 0.5188823116947865
+04/24 04:38:35 PM   rep_loss = 0.0
+04/24 04:38:35 PM ***** Save model *****
+04/24 04:43:31 PM ***** Running evaluation *****
+04/24 04:43:31 PM   Epoch = 0 iter 5999 step
+04/24 04:43:31 PM   Num examples = 1043
+04/24 04:43:31 PM   Batch size = 32
+04/24 04:43:32 PM preds.shape (1043, 2)
+04/24 04:43:32 PM ***** Eval results *****
+04/24 04:43:32 PM   att_loss = 0.0
+04/24 04:43:32 PM   cls_loss = 0.19823034190897107
+04/24 04:43:32 PM   eval_loss = 0.4853055750330289
+04/24 04:43:32 PM   global_step = 5999
+04/24 04:43:32 PM   loss = 0.19823034190897107
+04/24 04:43:32 PM   mcc = 0.5285049056800905
+04/24 04:43:32 PM   rep_loss = 0.0
+04/24 04:43:32 PM ***** Save model *****
+04/24 04:48:28 PM ***** Running evaluation *****
+04/24 04:48:28 PM   Epoch = 1 iter 7999 step
+04/24 04:48:28 PM   Num examples = 1043
+04/24 04:48:28 PM   Batch size = 32
+04/24 04:48:29 PM preds.shape (1043, 2)
+04/24 04:48:29 PM ***** Eval results *****
+04/24 04:48:29 PM   att_loss = 0.0
+04/24 04:48:29 PM   cls_loss = 0.19807632250767448
+04/24 04:48:29 PM   eval_loss = 0.4887528760415135
+04/24 04:48:29 PM   global_step = 7999
+04/24 04:48:29 PM   loss = 0.19807632250767448
+04/24 04:48:29 PM   mcc = 0.4830497789593027
+04/24 04:48:29 PM   rep_loss = 0.0
+04/24 04:53:25 PM ***** Running evaluation *****
+04/24 04:53:25 PM   Epoch = 1 iter 9999 step
+04/24 04:53:25 PM   Num examples = 1043
+04/24 04:53:25 PM   Batch size = 32
+04/24 04:53:26 PM preds.shape (1043, 2)
+04/24 04:53:26 PM ***** Eval results *****
+04/24 04:53:26 PM   att_loss = 0.0
+04/24 04:53:26 PM   cls_loss = 0.19774177724830883
+04/24 04:53:26 PM   eval_loss = 0.47194562649185007
+04/24 04:53:26 PM   global_step = 9999
+04/24 04:53:26 PM   loss = 0.19774177724830883
+04/24 04:53:26 PM   mcc = 0.5075813582663956
+04/24 04:53:26 PM   rep_loss = 0.0
+04/24 04:58:22 PM ***** Running evaluation *****
+04/24 04:58:22 PM   Epoch = 1 iter 11999 step
+04/24 04:58:22 PM   Num examples = 1043
+04/24 04:58:22 PM   Batch size = 32
+04/24 04:58:23 PM preds.shape (1043, 2)
+04/24 04:58:23 PM ***** Eval results *****
+04/24 04:58:23 PM   att_loss = 0.0
+04/24 04:58:23 PM   cls_loss = 0.19761976113696333
+04/24 04:58:23 PM   eval_loss = 0.47295197280067386
+04/24 04:58:23 PM   global_step = 11999
+04/24 04:58:23 PM   loss = 0.19761976113696333
+04/24 04:58:23 PM   mcc = 0.509687043672971
+04/24 04:58:23 PM   rep_loss = 0.0
+04/24 05:03:19 PM ***** Running evaluation *****
+04/24 05:03:19 PM   Epoch = 2 iter 13999 step
+04/24 05:03:19 PM   Num examples = 1043
+04/24 05:03:19 PM   Batch size = 32
+04/24 05:03:20 PM preds.shape (1043, 2)
+04/24 05:03:20 PM ***** Eval results *****
+04/24 05:03:20 PM   att_loss = 0.0
+04/24 05:03:20 PM   cls_loss = 0.19594147149582355
+04/24 05:03:20 PM   eval_loss = 0.46393942133043753
+04/24 05:03:20 PM   global_step = 13999
+04/24 05:03:20 PM   loss = 0.19594147149582355
+04/24 05:03:20 PM   mcc = 0.5158102563819117
+04/24 05:03:20 PM   rep_loss = 0.0
+04/24 05:08:16 PM ***** Running evaluation *****
+04/24 05:08:16 PM   Epoch = 2 iter 15999 step
+04/24 05:08:16 PM   Num examples = 1043
+04/24 05:08:16 PM   Batch size = 32
+04/24 05:08:17 PM preds.shape (1043, 2)
+04/24 05:08:17 PM ***** Eval results *****
+04/24 05:08:17 PM   att_loss = 0.0
+04/24 05:08:17 PM   cls_loss = 0.1949190988849633
+04/24 05:08:17 PM   eval_loss = 0.4686110240943504
+04/24 05:08:17 PM   global_step = 15999
+04/24 05:08:17 PM   loss = 0.1949190988849633
+04/24 05:08:17 PM   mcc = 0.5082511913227816
+04/24 05:08:17 PM   rep_loss = 0.0
+04/24 05:13:13 PM ***** Running evaluation *****
+04/24 05:13:13 PM   Epoch = 2 iter 17999 step
+04/24 05:13:13 PM   Num examples = 1043
+04/24 05:13:13 PM   Batch size = 32
+04/24 05:13:14 PM preds.shape (1043, 2)
+04/24 05:13:14 PM ***** Eval results *****
+04/24 05:13:14 PM   att_loss = 0.0
+04/24 05:13:14 PM   cls_loss = 0.1947339277373038
+04/24 05:13:14 PM   eval_loss = 0.45354171232743695
+04/24 05:13:14 PM   global_step = 17999
+04/24 05:13:14 PM   loss = 0.1947339277373038
+04/24 05:13:14 PM   mcc = 0.5268023551875569
+04/24 05:13:14 PM   rep_loss = 0.0
+04/24 05:18:10 PM ***** Running evaluation *****
+04/24 05:18:10 PM   Epoch = 3 iter 19999 step
+04/24 05:18:10 PM   Num examples = 1043
+04/24 05:18:10 PM   Batch size = 32
+04/24 05:18:11 PM preds.shape (1043, 2)
+04/24 05:18:11 PM ***** Eval results *****
+04/24 05:18:11 PM   att_loss = 0.0
+04/24 05:18:11 PM   cls_loss = 0.19352441820786614
+04/24 05:18:11 PM   eval_loss = 0.46563224991162616
+04/24 05:18:11 PM   global_step = 19999
+04/24 05:18:11 PM   loss = 0.19352441820786614
+04/24 05:18:11 PM   mcc = 0.5137796232907349
+04/24 05:18:11 PM   rep_loss = 0.0
+04/24 05:23:07 PM ***** Running evaluation *****
+04/24 05:23:07 PM   Epoch = 3 iter 21999 step
+04/24 05:23:07 PM   Num examples = 1043
+04/24 05:23:07 PM   Batch size = 32
+04/24 05:23:08 PM preds.shape (1043, 2)
+04/24 05:23:08 PM ***** Eval results *****
+04/24 05:23:08 PM   att_loss = 0.0
+04/24 05:23:08 PM   cls_loss = 0.19333377805551938
+04/24 05:23:08 PM   eval_loss = 0.45966088342847244
+04/24 05:23:08 PM   global_step = 21999
+04/24 05:23:08 PM   loss = 0.19333377805551938
+04/24 05:23:08 PM   mcc = 0.5135566841640817
+04/24 05:23:08 PM   rep_loss = 0.0
+04/24 05:28:05 PM ***** Running evaluation *****
+04/24 05:28:05 PM   Epoch = 3 iter 23999 step
+04/24 05:28:05 PM   Num examples = 1043
+04/24 05:28:05 PM   Batch size = 32
+04/24 05:28:05 PM preds.shape (1043, 2)
+04/24 05:28:05 PM ***** Eval results *****
+04/24 05:28:05 PM   att_loss = 0.0
+04/24 05:28:05 PM   cls_loss = 0.1931229257017214
+04/24 05:28:05 PM   eval_loss = 0.463646418669007
+04/24 05:28:05 PM   global_step = 23999
+04/24 05:28:05 PM   loss = 0.1931229257017214
+04/24 05:28:05 PM   mcc = 0.5319354120310512
+04/24 05:28:05 PM   rep_loss = 0.0
+04/24 05:28:05 PM ***** Save model *****
+04/24 05:33:02 PM ***** Running evaluation *****
+04/24 05:33:02 PM   Epoch = 3 iter 25999 step
+04/24 05:33:02 PM   Num examples = 1043
+04/24 05:33:02 PM   Batch size = 32
+04/24 05:33:03 PM preds.shape (1043, 2)
+04/24 05:33:03 PM ***** Eval results *****
+04/24 05:33:03 PM   att_loss = 0.0
+04/24 05:33:03 PM   cls_loss = 0.19296986384507903
+04/24 05:33:03 PM   eval_loss = 0.46467286506385513
+04/24 05:33:03 PM   global_step = 25999
+04/24 05:33:03 PM   loss = 0.19296986384507903
+04/24 05:33:03 PM   mcc = 0.5452100835559165
+04/24 05:33:03 PM   rep_loss = 0.0
+04/24 05:33:03 PM ***** Save model *****

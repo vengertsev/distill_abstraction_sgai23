@@ -1,0 +1,33 @@
+04/24 07:32:59 PM The args: Namespace(aug_train=False, cache_dir='', data_dir='./_data/glue_data_train2dev/CoLA', data_url='', do_eval=True, do_lower_case=True, eval_batch_size=32, eval_step=50, gradient_accumulation_steps=1, learning_rate=5e-05, max_seq_length=128, no_cuda=False, num_train_epochs=3.0, output_dir='./eval_results/1124_on_train', pred_distill=False, seed=42, student_model='./models_train/TinyBERT_6L_768D_1124_stg2_CoLA', task_name='CoLA', teacher_model=None, temperature=1.0, train_batch_size=32, warmup_proportion=0.1, weight_decay=0.0001)
+04/24 07:32:59 PM device: cuda n_gpu: 1
+04/24 07:32:59 PM ******** num_labels=2
+04/24 07:33:00 PM Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 6,
+  "pre_trained": "",
+  "structure": [],
+  "training": "",
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+
+04/24 07:33:00 PM Loading model ./models_train/TinyBERT_6L_768D_1124_stg2_CoLA/pytorch_model.bin
+04/24 07:33:00 PM loading model...
+04/24 07:33:00 PM done!
+04/24 07:33:01 PM ***** Running evaluation *****
+04/24 07:33:01 PM   Num examples = 8551
+04/24 07:33:01 PM   Batch size = 32
+04/24 07:33:08 PM preds.shape (8551, 2)
+04/24 07:33:08 PM ***** Eval results *****
+04/24 07:33:08 PM   eval_loss = 0.11711956974841765
+04/24 07:33:08 PM   mcc = 0.953484567938492
+04/24 07:33:08 PM --- preds.shape: (8551,), probs_0 len: = 8551, probs_1 len: 8551, eval_labels.shape: (8551,) ---

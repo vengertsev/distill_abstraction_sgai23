@@ -1,0 +1,33 @@
+05/03 10:47:15 PM The args: Namespace(aug_train=False, cache_dir='', data_dir='./_data/glue_data/QNLI', data_url='', do_eval=True, do_lower_case=True, eval_batch_size=32, eval_step=50, gradient_accumulation_steps=1, learning_rate=5e-05, max_seq_length=128, no_cuda=False, num_train_epochs=3.0, output_dir='./eval_results/1167_on_eval', pred_distill=False, seed=42, student_model='./models_train/TinyBERT_4L_312D_1167_stg2_QNLI', task_name='QNLI', teacher_model=None, temperature=1.0, train_batch_size=32, warmup_proportion=0.1, weight_decay=0.0001)
+05/03 10:47:15 PM device: cuda n_gpu: 1
+05/03 10:47:15 PM ******** num_labels=2
+05/03 10:47:17 PM Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pre_trained": "",
+  "structure": [],
+  "training": "",
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+
+05/03 10:47:17 PM Loading model ./models_train/TinyBERT_4L_312D_1167_stg2_QNLI/pytorch_model.bin
+05/03 10:47:17 PM loading model...
+05/03 10:47:17 PM done!
+05/03 10:47:17 PM ***** Running evaluation *****
+05/03 10:47:17 PM   Num examples = 5463
+05/03 10:47:17 PM   Batch size = 32
+05/03 10:47:19 PM preds.shape (5463, 2)
+05/03 10:47:19 PM ***** Eval results *****
+05/03 10:47:19 PM   acc = 0.8583196046128501
+05/03 10:47:19 PM   eval_loss = 0.3542437727688349
+05/03 10:47:19 PM --- preds.shape: (5463,), probs_0 len: = 5463, probs_1 len: 5463, eval_labels.shape: (5463,) ---

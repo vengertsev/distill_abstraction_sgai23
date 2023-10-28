@@ -1,0 +1,3 @@
+04/25 02:07:34 PM The args: Namespace(aug_train=False, cache_dir='', data_dir='./_data/glue_data_train2dev/CoLA', data_url='', do_eval=True, do_lower_case=True, eval_batch_size=32, eval_step=50, gradient_accumulation_steps=1, learning_rate=5e-05, max_seq_length=128, no_cuda=False, num_train_epochs=3.0, output_dir='./eval_results/1134_on_train', pred_distill=False, seed=42, student_model='./models_train/TinyBERT_4L_312D_1134_stg2_CoLA', task_name='CoLA', teacher_model=None, temperature=1.0, train_batch_size=32, warmup_proportion=0.1, weight_decay=0.0001)
+04/25 02:07:34 PM device: cuda n_gpu: 1
+04/25 02:07:34 PM ******** num_labels=2

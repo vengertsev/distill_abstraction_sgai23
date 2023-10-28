@@ -1,0 +1,3 @@
+04/23 11:45:27 PM The args: Namespace(aug_train=True, cache_dir='', data_dir='./_data/glue_data/WNLI', data_url='', do_eval=False, do_lower_case=True, eval_batch_size=32, eval_step=50, gradient_accumulation_steps=1, learning_rate=5e-05, max_seq_length=128, no_cuda=False, num_train_epochs=3.0, output_dir='./models_train/TinyBERT_6L_768D_1119_stg1_WNLI', pred_distill=False, seed=42, student_model='./_models/TinyBERT_General_6L_768D', task_name='WNLI', teacher_model='./_models/bert-base-uncased-WNLI', temperature=1.0, train_batch_size=32, warmup_proportion=0.1, weight_decay=0.0001)
+04/23 11:45:27 PM device: cuda n_gpu: 1
+04/23 11:45:27 PM ******** num_labels=2

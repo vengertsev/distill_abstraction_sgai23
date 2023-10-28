@@ -1,0 +1,265 @@
+05/01 11:55:22 AM The args: Namespace(aug_train=True, cache_dir='', data_dir='./_data/glue_data/RTE', data_url='', do_eval=False, do_lower_case=True, eval_batch_size=32, eval_step=2000, gradient_accumulation_steps=1, learning_rate=3e-05, max_seq_length=128, no_cuda=False, num_train_epochs=4.0, output_dir='./models_train/TinyBERT_6L_768D_1157_stg2_RTE', pred_distill=True, seed=42, student_model='./models_train/TinyBERT_6L_768D_1157_stg1_RTE', task_name='RTE', teacher_model='./_models/bert-base-uncased-rte', temperature=1.0, train_batch_size=38, warmup_proportion=0.1, weight_decay=0.0001)
+05/01 11:55:22 AM device: cuda n_gpu: 1
+05/01 11:55:22 AM ******** num_labels=2
+05/01 11:56:07 AM Model config {
+  "_name_or_path": "bert-base-uncased",
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "finetuning_task": "rte",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "problem_type": "single_label_classification",
+  "training": "",
+  "transformers_version": "4.6.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+05/01 11:56:08 AM Loading model ./_models/bert-base-uncased-rte/pytorch_model.bin
+05/01 11:56:08 AM loading model...
+05/01 11:56:08 AM done!
+05/01 11:56:08 AM Weights of TinyBertForSequenceClassification not initialized from pretrained model: ['fit_dense.weight', 'fit_dense.bias']
+05/01 11:56:08 AM Weights from pretrained model not used in TinyBertForSequenceClassification: ['bert.embeddings.position_ids']
+05/01 11:56:09 AM Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 6,
+  "pre_trained": "",
+  "structure": [],
+  "training": "",
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+
+05/01 11:56:09 AM Loading model ./models_train/TinyBERT_6L_768D_1157_stg1_RTE/pytorch_model.bin
+05/01 11:56:09 AM loading model...
+05/01 11:56:09 AM done!
+05/01 11:56:09 AM ***** Running training *****
+05/01 11:56:09 AM   Num examples = 144076
+05/01 11:56:09 AM   Batch size = 38
+05/01 11:56:09 AM   Num steps = 15164
+05/01 11:56:09 AM n: bert.embeddings.word_embeddings.weight
+05/01 11:56:09 AM n: bert.embeddings.position_embeddings.weight
+05/01 11:56:09 AM n: bert.embeddings.token_type_embeddings.weight
+05/01 11:56:09 AM n: bert.embeddings.LayerNorm.weight
+05/01 11:56:09 AM n: bert.embeddings.LayerNorm.bias
+05/01 11:56:09 AM n: bert.encoder.layer.0.attention.self.query.weight
+05/01 11:56:09 AM n: bert.encoder.layer.0.attention.self.query.bias
+05/01 11:56:09 AM n: bert.encoder.layer.0.attention.self.key.weight
+05/01 11:56:09 AM n: bert.encoder.layer.0.attention.self.key.bias
+05/01 11:56:09 AM n: bert.encoder.layer.0.attention.self.value.weight
+05/01 11:56:09 AM n: bert.encoder.layer.0.attention.self.value.bias
+05/01 11:56:09 AM n: bert.encoder.layer.0.attention.output.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.0.attention.output.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.0.attention.output.LayerNorm.weight
+05/01 11:56:09 AM n: bert.encoder.layer.0.attention.output.LayerNorm.bias
+05/01 11:56:09 AM n: bert.encoder.layer.0.intermediate.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.0.intermediate.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.0.output.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.0.output.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.0.output.LayerNorm.weight
+05/01 11:56:09 AM n: bert.encoder.layer.0.output.LayerNorm.bias
+05/01 11:56:09 AM n: bert.encoder.layer.1.attention.self.query.weight
+05/01 11:56:09 AM n: bert.encoder.layer.1.attention.self.query.bias
+05/01 11:56:09 AM n: bert.encoder.layer.1.attention.self.key.weight
+05/01 11:56:09 AM n: bert.encoder.layer.1.attention.self.key.bias
+05/01 11:56:09 AM n: bert.encoder.layer.1.attention.self.value.weight
+05/01 11:56:09 AM n: bert.encoder.layer.1.attention.self.value.bias
+05/01 11:56:09 AM n: bert.encoder.layer.1.attention.output.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.1.attention.output.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.1.attention.output.LayerNorm.weight
+05/01 11:56:09 AM n: bert.encoder.layer.1.attention.output.LayerNorm.bias
+05/01 11:56:09 AM n: bert.encoder.layer.1.intermediate.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.1.intermediate.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.1.output.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.1.output.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.1.output.LayerNorm.weight
+05/01 11:56:09 AM n: bert.encoder.layer.1.output.LayerNorm.bias
+05/01 11:56:09 AM n: bert.encoder.layer.2.attention.self.query.weight
+05/01 11:56:09 AM n: bert.encoder.layer.2.attention.self.query.bias
+05/01 11:56:09 AM n: bert.encoder.layer.2.attention.self.key.weight
+05/01 11:56:09 AM n: bert.encoder.layer.2.attention.self.key.bias
+05/01 11:56:09 AM n: bert.encoder.layer.2.attention.self.value.weight
+05/01 11:56:09 AM n: bert.encoder.layer.2.attention.self.value.bias
+05/01 11:56:09 AM n: bert.encoder.layer.2.attention.output.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.2.attention.output.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.2.attention.output.LayerNorm.weight
+05/01 11:56:09 AM n: bert.encoder.layer.2.attention.output.LayerNorm.bias
+05/01 11:56:09 AM n: bert.encoder.layer.2.intermediate.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.2.intermediate.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.2.output.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.2.output.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.2.output.LayerNorm.weight
+05/01 11:56:09 AM n: bert.encoder.layer.2.output.LayerNorm.bias
+05/01 11:56:09 AM n: bert.encoder.layer.3.attention.self.query.weight
+05/01 11:56:09 AM n: bert.encoder.layer.3.attention.self.query.bias
+05/01 11:56:09 AM n: bert.encoder.layer.3.attention.self.key.weight
+05/01 11:56:09 AM n: bert.encoder.layer.3.attention.self.key.bias
+05/01 11:56:09 AM n: bert.encoder.layer.3.attention.self.value.weight
+05/01 11:56:09 AM n: bert.encoder.layer.3.attention.self.value.bias
+05/01 11:56:09 AM n: bert.encoder.layer.3.attention.output.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.3.attention.output.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.3.attention.output.LayerNorm.weight
+05/01 11:56:09 AM n: bert.encoder.layer.3.attention.output.LayerNorm.bias
+05/01 11:56:09 AM n: bert.encoder.layer.3.intermediate.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.3.intermediate.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.3.output.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.3.output.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.3.output.LayerNorm.weight
+05/01 11:56:09 AM n: bert.encoder.layer.3.output.LayerNorm.bias
+05/01 11:56:09 AM n: bert.encoder.layer.4.attention.self.query.weight
+05/01 11:56:09 AM n: bert.encoder.layer.4.attention.self.query.bias
+05/01 11:56:09 AM n: bert.encoder.layer.4.attention.self.key.weight
+05/01 11:56:09 AM n: bert.encoder.layer.4.attention.self.key.bias
+05/01 11:56:09 AM n: bert.encoder.layer.4.attention.self.value.weight
+05/01 11:56:09 AM n: bert.encoder.layer.4.attention.self.value.bias
+05/01 11:56:09 AM n: bert.encoder.layer.4.attention.output.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.4.attention.output.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.4.attention.output.LayerNorm.weight
+05/01 11:56:09 AM n: bert.encoder.layer.4.attention.output.LayerNorm.bias
+05/01 11:56:09 AM n: bert.encoder.layer.4.intermediate.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.4.intermediate.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.4.output.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.4.output.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.4.output.LayerNorm.weight
+05/01 11:56:09 AM n: bert.encoder.layer.4.output.LayerNorm.bias
+05/01 11:56:09 AM n: bert.encoder.layer.5.attention.self.query.weight
+05/01 11:56:09 AM n: bert.encoder.layer.5.attention.self.query.bias
+05/01 11:56:09 AM n: bert.encoder.layer.5.attention.self.key.weight
+05/01 11:56:09 AM n: bert.encoder.layer.5.attention.self.key.bias
+05/01 11:56:09 AM n: bert.encoder.layer.5.attention.self.value.weight
+05/01 11:56:09 AM n: bert.encoder.layer.5.attention.self.value.bias
+05/01 11:56:09 AM n: bert.encoder.layer.5.attention.output.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.5.attention.output.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.5.attention.output.LayerNorm.weight
+05/01 11:56:09 AM n: bert.encoder.layer.5.attention.output.LayerNorm.bias
+05/01 11:56:09 AM n: bert.encoder.layer.5.intermediate.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.5.intermediate.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.5.output.dense.weight
+05/01 11:56:09 AM n: bert.encoder.layer.5.output.dense.bias
+05/01 11:56:09 AM n: bert.encoder.layer.5.output.LayerNorm.weight
+05/01 11:56:09 AM n: bert.encoder.layer.5.output.LayerNorm.bias
+05/01 11:56:09 AM n: bert.pooler.dense.weight
+05/01 11:56:09 AM n: bert.pooler.dense.bias
+05/01 11:56:09 AM n: classifier.weight
+05/01 11:56:09 AM n: classifier.bias
+05/01 11:56:09 AM n: fit_dense.weight
+05/01 11:56:09 AM n: fit_dense.bias
+05/01 11:56:09 AM Total parameters: 67547138
+05/01 12:01:46 PM ***** Running evaluation *****
+05/01 12:01:46 PM   Epoch = 0 iter 1999 step
+05/01 12:01:46 PM   Num examples = 277
+05/01 12:01:46 PM   Batch size = 32
+05/01 12:01:47 PM preds.shape (277, 2)
+05/01 12:01:47 PM ***** Eval results *****
+05/01 12:01:47 PM   acc = 0.6245487364620939
+05/01 12:01:47 PM   att_loss = 0.0
+05/01 12:01:47 PM   cls_loss = 0.25343943179667505
+05/01 12:01:47 PM   eval_loss = 0.6470866666899787
+05/01 12:01:47 PM   global_step = 1999
+05/01 12:01:47 PM   loss = 0.25343943179667505
+05/01 12:01:47 PM   rep_loss = 0.0
+05/01 12:01:47 PM ***** Save model *****
+05/01 12:07:25 PM ***** Running evaluation *****
+05/01 12:07:25 PM   Epoch = 1 iter 3999 step
+05/01 12:07:25 PM   Num examples = 277
+05/01 12:07:25 PM   Batch size = 32
+05/01 12:07:25 PM preds.shape (277, 2)
+05/01 12:07:25 PM ***** Eval results *****
+05/01 12:07:25 PM   acc = 0.6389891696750902
+05/01 12:07:25 PM   att_loss = 0.0
+05/01 12:07:25 PM   cls_loss = 0.24871006987702388
+05/01 12:07:25 PM   eval_loss = 0.6542803976270888
+05/01 12:07:25 PM   global_step = 3999
+05/01 12:07:25 PM   loss = 0.24871006987702388
+05/01 12:07:25 PM   rep_loss = 0.0
+05/01 12:07:25 PM ***** Save model *****
+05/01 12:13:03 PM ***** Running evaluation *****
+05/01 12:13:03 PM   Epoch = 1 iter 5999 step
+05/01 12:13:03 PM   Num examples = 277
+05/01 12:13:03 PM   Batch size = 32
+05/01 12:13:03 PM preds.shape (277, 2)
+05/01 12:13:03 PM ***** Eval results *****
+05/01 12:13:03 PM   acc = 0.6606498194945848
+05/01 12:13:03 PM   att_loss = 0.0
+05/01 12:13:03 PM   cls_loss = 0.2493203208255379
+05/01 12:13:03 PM   eval_loss = 0.6307969888051351
+05/01 12:13:03 PM   global_step = 5999
+05/01 12:13:03 PM   loss = 0.2493203208255379
+05/01 12:13:03 PM   rep_loss = 0.0
+05/01 12:13:03 PM ***** Save model *****
+05/01 12:18:41 PM ***** Running evaluation *****
+05/01 12:18:41 PM   Epoch = 2 iter 7999 step
+05/01 12:18:41 PM   Num examples = 277
+05/01 12:18:41 PM   Batch size = 32
+05/01 12:18:41 PM preds.shape (277, 2)
+05/01 12:18:41 PM ***** Eval results *****
+05/01 12:18:41 PM   acc = 0.6534296028880866
+05/01 12:18:41 PM   att_loss = 0.0
+05/01 12:18:41 PM   cls_loss = 0.2482735014719357
+05/01 12:18:41 PM   eval_loss = 0.6401728590329488
+05/01 12:18:41 PM   global_step = 7999
+05/01 12:18:41 PM   loss = 0.2482735014719357
+05/01 12:18:41 PM   rep_loss = 0.0
+05/01 12:24:19 PM ***** Running evaluation *****
+05/01 12:24:19 PM   Epoch = 2 iter 9999 step
+05/01 12:24:19 PM   Num examples = 277
+05/01 12:24:19 PM   Batch size = 32
+05/01 12:24:19 PM preds.shape (277, 2)
+05/01 12:24:19 PM ***** Eval results *****
+05/01 12:24:19 PM   acc = 0.6570397111913358
+05/01 12:24:19 PM   att_loss = 0.0
+05/01 12:24:19 PM   cls_loss = 0.2488415435012037
+05/01 12:24:19 PM   eval_loss = 0.6469734244876437
+05/01 12:24:19 PM   global_step = 9999
+05/01 12:24:19 PM   loss = 0.2488415435012037
+05/01 12:24:19 PM   rep_loss = 0.0
+05/01 12:29:57 PM ***** Running evaluation *****
+05/01 12:29:57 PM   Epoch = 3 iter 11999 step
+05/01 12:29:57 PM   Num examples = 277
+05/01 12:29:57 PM   Batch size = 32
+05/01 12:29:57 PM preds.shape (277, 2)
+05/01 12:29:57 PM ***** Eval results *****
+05/01 12:29:57 PM   acc = 0.6534296028880866
+05/01 12:29:57 PM   att_loss = 0.0
+05/01 12:29:57 PM   cls_loss = 0.24878292359387913
+05/01 12:29:57 PM   eval_loss = 0.6398520535892911
+05/01 12:29:57 PM   global_step = 11999
+05/01 12:29:57 PM   loss = 0.24878292359387913
+05/01 12:29:57 PM   rep_loss = 0.0
+05/01 12:35:35 PM ***** Running evaluation *****
+05/01 12:35:35 PM   Epoch = 3 iter 13999 step
+05/01 12:35:35 PM   Num examples = 277
+05/01 12:35:35 PM   Batch size = 32
+05/01 12:35:35 PM preds.shape (277, 2)
+05/01 12:35:35 PM ***** Eval results *****
+05/01 12:35:35 PM   acc = 0.6389891696750902
+05/01 12:35:35 PM   att_loss = 0.0
+05/01 12:35:35 PM   cls_loss = 0.24839854742608175
+05/01 12:35:35 PM   eval_loss = 0.6478440430429246
+05/01 12:35:35 PM   global_step = 13999
+05/01 12:35:35 PM   loss = 0.24839854742608175
+05/01 12:35:35 PM   rep_loss = 0.0
